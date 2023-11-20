@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -32,4 +30,3 @@
                     @endauth
                 </div>
             @endif
->>>>>>> a1a14fec3d3bd6ddb078f13e282d6013ebb77b62
