@@ -6,12 +6,11 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Item;
 
 
+Route::resource('Articolo', \App\Http\Controllers\ItemController::class);
+
+Route::resource('categorie', \App\Http\Controllers\CategoryController::class); 
 
 Route::get('/', [App\Http\Controllers\PageController::class, 'home'])->name('home');
-
-Route::get('/articoli', [App\Http\Controllers\ItemController::class, 'index'])->name('items');
-
-Route::get('/articolo/{id}', [App\Http\Controllers\ItemController::class, 'show'])->name('item');
 
 Route::get('/contatti', [App\Http\Controllers\PageController::class, 'contacts'])->name('contacts');
 
@@ -19,9 +18,7 @@ Route::get('/contatti', [App\Http\Controllers\ContactController::class, 'form'])
 
 Route::post('/contatti/invia', [App\Http\Controllers\ContactController::class, 'send'])->name('contacts.send');
 
-Route::get('/items', [App\Http\Controllers\ItemController::class, 'items']);
 
-Route::get('/categorie', [App\Http\Controllers\CategoryController::class, 'categories']); 
 
 
 
