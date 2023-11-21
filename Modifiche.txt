@@ -1,0 +1,22 @@
+Giorno 1
+1.0-{ 
+- creazione progetto 
+- npm install
+- npm install bootstrap ( - inserita la riga import 'bootstrap';  nel file resources/js/app.js (oppure in resources/js/bootstrap.js)
+                          - inserire la riga @import 'bootstrap'; nel file resources/css/app.css
+                        )
+- php artisan storage ( Inserito per rendere raggiungibile pubblicamente la cartella "storage/app/public attraverso il symlink storage creato nella cartella public"
+                        così da poter gestire le immagini che verranno caricate negli articoli
+                      )
+- composer require livewire/livewire (Installato livewire  che ci servirà per l'inserimento dell'annuncio)
+- modifiche file ".env" (
+                          - modificato  APP_NAME=Presto.it
+                          -  Settato il database [!IMPORTANTE! se ognuno ha delle specifiche diverse per il Database non passiamolo nel push se no ogni volta dovremmo modificarlo]
+                            DB_CONNECTION=mysql
+                            DB_HOST=127.0.0.1
+                            DB_PORT=3306
+                            DB_DATABASE=presto.it_db
+                            DB_USERNAME=root
+                            DB_PASSWORD=root
+                        )
+}
