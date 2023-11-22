@@ -8,8 +8,14 @@
                     <a class="nav-link" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('articles') }}">Articoli</a>
+                    <a class="nav-link" href="{{ route('Annuncio.index') }}">Articoli in vendita</a>
                 </li>
+<<<<<<< HEAD
+=======
+                <li class="nav-item">
+                    <button>Pubblica un annuncio</button>
+                </li>
+>>>>>>> 42cd0cc6bde293d0166e1461eb9f7ece2f8aa96e
             </ul>
                 {{-- {{ auth()->user()->email }} --}}
             <ul class="navbar-nav ms-auto mb-2 mb-2 mb-lg-0">

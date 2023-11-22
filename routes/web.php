@@ -3,10 +3,12 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 use App\Models\Item;
 
 
-Route::resource('Articolo', \App\Http\Controllers\ItemController::class);
+Route::resource('Annuncio', \App\Http\Controllers\ItemController::class);
+
 
 Route::resource('categorie', \App\Http\Controllers\CategoryController::class); 
 
@@ -17,7 +19,6 @@ Route::get('/contatti', [App\Http\Controllers\PageController::class, 'contacts']
 Route::get('/contatti', [App\Http\Controllers\ContactController::class, 'form'])->name('contacts');
 
 Route::post('/contatti/invia', [App\Http\Controllers\ContactController::class, 'send'])->name('contacts.send');
-
 
 
 
