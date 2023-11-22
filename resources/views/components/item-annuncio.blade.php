@@ -10,7 +10,7 @@
         </div>
 
         <div class="img-fluid img m-3">
-            <img src="{{ Storage::url($article->image) }}">
+            <img src="{{ Storage::url($item->image) }}">
         </div>
 
         <div class="mt-5">
