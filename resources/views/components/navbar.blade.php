@@ -8,13 +8,10 @@
                     <a class="nav-link" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('articles') }}">Articoli</a>
+                    <a class="nav-link" href="{{ route('articles') }}">Articoli in vendita</a>
                 </li>
                 <li class="nav-item">
-                    <a  class="nav-link" href="{{ route('chi-sono') }}">Chi sono</a>
-                </li>
-                <li class="nav-item">
-                    <a  class="nav-link" href="{{ route('contatti') }}">Contatti</a>
+                    <button>Pubblica un annuncio</button>
                 </li>
             </ul>
                 {{-- {{ auth()->user()->email }} --}}
