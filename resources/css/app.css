@@ -3,6 +3,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Agdasima&family=Bebas+Neue&family=Belanosima:wght@600&family=Dancing+Script:wght@500;600;700&family=Dosis:wght@300&family=Lato:wght@300&family=Manrope:wght@500&family=Oswald&family=Quicksand:wght@400;600&family=Raleway:wght@200&family=Roboto+Condensed:wght@300;400&family=Roboto+Mono:ital,wght@1,300&family=Ysabeau+SC:wght@300&display=swap');
 
+.bg-navbar{
+    background-color: rgb(96, 74, 236);
+}
 
 body {
     background-color:rgb(210, 229, 229);
