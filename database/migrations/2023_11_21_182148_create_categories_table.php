@@ -12,9 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('categories', function (Blueprint $table) {
+
             $table->id();
             $table->string('name', 20); // Definisci la lunghezza massima del nome
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id');//Riferimento all'utente che ha creato la categoria
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

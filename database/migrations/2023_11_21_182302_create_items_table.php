@@ -12,11 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('items', function (Blueprint $table) {
+
             $table->id();
             $table->string('title', 40); // Titolo con massimo 20 caratteri
             $table->decimal('price', 8, 2); // Prezzo numerico con virgola
             $table->text('description'); // Descrizione
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id');//Riferimento all'utente che ha creato l'annuncio
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

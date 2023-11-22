@@ -20,3 +20,19 @@ Giorno 1
                             DB_PASSWORD=root
                         )
 }
+
+Giorno 2
+1.2-{
+ - create le migration per categories,items,item_images e pivot tra categories e items
+ - Le relazioni tra i dati sono:
+      - categories-items( M-M )
+      - categories-users( M-1 )
+      - items-users( M-1 )
+      - item_images-items( M-1 )
+  - Per queste migration sono state fatte le factory e i seeders;
+      - Users si creano 10 utenti
+      - Items si creano 40 annunci
+      - item_images per ogni articolo si generano 4 immagini (ToT 160)
+      - categories si creano 10 categorie
+      - categoriesToItems popola la tabella pivot così che ogni annuncio abbia due categorie casuali
+}
