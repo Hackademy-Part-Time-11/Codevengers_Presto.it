@@ -8,7 +8,7 @@
                     <a class="nav-link" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('Articolo.index') }}">Articoli in vendita</a>
+                    <a class="nav-link" href="{{ route('Annuncio.index') }}">Articoli in vendita</a>
                 </li>
                 <li class="nav-item">
                     <button>Pubblica un annuncio</button>

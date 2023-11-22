@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Item;
 
 
-Route::resource('Articolo', \App\Http\Controllers\ItemController::class);
+Route::resource('Annuncio', \App\Http\Controllers\ItemController::class);
 
 
 Route::resource('categorie', \App\Http\Controllers\CategoryController::class); 

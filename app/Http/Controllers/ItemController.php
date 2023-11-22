@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\item;
+
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
@@ -12,7 +13,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -20,7 +21,9 @@ class ItemController extends Controller
      */
     public function create()
     {
-        //
+        $categories = \App\Models\Category::all();
+
+        return view('components.itemForm', compact('categories'));
     }
 
     /**
