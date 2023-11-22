@@ -10,12 +10,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('articles') }}">Articoli</a>
                 </li>
-                <li class="nav-item">
-                    <a  class="nav-link" href="{{ route('chi-sono') }}">Chi sono</a>
-                </li>
-                <li class="nav-item">
-                    <a  class="nav-link" href="{{ route('contatti') }}">Contatti</a>
-                </li>
             </ul>
                 {{-- {{ auth()->user()->email }} --}}
             <ul class="navbar-nav ms-auto mb-2 mb-2 mb-lg-0">
