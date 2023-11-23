@@ -1,5 +1,6 @@
 nav {
     background-color: rgb(96, 74, 236);
+    
     img {
         width: 50px;
         margin: 0;
@@ -8,5 +9,21 @@ nav {
     span {
         margin: 0 15px;
         font-weight: bold;
+    }
+
+    a {
+        color: aliceblue;
+    }
+
+    button {
+        padding: 3px;
+        padding-left: 8px;
+        padding-right: 8px;
+        margin-left: 10px;
+        border-radius: 5px;
+        color:white;
+        background-color:gold;
+        font-weight: 5px;
+        box-shadow: 2px, 0;
     }
 }
