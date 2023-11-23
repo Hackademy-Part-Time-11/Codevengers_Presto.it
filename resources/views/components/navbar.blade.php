@@ -10,8 +10,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('Annuncio.index') }}">Articoli in vendita</a>
                 </li>
-                <li class="d-flex">
-                    <button class="btn-publica">Pubblica un annuncio</button>
+                <li class="nav-item d-flex align-items-center">
+                    <button>Pubblica un annuncio</button>
                 </li>
             </ul>
             {{-- {{ auth()->user()->email }} --}}
