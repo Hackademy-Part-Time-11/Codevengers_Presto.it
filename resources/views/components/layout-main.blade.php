@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
+
 <head>
+    <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/x-icon" />
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('images/logo.png') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -8,6 +11,7 @@
 
     @vite(['resources/css/app.scss', 'resources/js/app.js'])
 </head>
+
 <body>
     <div class="d-flex flex-column min-vh-100">
         <header class="sticky-top">
@@ -23,4 +27,5 @@
         </footer>
     </div>
 </body>
+
 </html>
