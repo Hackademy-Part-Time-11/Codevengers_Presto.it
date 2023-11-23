@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Item;
 
 
-Route::resource('Annuncio', \App\Http\Controllers\ItemController::class);
+Route::resource('items', \App\Http\Controllers\ItemController::class);
 
-Route::resource('categorie', \App\Http\Controllers\CategoryController::class); 
+Route::resource('Categorie', \App\Http\Controllers\CategoryController::class); 
 
 Route::get('/', [App\Http\Controllers\PageController::class, 'home'])->name('home');
 
