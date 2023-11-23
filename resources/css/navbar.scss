@@ -34,5 +34,15 @@ nav {
         padding: 10px;
         border-radius: 10%;
     }
+
+    #destra{
+        
+    }
+
+    @media only screen and (max-width: 990px){
+    #navbarSupportedContent{
+        width: 100%;
+        }
+    }
 }
 
