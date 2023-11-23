@@ -9,11 +9,28 @@ nav {
     span {
         margin: 0 15px;
         font-weight: bold;
-    }
 
+        color: aliceblue;
+        font-size: 20px;
+    }
+<<<<<<< HEAD
+
+=======
+>>>>>>> 14ea59c96a94800c6c00b4ff4af5e26559713c6c
 
     a {
-        color: aliceblue;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bolder;
+        color: rgb(101, 222, 40);
+        font-family: "Lato", sans-serif;
+        border-radius: 5px;
+    }
+
+    a:hover {
+        color: rgb(93, 148, 148);
+        background-color: white;
+        border-radius: 5px;
     }
 
     button {
@@ -33,6 +50,7 @@ nav {
         
         padding: 10px;
         border-radius: 10%;
+<<<<<<< HEAD
     }
 
     #destra{
@@ -45,4 +63,14 @@ nav {
         }
     }
 }
+=======
+    }
+
+
+    }
+
+
+
+
+>>>>>>> 14ea59c96a94800c6c00b4ff4af5e26559713c6c
 
