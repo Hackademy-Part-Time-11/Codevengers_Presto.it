@@ -20,7 +20,7 @@
                 
             </ul>
         </div>
-        <div class="collapse navbar-collapse d-flex justify-content-end me-5 " id="navbarNavDropdown">
+        <div class="collapse navbar-collapse d-flex justify-content-end me-5 s" id="navbarNavDropdown">
             <ul class="navbar-nav ">
                 <li class="nav-item dropdown ">
                     
