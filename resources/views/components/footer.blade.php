@@ -1,65 +1,65 @@
 <footer>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12 d-flex justify-content-center"> 
-                        <div class="title-section3">Seguici sui social media</div>
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="../../img/Logo.jpg" alt="alt">
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="../../img/Logo.jpg" alt="">
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="../../img/Logo.jpg" alt="">
-                    </div>
-                    <div class="col-6 col-md-2">
-                        <img src="../../img/Logo.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid bg-footer cw">
-                <div class="container">
-                    <div class="row ">
-                        <div class="col-xl-6 col-12">
-                            <img class="ps-logo-footer" src="../../img/Logo.jpg" alt="">
-                            <div>
-                                <img class="language-globe" src="img/language-globe.svg" alt="">
-                               <span>Country/Region: Italy</span> 
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-12 mt-xl-0 mt-4">
-                            <div class="row ">
-                                <div class="col-md-4 col-12 d-flex flex-column align-items-xl-end">
-                                    <a href="">Link footer n</a>
-                                    <a href="">Link footer n</a>
-                                    <a href="">Link footer n</a>
-                                    <a href="">Link footer n</a>
-                                    <a href="">Link footer n</a>
-                                </div>
-                                <div class="col-md-4 col-12 d-flex flex-column align-items-xl-end">
-                                    <a href="">Link footer n</a>
-                                    <a href="">Link footer n</a>
-                                    <a href="">Link footer n</a>
-                                    <a href="">Link footer n</a>
-                                    <a href="">Link footer n</a>
-                                    <a href="">Link footer n</a>
-                                    <a href="">Link footer n</a>
-                                </div>
-                                <div class="col-md-4 col-12 d-flex flex-column align-items-xl-end">
-                                    <a href="">Link footer n</a>
-                                    <a href="">Link footer n</a>
-                                    <a href="">Link footer n</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-xl-6">
-                            <img class="ps-logo-footer" src="img/sie-logo.svg" alt="">
-                            <div>Website ©2021 Sony Interactive Entertainment Europe Limited. Tutti i contenuti, nomi dei giochi, nomi commerciali e/o di abbigliamento, marchi registrati, grafica e immagini associati sono marchi registrati e/o materiale protetto da copyright dei rispettivi proprietari. tutti i diritti riservati. Maggiori info</div>                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </footer>
+
+<div class="container">
+
+  <footer class="py-5">
+    <div class="row">
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Section</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Section</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3">
+        <h5>Section</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-5 offset-md-1 mb-3">
+        <form>
+          <h5>Subscribe to our newsletter</h5>
+          <p>Monthly digest of what's new and exciting from us.</p>
+          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <label for="newsletter1" class="visually-hidden">Email address</label>
+            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+            <button class="btn btn-primary" type="button">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <p>© 2023 Company, Inc. All rights reserved.</p>
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-twitter"></i></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-instagram"></i></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-facebook"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+</div>
+
+
+</footer>
