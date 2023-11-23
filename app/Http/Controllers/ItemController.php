@@ -31,15 +31,16 @@ class ItemController extends Controller
      */
     public function store(itemFormRequest $request)
     {
+        $request->merge(['user_id' => 1]);
         $item = item::create($request->all());
 
-        $item->user_id = auth()->user()->id;
+        $item->save();
 
         $item->categories()->attach($request->categories);
 
         foreach ($request->file('images') as $key=>$image){
             
-            $fileName = \Illuminate\Support\Str::slug($item->title). $key . '.' . $request->file('image')->extension();
+            $fileName = \Illuminate\Support\Str::slug($item->title). $key . '.' . $image->extension();
 
             $imagePath = $image->storeAs("public/images/items/$item->id", $fileName);
 
@@ -53,9 +54,9 @@ class ItemController extends Controller
 
         }
 
-        $item->save();
+       
 
-        return redirect()->route('items.edit', $item)->with(['success' => 'Articolo inserito correttamente']);
+        return redirect()->route('Annuncio.create')->with(['success' => 'Articolo inserito correttamente']);
     }
 
     /**

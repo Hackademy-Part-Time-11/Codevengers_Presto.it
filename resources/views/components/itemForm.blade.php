@@ -43,9 +43,9 @@
                  @error('images') <span class="text-danger small">{{ $message }}</span> @enderror
             </div>
             <div class="col-12">
-                <label for="body">Descrizione</label>
-                <textarea name="body" id="body" class="form-control @error('body') is-invalid @enderror" rows="10" maxlength="5000">{{ old('body') }}</textarea>
-                @error('body') <span class="text-danger small">{{ $message }}</span> @enderror
+                <label for="description">Descrizione</label>
+                <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror" rows="10" maxlength="5000">{{ old('description') }}</textarea>
+                @error('description') <span class="text-danger small">{{ $message }}</span> @enderror
             </div>
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Crea Articolo</button>
