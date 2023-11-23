@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <x-layout-main>
 
     <h1>Benvenuto su Presto.it!</h1>
@@ -41,4 +39,3 @@
       </div><br><br>
     
     </x-layout-main>
->>>>>>> 42cd0cc6bde293d0166e1461eb9f7ece2f8aa96e
