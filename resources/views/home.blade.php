@@ -37,5 +37,23 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div><br><br>
+
+      <div class="container mt-5">
+        <div class="row">
+            @foreach($categories as $category)
+                <div class="col-md-4 mb-4">
+                  <a href="">
+                    <div class="card">
+                        <img src="{{ $category['image'] }}" class="card-img-top" alt="{{ $category['name'] }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $category['name'] }}</h5>
+                        </div>
+                    </div>
+                  </a>
+                </div>
+            @endforeach
+        </div>
+    </div>
+    <br><br>
     
     </x-layout-main>

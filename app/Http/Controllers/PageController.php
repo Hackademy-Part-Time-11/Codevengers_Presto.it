@@ -1,19 +1,17 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class PageController extends Controller
 {
     public function home()
     {
-        $title = 'Welcome!';
-        return view ('home', compact('title'));
-    }
-    public function contacts()
-    {
-        return view ('contacts');
-    }
+        $categories = Category::all();
 
+        return view('home', compact('categories'));
+    }
 }
