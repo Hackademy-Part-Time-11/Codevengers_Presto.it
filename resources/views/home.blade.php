@@ -1,6 +1,6 @@
 <x-layout-main>
 
-    <h1>How to Start a Business</h1>
+    <h1>Benvenuto su Presto.it!</h1>
     
     <div id="carouselExampleCaptions" class="carousel slide">
         <div class="carousel-indicators">
@@ -10,19 +10,19 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="https://immagini.trovaprezzi.it/magazine/2019/01/cameretta-neonato.jpg" class="d-block w-100 rounded mx-auto" alt="photo1">
+            <img src="https://picsum.photos/1200/400" class="d-block w-100 rounded mx-auto" alt="photo1">
             <div class="carousel-caption d-none d-md-block">
               <h5>Cerca</h5>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="https://a0.muscache.com/im/pictures/a4ac7ee2-d51f-47a3-96fc-6e76a9eea04e.jpg" class="d-block w-100 rounded mx-auto" alt="photo2">
+            <img src="https://picsum.photos/1201/400" class="d-block w-100 rounded mx-auto" alt="photo2">
             <div class="carousel-caption d-none d-md-block">
               <h5>Vendi</h5>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="https://dq5r178u4t83b.cloudfront.net/wp-content/uploads/sites/41/2023/03/28131705/6582-42-1200x400.jpg" class="d-block w-100 rounded mx-auto" alt="photo3">
+            <img src="https://picsum.photos/1200/401" class="d-block w-100 rounded mx-auto" alt="photo3">
             <div class="carousel-caption d-none d-md-block">
               <h5>Compra</h5>
             </div>

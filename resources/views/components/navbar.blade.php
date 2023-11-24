@@ -20,7 +20,7 @@
                 
             </ul>
         </div>
-        <div class="collapse navbar-collapse d-flex justify-content-end me-5 s" id="navbarNavDropdown">
+        <div class="collapse navbar-collapse d-flex justify-content-end me-3 " id="navbarNavDropdown ">
             <ul class="navbar-nav ">
                 <li class="nav-item dropdown ">
                     
@@ -35,17 +35,19 @@
                         
                     </a>
                 
-                <ul class="dropdown-menu">
+                <ul class=" dropdown-menu " id="login">
                     
                         @auth
                         
-                            
-                            {{-- <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{-- <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> --}}
+                            <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Dropdown
-                            </a> --}}
+                            </a>
                             
                             
-                            <li><a class="dopdown-item m-3 form-control-sm" href="{{route('account')}}">Account</a></li>
+                            <li>
+                                <a class="dopdown-item m-3 form-control-sm" href="{{route('account')}}">Account</a>
+                            </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -60,7 +62,9 @@
                     @else
                         
                     
-                    <li><a class="dropdown-item" href="/login">Accedi</a></li>
+                    <li>
+                        <a class="dropdown-item" href="/login">Accedi</a>
+                    </li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
