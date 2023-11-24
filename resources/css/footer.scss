@@ -1,6 +1,6 @@
 footer {
 
-   background-color: rgb(99, 96, 96);
+   background-color:rgb(79, 16, 69);
    font-weight: bold;
    
    i {
@@ -28,10 +28,16 @@ footer {
       padding-right: 8px;
       margin-left: 10px;
       border-radius: 5px;
-      color:white;
-      background-color:rgb(79, 16, 69);
+      color:black;
+      background-color:rgb(208, 202, 202);
       font-weight: 5px;
       box-shadow: 2px, 0;
    }
+
+   h5 {
+
+      color: black;
+   }
+   
 }
 
