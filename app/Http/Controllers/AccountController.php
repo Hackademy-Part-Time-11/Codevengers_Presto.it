@@ -9,7 +9,7 @@ class AccountController extends Controller
 {
     public function index()
     {
-        return view ("auth.login");
+        return view ("account.index");
     }
 
     public function settings()

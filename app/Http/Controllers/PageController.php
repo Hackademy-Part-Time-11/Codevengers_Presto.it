@@ -13,5 +13,6 @@ class PageController extends Controller
         $categories = Category::all();
 
         return view('home', compact('categories'));
-    }
+    }   
+
 }

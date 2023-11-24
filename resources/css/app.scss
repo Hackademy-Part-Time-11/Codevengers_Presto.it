@@ -1,22 +1,21 @@
 @import "bootstrap";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
 
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Orbitron&family=Tourney:ital,wght@1,100&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Agdasima&family=Bebas+Neue&family=Belanosima:wght@600&family=Dancing+Script:wght@500;600;700&family=Dosis:wght@300&family=Lato:wght@300&family=Manrope:wght@500&family=Oswald&family=Quicksand:wght@400;600&family=Raleway:wght@200&family=Roboto+Condensed:wght@300;400&family=Roboto+Mono:ital,wght@1,300&family=Ysabeau+SC:wght@300&display=swap");
 
 @import "navbar.scss";
 @import "footer.scss";
 
 body {
     background-color:rgb(208, 202, 202);
-    }
-
-.carousel-inner {
+.carousel-inner
+{
     width: 100%;
 }
 
 h1 {
         color: rgb(91, 34, 34);
+        padding: 50px;
         font-size: 50px;
         font-style: oblique, bold;
         font-family: 'Tourney', sans-serif;
@@ -25,20 +24,19 @@ h1 {
         text-align: center;
     }
 
-h2 {
+    h2 {
         color: rgb(91, 34, 34);
         font-size: 40px;
         font-style: oblique;
-        font-family: 'Amatic SC', sans-serif;
+        font-family: "Roboto Condensed", sans-serif;
         align-items: center;
         justify-content: center;
         text-align: center;
     }
-    
 
     a {
         text-decoration: none;
         padding: 5px;
     }
 
-
+}
