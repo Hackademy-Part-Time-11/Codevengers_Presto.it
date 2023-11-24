@@ -1,6 +1,11 @@
 <x-layout-main>
 
+<<<<<<< HEAD
     <h1>How to Start a Business</h1>
+=======
+    <h1>Presto.it</h1>
+    <h2>L'e-commerce su misura per te</h2><br><br>
+>>>>>>> 74043810542ef03ac556193497a2e2cc4de18459
     
     <div id="carouselExampleCaptions" class="carousel slide">
         <div class="carousel-indicators">
