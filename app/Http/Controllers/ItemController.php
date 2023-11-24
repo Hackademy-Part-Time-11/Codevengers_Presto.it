@@ -49,7 +49,7 @@ class ItemController extends Controller
             
             $fileName = \Illuminate\Support\Str::slug($item->title). $key . '.' . $image->extension();
 
-            $imagePath = $image->storeAs("images/items/$item->id", $fileName);
+            $imagePath = $image->storeAs("public/images/items/$item->id", $fileName);
 
             $imgNew= new item_image();
 

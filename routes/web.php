@@ -36,6 +36,4 @@ Route::post('/settings.store', [App\Http\Controllers\AccountController::class, '
 
 
 
-Route::resource('items', App\Http\Controllers\ItemController::class);
-
 });
