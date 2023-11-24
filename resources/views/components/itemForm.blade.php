@@ -38,9 +38,9 @@
             </div>
             <div class="col-12">
                 <label for="image">Immagini prodotto (max:4)</label>
-                 <input type="file" name="images[]" id="images" accept="image/*" class="form-control" multiple>
-                 <div id="imagePreview"></div>
-                 @error('images') <span class="text-danger small">{{ $message }}</span> @enderror
+                <input type="file" name="images[]" id="images" accept="image/*" class="form-control" multiple>
+                <div id="imagePreview"></div>
+                @error('images') <span class="text-danger small">{{ $message }}</span> @enderror
             </div>
             <div class="col-12">
                 <label for="description">Descrizione</label>
