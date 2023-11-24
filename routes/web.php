@@ -20,12 +20,7 @@ Route::get('/contatti', [App\Http\Controllers\ContactController::class, 'form'])
 Route::post('/contatti/invia', [App\Http\Controllers\ContactController::class, 'send'])->name('contacts.send');
 
 
-
-
-Route::prefix('account')->middleware(['auth', 'verified'])->group(function(){   
-          // per far creare gli articoli solo agli utenti autenticati
-
-Route::get('/', [App\Http\Controllers\AccountController::class, 'index'])
+Route::get('/login', [App\Http\Controllers\AccountController::class, 'index'])
     ->name('account');
 
 Route::get('/settings', [App\Http\Controllers\AccountController::class, 'settings'])
@@ -35,7 +30,9 @@ Route::post('/settings.store', [App\Http\Controllers\AccountController::class, '
     ->name('account.settings.store');
 
 
+Route::prefix('account')->middleware(['auth', 'verified'])->group(function(){   
+          // per far creare gli articoli solo agli utenti autenticati
 
-Route::resource('items', App\Http\Controllers\ItemController::class);
+
 
 });

@@ -49,7 +49,7 @@ class ItemController extends Controller
             
             $fileName = \Illuminate\Support\Str::slug($item->title). $key . '.' . $image->extension();
 
-            $imagePath = $image->storeAs("images/items/$item->id", $fileName);
+            $imagePath = $image->storeAs("public/images/items/$item->id", $fileName);
 
             $imgNew= new item_image();
 
@@ -95,7 +95,10 @@ class ItemController extends Controller
      */
     public function update(itemFormRequest $request, item $item)
     {
-        return "ciao";
+        $item->update($request->all());
+        $item->categories()->detach();
+        $item->categories()->attach($request->categories);
+        return redirect()->back()->with(['success' => 'Articolo modificato con successo!']);
     }
 
     /**
