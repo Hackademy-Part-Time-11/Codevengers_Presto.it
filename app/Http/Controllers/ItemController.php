@@ -23,7 +23,14 @@ class ItemController extends Controller
     {
         $categories = \App\Models\Category::all();
 
-        return view('components.itemForm', compact('categories'));
+        return view('components.itemForm', [
+            'title' => 'Crea una nuovo Annuncio',
+            'categories'=>$categories,
+            'action' => route('items.store'),
+            'button' => 'Crea Annuncio',
+            'item' => new item(),
+        ]);
+
     }
 
     /**
@@ -42,7 +49,7 @@ class ItemController extends Controller
             
             $fileName = \Illuminate\Support\Str::slug($item->title). $key . '.' . $image->extension();
 
-            $imagePath = $image->storeAs("public/images/items/$item->id", $fileName);
+            $imagePath = $image->storeAs("images/items/$item->id", $fileName);
 
             $imgNew= new item_image();
 
@@ -54,9 +61,7 @@ class ItemController extends Controller
 
         }
 
-       
-
-        return redirect()->route('Annuncio.create')->with(['success' => 'Articolo inserito correttamente']);
+        return redirect()->route('items.edit', $item)->with(['success' => 'Annuncio creato correttamente']);
     }
 
     /**
@@ -72,9 +77,17 @@ class ItemController extends Controller
      */
     public function edit(item $item)
     {
+        
         $categories = \App\Models\Category::all();
+        return view('components.itemForm', [
+            'title' => 'Modifica Annuncio',
+            'categories'=>$categories,
+            'action' => route('items.update', $item),
+            'button' => 'Modifica Annuncio',
+            'prova'=>count($item->item_image),
+            'item'=>$item,
+        ]);
 
-        return view('components.itemForm', compact('categories'));
     }
 
     /**
@@ -82,7 +95,7 @@ class ItemController extends Controller
      */
     public function update(itemFormRequest $request, item $item)
     {
-        //
+        return "ciao";
     }
 
     /**
@@ -93,3 +106,5 @@ class ItemController extends Controller
         //
     }
 }
+
+

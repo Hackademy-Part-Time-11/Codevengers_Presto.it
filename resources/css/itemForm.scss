@@ -1,0 +1,23 @@
+.col-12{
+  .row{
+    img{
+        height: 200px;
+        width: 200px;
+        object-fit: contain;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+}
+.dn{
+    display: none;
+}
+i{
+    display: flex;
+    height: 200px;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+}
