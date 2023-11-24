@@ -11,7 +11,7 @@ Route::resource('items', \App\Http\Controllers\ItemController::class);
 
 Route::resource('Categorie', \App\Http\Controllers\CategoryController::class); 
 
-Route::get('/', [App\Http\Controllers\PageController::class, 'home'])->name('home');
+Route::get('/home', [App\Http\Controllers\PageController::class, 'home'])->name('home');
 
 Route::get('/contatti', [App\Http\Controllers\PageController::class, 'contacts'])->name('contacts');
 

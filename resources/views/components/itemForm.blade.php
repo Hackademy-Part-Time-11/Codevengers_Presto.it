@@ -33,12 +33,12 @@
                 </div>
                 @error('categories') <span class="text-danger small">{{ $message }}</span> @enderror
             </div>
-            <div class="col-12">
+            <div class="col-12 ">
                 <label for="price">Prezzo</label>
                 <input type="number" name="price" id="price" min="1" class="form-control @error('price') is-invalid @enderror" value="{{ old('price',$item->price) }}">
                 @error('price') <span class="text-danger small">{{ $message }}</span> @enderror
             </div>
-            <div class="col-12">
+            <div class="col-12 align-items-center">
                 <label for="image">Immagini prodotto (max:4)</label>
 
                 @if($item->id)

@@ -72,7 +72,7 @@
                     @endauth
                 </ul>
             </li>
-
+            
             </ul>
         </div>
     </div>
