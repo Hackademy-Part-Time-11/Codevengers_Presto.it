@@ -7,44 +7,22 @@
 @import "footer.scss";
 
 body {
-<<<<<<< HEAD
     background-color: rgb(210, 229, 229);
-=======
-    background-color:rgb(208, 202, 202);
->>>>>>> 74043810542ef03ac556193497a2e2cc4de18459
 .carousel-inner
 {
     width: 100%;
 }
     h1 {
         color: rgb(91, 34, 34);
+        padding: 50px;
         font-size: 50px;
-<<<<<<< HEAD
         font-style: oblique;
         font-family: "Roboto Condensed", sans-serif;
-=======
-        font-style: oblique, bold;
-        font-family: 'Tourney', sans-serif;
->>>>>>> 74043810542ef03ac556193497a2e2cc4de18459
         align-items: center;
         justify-content: center;
         text-align: center;
     }
 
-<<<<<<< HEAD
-=======
-    h2 {
-        color: rgb(91, 34, 34);
-        font-size: 40px;
-        font-style: oblique;
-        font-family: 'Amatic SC', sans-serif;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-    
-
->>>>>>> 74043810542ef03ac556193497a2e2cc4de18459
     a {
         text-decoration: none;
         padding: 5px;
