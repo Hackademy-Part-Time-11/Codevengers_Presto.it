@@ -1,6 +1,6 @@
 footer {
 
-   background-color: rgb(96, 74, 236);
+   background-color: rgb(99, 96, 96);
    font-weight: bold;
    
    i {
@@ -19,6 +19,12 @@ footer {
    a:hover {
       color: rgb(93, 148, 148);
       background-color: white;
+      border-radius: 5px;
+   }
+
+   button {
+      background-color: rgb(79, 16, 69);
+      color: white;
       border-radius: 5px;
    }
 }
