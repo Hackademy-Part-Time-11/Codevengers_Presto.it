@@ -1,6 +1,7 @@
 <x-layout-main>
 
-    <h1>Benvenuto su Presto.it!</h1>
+    <h1>Presto.it!</h1>
+    <h2>L'E-commerce su misura per te</h2><br><br>
     
     <div id="carouselExampleCaptions" class="carousel slide">
         <div class="carousel-indicators">
@@ -10,19 +11,19 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="https://picsum.photos/1200/400" class="d-block w-100 rounded mx-auto" alt="photo1">
+            <img src="https://images.ctfassets.net/l7x57e7jkz0c/2tDMBA5HmCHVrJ5Q7uMcOq/8eda8946f664ad684736c20866c3292b/5338w3-BH-CCGAS-Web-Header---1400x400---Book-Appointment-WRK.jpg" class="d-block w-100 rounded mx-auto" alt="photo1">
             <div class="carousel-caption d-none d-md-block">
               <h5>Cerca</h5>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="https://picsum.photos/1201/400" class="d-block w-100 rounded mx-auto" alt="photo2">
+            <img src="https://www.ecaldwellstyle.com/wp-content/uploads/2019/05/E-Caldwell-Style-Closet-Overhaul-Banner-1400x400.jpg" class="d-block w-100 rounded mx-auto" alt="photo2">
             <div class="carousel-caption d-none d-md-block">
               <h5>Vendi</h5>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="https://picsum.photos/1200/401" class="d-block w-100 rounded mx-auto" alt="photo3">
+            <img src="https://buildingbiologyinstitute.org/wp-content/uploads/2019/03/products-stores-1400x400.jpg" class="d-block w-100 rounded mx-auto" alt="photo3">
             <div class="carousel-caption d-none d-md-block">
               <h5>Compra</h5>
             </div>
