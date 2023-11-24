@@ -1,6 +1,6 @@
 footer {
 
-   background-color: rgb(152, 150, 157);
+   background-color:rgb(79, 16, 69);
    font-weight: bold;
    
    i {
@@ -14,12 +14,30 @@ footer {
       color: rgb(101, 222, 40);
       font-family: "Lato", sans-serif;
       border-radius: 5px;
-  }
+   }
 
-  a:hover {
+   a:hover {
       color: rgb(93, 148, 148);
       background-color: white;
       border-radius: 5px;
-  }
+   }
+
+   button {
+      padding: 3px;
+      padding-left: 8px;
+      padding-right: 8px;
+      margin-left: 10px;
+      border-radius: 5px;
+      color:black;
+      background-color:rgb(208, 202, 202);
+      font-weight: 5px;
+      box-shadow: 2px, 0;
+   }
+
+   h5 {
+
+      color: black;
+   }
+   
 }
 
