@@ -1,7 +1,7 @@
 <x-layout-main>
 
     <h1>Presto.it!</h1>
-    <h2>L'E-commerce su misura per te</h2><br><br>
+    <h2>L'e-commerce su misura per te</h2><br><br>
     
     <div id="carouselExampleCaptions" class="carousel slide">
         <div class="carousel-indicators">

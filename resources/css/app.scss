@@ -15,9 +15,8 @@ body {
 }
     h1 {
         color: rgb(91, 34, 34);
-        padding: 50px;
         font-size: 50px;
-        font-style: oblique;
+        font-style: oblique, bold;
         font-family: 'Tourney', sans-serif;
         align-items: center;
         justify-content: center;
@@ -26,7 +25,6 @@ body {
 
     h2 {
         color: rgb(91, 34, 34);
-        padding: 50px;
         font-size: 40px;
         font-style: oblique;
         font-family: 'Amatic SC', sans-serif;
@@ -34,7 +32,7 @@ body {
         justify-content: center;
         text-align: center;
     }
-    }
+    
 
     a {
         text-decoration: none;
