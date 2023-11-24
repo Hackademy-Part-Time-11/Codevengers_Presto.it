@@ -19,6 +19,35 @@ document.getElementById('images').addEventListener('change', function () {
         reader.readAsDataURL(files[i]);
     }
 });
+
+$(document).ready(function () {
+  $(".existing-image, .bi-folder-plus").click(function () {
+      var container = $(this).closest(".image-container");
+      var input = container.find(".new-image-input")[0];
+      $(input).click();
+
+        
+  });
+
+  $(".new-image-input").change(function () {
+      var input = this;
+      var container = $(this).closest(".image-container");
+      var preview = container.find(".new-image-preview")[0];
+      var existingImage = container.find(".existing-image")[0];
+
+      if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+              $(preview).attr('src', e.target.result);
+              $(preview).show();
+              $(existingImage).hide(); // Rimuove l'attributo display: none
+          };
+
+          reader.readAsDataURL(input.files[0]);
+      }
+  });
+});
  
   /*
   1-document.getElementById('images').addEventListener('change', function () {:

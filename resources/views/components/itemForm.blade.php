@@ -1,6 +1,5 @@
 <x-layout-main>
-
-    @vite('resources/js/formItem.js')
+    @vite(['resources/css/itemForm.scss','resources/js/formItem.js'])
 
     <h1 class="mb-4">{{$title}}</h1>
 
@@ -23,7 +22,7 @@
                     @foreach($categories as $key =>$category)
                     <div class="col-2">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="categories[]" id="flexCheckDefault{{$key}}" value="{{ $category->id }}">
+                            <input class="form-check-input" type="checkbox" name="categories[]" id="flexCheckDefault{{$key}}" value="{{ $category->id }}" @checked($item->categories->contains($category->id))>
                             <label class="form-check-label" for="flexCheckDefault{{$key}}">
                                 {{ $category->name }}
                             </label>
@@ -41,26 +40,52 @@
             </div>
             <div class="col-12">
                 <label for="image">Immagini prodotto (max:4)</label>
-                <input type="file" name="images[]" id="images" accept="image/*" class="form-control" multiple>
-                <div id="imagePreview">
-                    @if($item->id)
 
+                @if($item->id)
+                <div class="row align-items-end">
+                    @foreach($item->item_image as $key => $image)
+                    <div class="col-3">
+                        <div class="image-container" data-image-index="{{ $key }}">
+                            <img src="{{ asset($image->image) }}" alt="Immagine esistente" class="existing-image">
+                            <input type="file" name="new_images[]" class="new-image-input dn">
+                            <img src="#" alt="Anteprima" class="new-image-preview dn">
+                        </div>
+                    </div>
+                    @endforeach
+                    @if($prova < 4) @for($i=0; $i < 4-$prova; $i++) 
+                    <div class="col-3">
+                        <div class="image-container" data-image-index="{{ $prova }}">
+                            <div class="add-image-placeholder">
+                                <i class="bi bi-folder-plus existing-image"></i>
+                                <input type="file" name="new_images[]" class="new-image-input dn">
+                                <img src="#" alt="Anteprima" class="new-image-preview dn">
+                            </div>
 
-
+                        </div>
+                    </div>
+                    @endfor
                     @endif
                 </div>
-                @error('images') <span class="text-danger small">{{ $message }}</span> @enderror
+
+                @endif
+
+
+                <input type="file" name="images[]" id="images" accept="image/*" class="form-control {{$item->id ?'dn': ''}}" multiple>
+
+                <div id="imagePreview">
             </div>
-            <div class="col-12">
-                <label for="description">Descrizione</label>
-                <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror" rows="10" maxlength="5000">{{ old('description',$item->description) }}</textarea>
-                @error('description') <span class="text-danger small">{{ $message }}</span> @enderror
-            </div>
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">{{$button}}</button>
-            </div>
+            @error('images') <span class="text-danger small">{{ $message }}</span> @enderror
+        </div>
+        </div>
+        <div class="col-12">
+            <label for="description">Descrizione</label>
+            <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror" rows="10" maxlength="5000">{{ old('description',$item->description) }}</textarea>
+            @error('description') <span class="text-danger small">{{ $message }}</span> @enderror
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">{{$button}}</button>
+        </div>
         </div>
     </form>
-
 
 </x-layout-main>

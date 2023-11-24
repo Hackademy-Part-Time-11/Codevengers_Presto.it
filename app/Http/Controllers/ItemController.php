@@ -49,7 +49,7 @@ class ItemController extends Controller
             
             $fileName = \Illuminate\Support\Str::slug($item->title). $key . '.' . $image->extension();
 
-            $imagePath = $image->storeAs("public/images/items/$item->id", $fileName);
+            $imagePath = $image->storeAs("images/items/$item->id", $fileName);
 
             $imgNew= new item_image();
 
@@ -77,12 +77,14 @@ class ItemController extends Controller
      */
     public function edit(item $item)
     {
+        
         $categories = \App\Models\Category::all();
         return view('components.itemForm', [
             'title' => 'Modifica Annuncio',
             'categories'=>$categories,
             'action' => route('items.update', $item),
             'button' => 'Modifica Annuncio',
+            'prova'=>count($item->item_image),
             'item'=>$item,
         ]);
 
