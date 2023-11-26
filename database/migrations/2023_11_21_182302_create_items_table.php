@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('title', 40); // Titolo con massimo 20 caratteri
             $table->decimal('price', 8, 2); // Prezzo numerico con virgola
             $table->text('description'); // Descrizione
-            $table->unsignedBigInteger('user_id');//Riferimento all'utente che ha creato l'annuncio
+            $table->unsignedBigInteger('user_id')->nullable();//Riferimento all'utente che ha creato l'annuncio
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

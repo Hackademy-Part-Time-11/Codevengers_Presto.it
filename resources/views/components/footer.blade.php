@@ -1,4 +1,3 @@
-<footer>
 
   <div class="container">
   
@@ -60,6 +59,3 @@
       </div>
     </footer>
   </div>
-  
-  
-  </footer>

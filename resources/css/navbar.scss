@@ -1,6 +1,7 @@
 nav {
-    background-color: rgb(96, 74, 236);
-    
+    .custom-dropdown-menu {
+        transform: translateX(-25%);
+    }
     img {
         width: 50px;
         margin: 0;
@@ -37,7 +38,7 @@ nav {
         border-radius: 5px;
     }
 
-    button {
+    .button {
         padding: 3px;
         padding-left: 8px;
         padding-right: 8px;
@@ -56,4 +57,11 @@ nav {
         border-radius: 10%;
 
     }
+
+.dropdown-menu{
+    li:first-of-type,li:last-of-type{
+        display: flex;
+        justify-content: center;
+    }
+}
 }

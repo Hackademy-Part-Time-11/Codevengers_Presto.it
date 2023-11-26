@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\item;
 use App\Models\item_image;
 use Illuminate\Support\Facades\Storage;
-use App\Http\Controllers\Item_imageController;
 use Illuminate\Http\Request;
 use App\Http\Requests\itemFormRequest;
 
@@ -17,6 +16,8 @@ class ItemController extends Controller
      */
     public function index()
     {
+        $items=item::all();
+        return view("itemList",compact("items"));
     }
 
     /**
@@ -40,8 +41,8 @@ class ItemController extends Controller
      */
     public function store(itemFormRequest $request)
     {
-        $request->merge(['user_id' => 1]);
         $item = item::create($request->all());
+        $item->user_id = auth()->user()->id;
         $item->save();
         $itemId = $item->id;
 
