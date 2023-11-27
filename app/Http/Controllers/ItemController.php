@@ -72,13 +72,12 @@ class ItemController extends Controller
      */
     public function edit(item $item)
     {
-        $images = $item->item_image;
+        $images = $item->item_images;
         $img = ["add", "add", "add", "add"];
 
         foreach ($images as $image) {
             $img[pathinfo($image->image, PATHINFO_FILENAME)] = $image->image;
         }
-
         $categories = \App\Models\Category::all();
         return view('components.itemForm', [
             'title' => 'Modifica Annuncio',
@@ -134,7 +133,7 @@ class ItemController extends Controller
     {
         $fileName = \Illuminate\Support\Str::slug($key) . '.' . $image->extension();
         $filePath = "public/images/items/{$item->id}/$fileName";
-        $oldImgArray = $item->item_image->filter(function ($itemImage) use ($key) {
+        $oldImgArray = $item->item_images->filter(function ($itemImage) use ($key) {
             $nomeFileSenzaEstensione = pathinfo($itemImage->image, PATHINFO_FILENAME);
             return $nomeFileSenzaEstensione == $key;
         });
