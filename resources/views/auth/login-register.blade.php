@@ -14,7 +14,7 @@
         <x-layout-main>
             <div class="contain">
                 
-                @if ({{--'value'--}}=1){ 
+                @if (/*'value'=1*/){ 
                     {{-- login --}}
                     <div class="row">
                         <div class="col-lg-5 mx-auto mt-5">

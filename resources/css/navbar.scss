@@ -1,21 +1,26 @@
 nav {
-    background-color: rgb(96, 74, 236);
-    
+    .custom-dropdown-menu {
+        transform: translateX(-25%);
+    }
     img {
         width: 50px;
         margin: 0;
         padding: 0;
     }
-    span {
-        margin: 0 15px;
-        font-weight: bold;
-
-        color: aliceblue;
-        font-size: 20px;
+    .span {
+        margin: 0 20px;
+        font-weight: bolder;
+        font-family: 'Tourney', sans-serif;
+        font-size: 25px;
+        color: rgb(117, 15, 103);
+        font-size: 35px;
     }
 
 
 
+    #login{
+        left: -80px;
+    }
 
 
     a {
@@ -33,14 +38,14 @@ nav {
         border-radius: 5px;
     }
 
-    button {
+    .button {
         padding: 3px;
         padding-left: 8px;
         padding-right: 8px;
         margin-left: 10px;
         border-radius: 5px;
         color:white;
-        background-color:gold;
+        background-color:rgb(79, 16, 69);
         font-weight: 5px;
         box-shadow: 2px, 0;
     }
@@ -52,4 +57,11 @@ nav {
         border-radius: 10%;
 
     }
+
+.dropdown-menu{
+    li:first-of-type,li:last-of-type{
+        display: flex;
+        justify-content: center;
+    }
+}
 }

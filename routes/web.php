@@ -9,7 +9,7 @@ use App\Models\Item;
 
 Route::resource('items', \App\Http\Controllers\ItemController::class);
 
-Route::resource('Categorie', \App\Http\Controllers\CategoryController::class); 
+Route::resource('Category', \App\Http\Controllers\CategoryController::class); 
 
 Route::get('/home', [App\Http\Controllers\PageController::class, 'home'])->name('home');
 
@@ -34,6 +34,10 @@ Route::get('/settings', [App\Http\Controllers\AccountController::class, 'setting
 Route::post('/settings.store', [App\Http\Controllers\AccountController::class, 'settingsStore'])
     ->name('account.settings.store');
 
-
+    Route::resource('items', \App\Http\Controllers\ItemController::class)->except([
+        'index'
+    ]);;
 
 });
+
+Route::get('items', [App\Http\Controllers\ItemController::class, 'index'])->name('listItems');

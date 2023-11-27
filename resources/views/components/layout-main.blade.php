@@ -22,7 +22,7 @@
             {{ $slot }}
         </main>
 
-        <footer class="mt-auto">
+        <footer>
             <x-footer />
         </footer>
     </div>

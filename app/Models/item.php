@@ -21,7 +21,7 @@ class item extends Model
         return $this->belongsToMany(Category::class);
     }
 
-    public function item_image()
+    public function item_images()
     {
         return $this->hasMany(Item_image::class);
     }

@@ -43,28 +43,23 @@
 
                 @if($item->id)
                 <div class="row align-items-end">
-                    @foreach($item->item_image as $key => $image)
-                    <div class="col-3">
-                        <div class="image-container" data-image-index="{{ $key }}">
-                            <img src="{{ asset($image->image) }}" alt="Immagine esistente" class="existing-image">
-                            <input type="file" name="new_images[]" class="new-image-input dn">
-                            <img src="#" alt="Anteprima" class="new-image-preview dn">
-                        </div>
-                    </div>
-                    @endforeach
-                    @if($prova < 4) @for($i=0; $i < 4-$prova; $i++) 
-                    <div class="col-3">
-                        <div class="image-container" data-image-index="{{ $prova }}">
-                            <div class="add-image-placeholder">
-                                <i class="bi bi-folder-plus existing-image"></i>
+                    @foreach($images as $key=>$image)
+                        <div class="col-3">
+                            <div class="image-container" data-image-index="{{ $key }}">
+                                @if ($image != "add")
+                                <img src="{{ $image ? asset($image) : '#' }}" alt="Immagine esistente" class="existing-image">
                                 <input type="file" name="new_images[]" class="new-image-input dn">
                                 <img src="#" alt="Anteprima" class="new-image-preview dn">
+                                @else
+                                <div class="add-image-placeholder">
+                                    <i class="bi bi-folder-plus existing-image"></i>
+                                    <input type="file" name="new_images[]" class="new-image-input dn">
+                                    <img src="#" alt="Anteprima" class="new-image-preview dn">
+                                </div>
+                                @endif
                             </div>
-
                         </div>
-                    </div>
-                    @endfor
-                    @endif
+                        @endforeach
                 </div>
 
                 @endif
@@ -73,9 +68,9 @@
                 <input type="file" name="images[]" id="images" accept="image/*" class="form-control {{$item->id ?'dn': ''}}" multiple>
 
                 <div id="imagePreview">
+                </div>
+                @error('images') <span class="text-danger small">{{ $message }}</span> @enderror
             </div>
-            @error('images') <span class="text-danger small">{{ $message }}</span> @enderror
-        </div>
         </div>
         <div class="col-12">
             <label for="description">Descrizione</label>
