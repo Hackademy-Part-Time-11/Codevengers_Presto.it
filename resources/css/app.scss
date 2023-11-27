@@ -6,6 +6,7 @@
 
 @import "navbar.scss";
 @import "footer.scss";
+@import "itemList.scss";
 @import "login.scss";
 
 body {
@@ -40,6 +41,18 @@ h2 {
     a {
         text-decoration: none;
         padding: 5px;
+    }
+
+    button {
+        padding: 3px;
+        padding-left: 8px;
+        padding-right: 8px;
+        margin-left: 10px;
+        border-radius: 5px;
+        color:white;
+        background-color:rgb(79, 16, 69);
+        font-weight: 5px;
+        box-shadow: 2px, 0;
     }
 
     ::-webkit-scrollbar {

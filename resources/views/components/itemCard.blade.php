@@ -32,8 +32,8 @@
                         </div>
                         <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
                             <div class="d-flex flex-row align-items-center mb-1">
-                                <h4 class="mb-1 me-1"> {{-- {{ number_format($item->price, 2, ',', '.')}}€ --}}</h4>
-                                <span class="text-danger"><s> {{-- {{ number_format(($item->price+3.9), 2, ',', '.')}}€ --}}</s></span>
+                                <h4 class="mb-1 me-1"> {{ number_format($item->price, 2, ',', '.')}}€</h4>
+                                <span class="text-danger"><s> {{ number_format(($item->price+$item->price*20/100), 2, ',', '.')}}€</s></span>
                             </div>
                             <h6 class="text-success">Free shipping</h6>
                             <div class="d-flex flex-column mt-4">

@@ -11,25 +11,26 @@ footer {
       text-decoration: none;
       font-size: 20px;
       font-weight: bolder;
-      color: rgb(101, 222, 40);
+      color: rgb(0, 0, 0);
       font-family: "Lato", sans-serif;
       border-radius: 5px;
    }
 
    a:hover {
-      color: rgb(93, 148, 148);
-      background-color: white;
+      color: rgb(241, 246, 246);
+      background-color: white, 0.5;
       border-radius: 5px;
    }
 
    button {
+      font-weight: 3px;
       padding: 3px;
       padding-left: 8px;
       padding-right: 8px;
       margin-left: 10px;
       border-radius: 5px;
       color:black;
-      background-color:rgb(208, 202, 202);
+      background-color:rgb(151, 142, 149);
       font-weight: 5px;
       box-shadow: 2px, 0;
    }

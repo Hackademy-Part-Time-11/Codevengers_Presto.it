@@ -5,7 +5,7 @@
             <div class="col-lg-5 mx-auto mt-5">
                 <div class="card">
                     <div class="card-header">
-                        Accedi all'EMAIL
+                        Accedi alla tua area riservata
                     </div>
                     <div class="m-2">
                         <form action="/login" method="POST">

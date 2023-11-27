@@ -38,13 +38,13 @@
       </button>
     </div><br><br>
 
-    <div class="container mt-5">
-      <div class="row">
+    <div class="container mt-5 mx-auto">
+      <div class="row mx-auto">
           @foreach($categories as $category)
-              <div class="col-md-4 mb-4">
+              <div class="col-md-4 mb-4 mx-auto">
                 <a href="">
-                  <div class="card">
-                      <img src="{{ $category['image'] }}" class="card-img-top" alt="{{ $category['name'] }}">
+                  <div class="card bg-success text-light text-center w-50 mx-auto">
+                      <img src="https://www.practiceportuguese.com/wp-content/uploads/2017/08/Household-Items.jpg" class="card-img-top w-60" alt="{{ $category['name'] }}">
                       <div class="card-body">
                           <h5 class="card-title">{{ $category['name'] }}</h5>
                       </div>
