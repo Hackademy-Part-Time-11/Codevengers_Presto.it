@@ -1,12 +1,11 @@
-<x-layout-main>
+
 @vite('resources/css/itemList.scss')
     <div class="row" id="item-list">
         <div class="col-2"></div>
         <div class="col-8">
             <div class="row">
-
                 <h1>Titolo <a href="{{ route('items.create') }}"><i class="bi bi-plus-square"></i></a></h1>
-                <form action="" id="searchBar">
+                <form action="" id="searchBar" class="d-flex justify-content-center">
                     <input type="text">
                     <button><i class="bi bi-search"></i></button>
                 </form>
@@ -22,6 +21,3 @@
                 </div>
             </div>
 
-
-
-</x-layout-main>
