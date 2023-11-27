@@ -36,8 +36,9 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
-    </div><br><br>
+    </div><br><br><br><br>
 
+    <div class="categories-container">
     <div class="container mt-5 mx-auto">
       <div class="row mx-auto">
           @foreach($categories as $category)
@@ -54,6 +55,7 @@
           @endforeach
       </div>
   </div>
+</div>
   <br><br>
   
   </x-layout-main>
