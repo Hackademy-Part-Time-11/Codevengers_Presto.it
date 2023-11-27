@@ -2,7 +2,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Livewire\ItemList;
 
 use App\Models\Item;
 
@@ -40,4 +40,4 @@ Route::post('/settings.store', [App\Http\Controllers\AccountController::class, '
 
 });
 
-Route::get('items', [App\Http\Controllers\ItemController::class, 'index'])->name('listItems');
+Route::get('/items', ItemList::class)->name('listItems');
