@@ -64,7 +64,8 @@ class ItemController extends Controller
      */
     public function show(item $item)
     {
-        //
+
+        return view('components.item-annuncio', compact('item'));
     }
 
     /**

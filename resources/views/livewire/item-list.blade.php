@@ -1,6 +1,6 @@
 <x-layout-main>
-
-    <div class="row">
+@vite('resources/css/itemList.scss')
+    <div class="row" id="item-list">
         <div class="col-2"></div>
         <div class="col-8">
             <div class="row">

@@ -45,19 +45,16 @@
                     </div>
                 </div>
                 <div class="m-2 ">
-                    {{-- descrizione --}}
+                    <!-- {{-- descrizione --}} -->
                 </div>
             
-                <div class="img-fluid img m-3">
-                    <img src="{{ Storage::url($item->image) }}">
-                </div>
             
                 <div class="mt-5">
-                    {{-- {{ number_format($accessory->price, 2, ',', '.')}}€ --}}
+                    <!-- {{-- {{ number_format($accessory->price, 2, ',', '.')}}€ --}} -->
                 </div>
                 
                 <div class="mt-5">
-                    <a class="btn btn-sm btn-primary" href="{{ route ('article', $cardId) }}">vai all'Annuncio</a>
+                    <a class="btn btn-sm btn-primary" href="{{ route ('article', $cardId) }}">Aquista</a>
                 </div>
             </div>
         </div>
