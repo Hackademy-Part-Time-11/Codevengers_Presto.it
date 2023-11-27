@@ -18,7 +18,7 @@
             <x-navbar />
         </header>
 
-        <main class="container-fluid mt-5">
+        <main class="container mt-5">
             {{ $slot }}
         </main>
 
