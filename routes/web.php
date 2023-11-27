@@ -2,10 +2,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-
 use App\Models\Item;
-
+use App\Http\Controllers\LavoraConNoiController;
 
 Route::resource('items', \App\Http\Controllers\ItemController::class);
 
@@ -19,7 +17,11 @@ Route::get('/contatti', [App\Http\Controllers\ContactController::class, 'form'])
 
 Route::post('/contatti/invia', [App\Http\Controllers\ContactController::class, 'send'])->name('contacts.send');
 
+Route::get('/job', function() {
 
+    return view('job');
+
+})->name('job');
 
 
 Route::prefix('account')->middleware(['auth', 'verified'])->group(function(){   
@@ -41,3 +43,7 @@ Route::post('/settings.store', [App\Http\Controllers\AccountController::class, '
 });
 
 Route::get('items', [App\Http\Controllers\ItemController::class, 'index'])->name('listItems');
+
+Route::get('/lavora_con_noi', [LavoraConNoiController::class, 'index']);
+
+Route::post('/lavora_con_noi', [LavoraConNoiController::class, 'submit']);

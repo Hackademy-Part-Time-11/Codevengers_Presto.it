@@ -5,7 +5,7 @@
         <div class="col-lg-5 mx-auto mt-5">
             <div class="card">
                 <div class="card-header">
-                    Registrati con l'EMAIL
+                    Registrati
                 </div>
                 <div class="m-2">
                     <form action="/register" method="POST">
@@ -34,7 +34,7 @@
                             
                         </div>
                         <div class="mt-5 mb-3 mx-3">
-                            <button type="submit" class="btn btn-primary">Registrati</button>
+                            <button type="submit">Registrati</button>
                         </div>
                     </form>
                 </div>
