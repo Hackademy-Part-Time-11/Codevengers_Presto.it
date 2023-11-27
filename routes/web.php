@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\ItemList;
 
 use App\Models\Item;
-
+use App\Http\Controllers\LavoraConNoiController;
 
 Route::resource('items', \App\Http\Controllers\ItemController::class);
 
@@ -19,7 +19,11 @@ Route::get('/contatti', [App\Http\Controllers\ContactController::class, 'form'])
 
 Route::post('/contatti/invia', [App\Http\Controllers\ContactController::class, 'send'])->name('contacts.send');
 
+Route::get('/job', function() {
 
+    return view('job');
+
+})->name('job');
 
 
 Route::prefix('account')->middleware(['auth', 'verified'])->group(function(){   

@@ -23,7 +23,7 @@
                                 <span class="text-danger small"> {{$message}} </span> @enderror
                             </div>
                             <div class="mt-5 mb-3 mx-3">
-                                <button type="submit" class="btn btn-primary">Accedi</button>
+                                <button type="submit">Accedi</button>
                             </div>
                         </form>
                     </div>

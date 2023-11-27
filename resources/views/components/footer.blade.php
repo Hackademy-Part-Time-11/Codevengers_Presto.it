@@ -43,8 +43,11 @@
             <div class="d-flex flex-column flex-sm-row w-100 gap-2">
               <label for="newsletter1" class="visually-hidden">Email address</label>
               <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-              <button type="button">Subscribe</button>
-            </div>
+              <button type="button">Subscribe</button> 
+            </div><br><br>
+            <div>
+                <h5 class="text-white"><a href= {{ route('job') }}>Lavora con noi</a></h5>
+              </div>
           </form>
         </div>
       </div>
