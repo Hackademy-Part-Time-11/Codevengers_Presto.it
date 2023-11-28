@@ -1,13 +1,13 @@
-#item-list{
-    form{
+#item-list {
+    form {
         background-color: white;
-        padding: 5px;
+        padding: 10px;
         border-radius: 5px;
     }
-input{
-    width: 100%;
-    border: none;
-}
-
-
+    #searchBar {
+        input {
+            border: none;
+            width: 100%;
+        }
+    }
 }
