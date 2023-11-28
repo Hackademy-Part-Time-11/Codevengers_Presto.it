@@ -1,15 +1,17 @@
 <x-layout-main>
 
 
-    <div id="item">
+    <div id="item" >
         <div class="card">
-            <h3 class="d-flex justify-content-center">
-                {{$item->title}}
-            </h3>
+            
             <div class="card-body py-3 text-center row">
+                <div class="row">
+                    <h3 class="d-flex justify-content-center m-4">
+                        {{$item->title}}
+                    </h3>
+                </div>
                 
-                
-                <div class=" col-3 ">
+                <div class=" col-4 ">
                     <div id="carouselExampleCaptions" class="carousel slide">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -46,9 +48,22 @@
                     </div>
                 </div>
                 
-                <div class="col-9">
-                    <div class="m-2 ">
+                <div class="col-8">
+                    <div class="m-2">
+                        <h3 class="m-3">Descrizione</h3>
                         {{$item->description}}
+                    </div>
+                    <div class=" m-2 ">
+                        <h3 class="">Categorie</h3>
+                        
+                            @foreach ($item->categories as $category)
+                            <div class="row my-3 ms-5">
+                                <ul class="list-group align-items-start">
+                                    <a class="list-group-item" href=""> {{$category->name}}</a>
+                                </ul>
+                            </div>
+                            @endforeach
+                        
                     </div>
                 </div>
                 
@@ -63,6 +78,11 @@
                 </div>
             </div>
         </div>
+
+        <div class="m-5">
+            <a class="btn btn-sm btn-primary" href=""><-- vai Indietro</a>
+        </div>
+
 
     </div>
 </x-layout-main>
