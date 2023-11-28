@@ -45,3 +45,12 @@ Route::post('/settings.store', [App\Http\Controllers\AccountController::class, '
 });
 
 Route::get('/items', ItemList::class)->name('listItems');
+
+//Home revisore
+Route::get('/revisor/home', [RevisorControlle::class, 'index'])->name('revisor.index');
+
+//Accetta annuncio
+Route::patch('/accetta/annuncio/{announcements}', [RevisorController::class,'acceptAnnouncement'])->name('revisor.accept_announcement');
+
+//Rifiuta annuncio
+Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class,'rejectAnnouncement'])->name('revisor.reject_announcement'););
