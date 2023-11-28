@@ -10,41 +10,61 @@
             <h3>ordine:</h3>
             <div class="form-check d-flex flex-column">
 
+
                 <label class="form-check-label" for="flexRadioDefault1">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">Alfabetico
+                    <input class="form-check-input" type="radio" value="A-z" wire:model.live="order">
+                    A-z
                 </label>
                 <label class="form-check-label" for="flexRadio2">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadio2">
-                    Prezzo
+                    <input class="form-check-input" type="radio" value="Z-a" wire:model.live="order">
+                    Z-a
                 </label>
                 <label class="form-check-label" for="flexRadio3">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadio3">
-                    Data creazione
+                    <input class="form-check-input" type="radio" value="T" wire:model.live="order">
+                    Più recente
                 </label>
+                <label class="form-check-label" for="flexRadioDefault1">
+                    <input class="form-check-input" type="radio" value="t" wire:model.live="order">
+                    Meno Recente
+                </label>
+                <label class="form-check-label" for="flexRadio2">
+                    <input class="form-check-input" type="radio" value="M-m" wire:model.live="order">
+                    Prezzo crescente
+                </label>
+                <label class="form-check-label" for="flexRadio3">
+                    <input class="form-check-input" type="radio" value="m-M" wire:model.live="order">
+                    Prezzo decrescente
+                </label>
+
             </div>
+            @foreach($categorie as $categoria)
+            {{$categoria}}
+            @endforeach
             <h3>Filtra per:</h3>
             <h6>categoria</h6>
             @foreach($categories as $key =>$category)
             <div class="col">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="categories[]" id="flexCheckDefault{{$key}}" value="{{ $category->id }}">
-                    <label class="form-check-label" for="flexCheckDefault{{$key}}">
+                    <input class="form-check-input" wire:model.live="categorie" type="checkbox" value="{{ $category->name }}">
+                    <label class="form-check-label">
                         {{ $category->name }}
                     </label>
                 </div>
             </div>
-
             @endforeach
         </div>
         <div class="col-8">
             <div class="row mb-5">
-                <div class="col-12">
-
-                    <input type="text" wire:model.live="search">
-                    <i class="bi bi-search"></i>
-
+                <div class="col-12" id="searchBar">
+                    <div class="input-group">
+                        <input type="text" class="form-control" wire:model.live="search" placeholder="Cerca annuncio">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                {{$search}}
             </div>
             <div class="row g-3">
                 @foreach($items as $item)

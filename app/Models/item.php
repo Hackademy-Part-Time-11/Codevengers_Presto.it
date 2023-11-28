@@ -5,17 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use function PHPUnit\Framework\isEmpty;
+
 class item extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'price', 'description','user_id'];
+    protected $fillable = ['title', 'price', 'description', 'user_id'];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
-    
+
     public function categories()
     {
         return $this->belongsToMany(Category::class);
@@ -27,12 +29,49 @@ class item extends Model
     }
 
 
-    public static function search($query)
+    public static function search($search, $categorie, $order)
     {
-        if($query == '') {
-            return [];
+
+        $query = Item::query();
+
+        if (!empty($search)) {
+            $query->where('title', 'LIKE', "%$search%");
         }
 
-        return item::where('title', 'LIKE', "%$query%")->get();
+        if (!empty($categorie)) {
+            $query->whereHas('categories', function ($a) use ($categorie) {
+                $a->whereIn('name', $categorie);
+            });
+        }
+
+        switch ($order) {
+            case 'Z-a':
+                $query->orderByDesc('title');
+                break;
+
+            case 'T':
+                $query->orderBy('updated_at');
+                break;
+
+            case 't':
+                $query->orderByDesc('updated_at');
+                break;
+
+            case 'M-m':
+                $query->orderBy('price');
+                break;
+
+            case 'm-M':
+                $query->orderByDesc('price');
+                break;
+
+            default:
+                $query->orderBy('title');
+                break;
+        }
+
+
+
+        return $query->get();
     }
 }

@@ -12,19 +12,15 @@ class ItemList extends Component
     #[Url]
     public $search = '';
 
-
-    public $title;
-    public $Categories = [];
-    public $order;
+    public $categorie = [];
+    public $order = 'A-z';
 
 
     public function render()
     {
-        if (empty($this->search)) {
-            $items = item::all();
-        } else {
-            $items = item::search($this->search);
-        }
+
+        $items = item::search($this->search, $this->categorie, $this->order);
+
         $categories = category::all();
         return view('livewire.itemList', compact("items", "categories"));
     }
