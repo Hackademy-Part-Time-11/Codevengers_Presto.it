@@ -11,7 +11,7 @@
                     </h3>
                 </div>
                 
-                <div class=" col-4 ">
+                <div class=" col-lg-4 ">
                     <div id="carouselExampleCaptions" class="carousel slide">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -48,21 +48,24 @@
                     </div>
                 </div>
                 
-                <div class="col-8">
+                <div class="col-lg-8">
                     <div class="m-2">
                         <h3 class="m-3">Descrizione</h3>
                         {{$item->description}}
                     </div>
                     <div class=" m-2 ">
                         <h3 class="">Categorie</h3>
-                        
-                            @foreach ($item->categories as $category)
-                            <div class="row my-3 ms-5">
-                                <ul class="list-group align-items-start">
-                                    <a class="list-group-item" href=""> {{$category->name}}</a>
+                        <div class="row">
+                            <div class=" col col-12">
+                            
+                                <ul class="d-flex list-group align-items-start">
+                                    @foreach ($item->categories as $category)
+                                        <li class="list-group-item "><a class="text-dark" href=""> {{$category->name}}</a></li>
+                                    @endforeach
                                 </ul>
+                            
                             </div>
-                            @endforeach
+                        </div>
                         
                     </div>
                 </div>
@@ -73,7 +76,11 @@
                     <!-- {{-- {{ number_format($accessory->price, 2, ',', '.')}}€ --}} -->
                 </div>
                 
-                <div class="mt-5">
+                <div class="mt-3">
+                    <div class="d-flex flex-row justify-content-center mb-4">
+                        <h4 class="mb-1 me-1"> {{ number_format($item->price, 2, ',', '.')}}€</h4>
+                        <span class="text-danger"><s> {{ number_format(($item->price+$item->price*20/100), 2, ',', '.')}}€</s></span>
+                    </div>
                     <a class="btn btn-sm btn-primary" href="">Aquista</a>
                 </div>
             </div>
