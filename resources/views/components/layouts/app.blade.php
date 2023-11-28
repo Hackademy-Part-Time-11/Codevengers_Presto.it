@@ -9,10 +9,24 @@
     <title>{{ $title ?? 'Page Title' }}</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     @vite(['resources/css/app.scss', 'resources/js/app.js'])
+
+
 </head>
 
 <body>
-    {{ $slot }}
-</body>
+    <div class="d-flex flex-column min-vh-100">
+        <header class="sticky-top">
+            <x-navbar />
+        </header>
 
+        <main class="container-fluid mt-5">
+            {{ $slot }}
+        </main>
+
+        <footer>
+            <x-footer />
+        </footer>
+    </div>
+
+</body>
 </html>

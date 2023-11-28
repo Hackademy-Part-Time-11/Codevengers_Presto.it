@@ -37,10 +37,9 @@
                             </div>
                             <h6 class="text-success">Free shipping</h6>
                             <div class="d-flex flex-column mt-4">
-                                <button class="btn btn-primary btn-sm" type="button">DETTAGLI</button>
-                                <button class="btn btn-outline-primary btn-sm mt-2" type="button">
-                                    ACQUISTA
-                                </button>
+                                <a class="btn btn-primary btn-sm" href="{{route('items.show', $item)}}">DETTAGLI</a>
+                                <a class="btn btn-outline-primary btn-sm mt-2">ACQUISTA</a>
+
                             </div>
                         </div>
                     </div>

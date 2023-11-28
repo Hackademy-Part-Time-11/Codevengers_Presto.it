@@ -25,4 +25,14 @@ class item extends Model
     {
         return $this->hasMany(Item_image::class);
     }
+
+
+    public static function search($query)
+    {
+        if($query == '') {
+            return [];
+        }
+
+        return item::where('title', 'LIKE', "%$query%")->get();
+    }
 }

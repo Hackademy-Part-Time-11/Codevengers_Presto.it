@@ -1,4 +1,13 @@
-#item-list{
-
-
+#item-list {
+    form {
+        background-color: white;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    #searchBar {
+        input {
+            border: none;
+            width: 100%;
+        }
+    }
 }
