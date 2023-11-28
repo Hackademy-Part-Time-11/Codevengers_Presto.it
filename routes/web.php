@@ -53,4 +53,4 @@ Route::get('/revisor/home', [RevisorControlle::class, 'index'])->name('revisor.i
 Route::patch('/accetta/annuncio/{announcements}', [RevisorController::class,'acceptAnnouncement'])->name('revisor.accept_announcement');
 
 //Rifiuta annuncio
-Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class,'rejectAnnouncement'])->name('revisor.reject_announcement'););
+Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class,'rejectAnnouncement'])->name('revisor.reject_announcement');
