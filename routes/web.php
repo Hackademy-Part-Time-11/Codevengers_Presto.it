@@ -39,7 +39,7 @@ Route::post('/settings.store', [App\Http\Controllers\AccountController::class, '
     ->name('account.settings.store');
 
     Route::resource('items', \App\Http\Controllers\ItemController::class)->except([
-        'index'
+        'index','show'
     ]);;
 
 });
