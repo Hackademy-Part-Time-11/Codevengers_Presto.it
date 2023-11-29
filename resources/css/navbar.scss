@@ -1,6 +1,16 @@
 nav {
     .custom-dropdown-menu {
         transform: translateX(-25%);
+        
+        a:hover{
+            color: black !important;
+            background-color: white;
+        }
+        button:hover{
+            color: black !important;
+            background-color: red;
+        }
+    
     }
     img {
         width: 50px;
@@ -17,23 +27,28 @@ nav {
     }
 
 
-    #login{
-        left: -80px;
-    }
+
 
 
     a {
-        text-decoration: none;
-        font-size: 20px;
-        font-weight: bolder;
-        color: rgb(101, 222, 40);
+        color: black !important;
+        padding: 3px !important;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+        margin-left: 10px !important;
+        border-radius: 5px !important;
+        font-size: 20px !important;
+        font-weight: bolder !important;
+        
         font-family: "Lato", sans-serif;
         border-radius: 5px;
     }
 
     a:hover {
-        color: rgb(93, 148, 148);
-        background-color: white;
+        
+        
+        background-color: rgb(79, 16, 69);
+        color: white !important;
         border-radius: 5px;
     }
 
@@ -47,6 +62,14 @@ nav {
         background-color:rgb(79, 16, 69);
         font-weight: 5px;
         box-shadow: 2px, 0;
+    }
+
+    #pubblicaAnnuncio{
+        color: white !important;
+    }
+    #pubblicaAnnuncio:hover{
+        color: black !important;
+        background-color: rgb(138, 47, 123) !important;
     }
     
     .btn-publica {
