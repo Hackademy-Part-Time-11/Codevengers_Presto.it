@@ -20,7 +20,7 @@ Route::get('/contatti', [App\Http\Controllers\ContactController::class, 'form'])
 
 Route::post('/contatti/invia', [App\Http\Controllers\ContactController::class, 'send'])->name('contacts.send');
 
-Route::get('/job', function() {
+Route::post('/job', function() {
 
     return view('job');
 
@@ -51,7 +51,7 @@ Route::get('/CreaAnnuncio', ItemForm::class)->name('itemForm');
 Route::get('/revisor/home', [RevisorControlle::class, 'index'])->name('revisor.index');
 
 //Accetta annuncio
-Route::patch('/accetta/annuncio/{announcements}', [RevisorController::class,'acceptAnnouncement'])->name('revisor.accept_announcement');
+Route::patch('/accetta/annuncio/{items}', [RevisorController::class,'acceptItem'])->name('revisor.accept_item');
 
 //Rifiuta annuncio
-Route::patch('/rifiuta/annuncio/{announcement}', [RevisorController::class,'rejectAnnouncement'])->name('revisor.reject_announcement');
+Route::patch('/rifiuta/annuncio/{items}', [RevisorController::class,'rejectItem'])->name('revisor.reject_item');
