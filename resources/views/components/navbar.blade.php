@@ -17,6 +17,18 @@
                 <li class="nav-item d-flex align-items-center">
                     <a class="nav-link button" href="{{ route('items.create') }}">Pubblica un Annuncio</a>
                 </li>
+                @if (Auth::user()->is_revisor)
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-success btn-sm position-relative" 
+                    area-current="page" href="{{ route('revisor.index') }}">
+                    Area revisore
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">  
+                        {{ App\Models\Items::toBeRevisionedCount() }}
+                        <span class="visually-hidden">unread messages</span>
+                    </span>
+                    </a>
+                </li> 
+                @endif
 
             </ul>
         </div>
