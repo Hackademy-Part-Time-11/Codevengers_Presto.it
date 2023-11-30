@@ -5,7 +5,7 @@
         <div class="col-12">
             <h1>Titolo <a href="{{ route('items.create') }}"><i class="bi bi-plus-square"></i></a></h1>
         </div>
-        <div class="col-2">
+        <div class="col-2 bg-white rounded">
             <h2>filtra la tua ricerca</h2>
             <h3>ordine:</h3>
             <div class="form-check d-flex flex-column">
