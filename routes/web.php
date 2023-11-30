@@ -4,6 +4,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Livewire\ItemList;
 use App\Livewire\ItemForm;
+use App\Http\Controllers\RevisorController;
 
 use App\Models\Item;
 use App\Http\Controllers\LavoraConNoiController;
@@ -48,7 +49,7 @@ Route::post('/settings.store', [App\Http\Controllers\AccountController::class, '
 Route::get('/Annunci', ItemList::class)->name('listItems');
 Route::get('/CreaAnnuncio', ItemForm::class)->name('itemForm');
 //Home revisore
-Route::get('/revisor/home', [RevisorControlle::class, 'index'])->name('revisor.index');
+Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
 
 //Accetta annuncio
 Route::patch('/accetta/annuncio/{items}', [RevisorController::class,'acceptItem'])->name('revisor.accept_item');

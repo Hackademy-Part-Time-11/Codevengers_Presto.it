@@ -28,7 +28,7 @@
                                 </div>
 
                                 <div class="position-absolute bottom-0 end-0 mb-2 me-3">
-                                    <p> Se non hai un account<span><button><a>Registrati</button></a></span></p> 
+                                    <p>Se non hai un account<span><button><a href="/register">Registrati</a></button></span></p> 
                                 </div>
                                 
                                 
