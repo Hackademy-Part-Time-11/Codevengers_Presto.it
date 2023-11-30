@@ -87,7 +87,7 @@
         </div>
 
         <div class="m-5">
-            <a class="btn btn-sm btn-primary" href=""><-- vai Indietro</a>
+            <a class="btn btn-sm btn-primary" href="{{ route('listItems') }}"><-- vai Indietro</a>
         </div>
 
 
