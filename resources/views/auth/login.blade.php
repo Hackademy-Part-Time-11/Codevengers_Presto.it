@@ -24,11 +24,11 @@
                             </div>
                             <div class="mt-5 mb-3 mx-3 position relative">
                                 <div class="">
-                                    <button type="submit" class="btn btn-primary">Accedi</button>
+                                    <button type="submit">Accedi</button>
                                 </div>
 
                                 <div class="position-absolute bottom-0 end-0 mb-2 me-3">
-                                    <p >se non hai un Account <a class="btn btn-primary">Registrati</a></p>
+                                    <p>Se non hai un account<span><button><a href="/register">Registrati</a></button></span></p> 
                                 </div>
                                 
                                 
