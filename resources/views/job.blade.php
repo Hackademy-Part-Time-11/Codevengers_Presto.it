@@ -1,6 +1,6 @@
 <x-layout-main>
 
-<h2>Lavora con noi</h2>
+<h2>Diventa un revisore di Presto.it!</h2>
 
 <div class="container mt-5">
   <form action="#" method="post" enctype="multipart/form-data">

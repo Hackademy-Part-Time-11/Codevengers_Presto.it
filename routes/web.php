@@ -20,7 +20,7 @@ Route::get('/contatti', [App\Http\Controllers\ContactController::class, 'form'])
 
 Route::post('/contatti/invia', [App\Http\Controllers\ContactController::class, 'send'])->name('contacts.send');
 
-Route::post('/job', function() {
+Route::get('/job', function() {
 
     return view('job');
 
