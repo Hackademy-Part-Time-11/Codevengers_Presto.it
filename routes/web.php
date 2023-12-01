@@ -52,7 +52,7 @@ Route::get('/CreaAnnuncio', ItemForm::class)->name('itemForm');
 Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
 
 //Accetta annuncio
-Route::patch('/accetta/annuncio/{items}', [RevisorController::class,'acceptItem'])->name('revisor.accept_item');
+Route::patch('/accetta/annuncio/{item}', [RevisorController::class,'acceptItem'])->name('revisor.accept_item');
 
 //Rifiuta annuncio
-Route::patch('/rifiuta/annuncio/{items}', [RevisorController::class,'rejectItem'])->name('revisor.reject_item');
+Route::patch('/rifiuta/annuncio/{item}', [RevisorController::class,'rejectItem'])->name('revisor.reject_item');

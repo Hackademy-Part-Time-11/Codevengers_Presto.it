@@ -5,6 +5,9 @@
         <div class="col-12 text-light p-5">
             <h1 class="display-2"> {{ $item_to_check ? 'Annunci da revisionare' : 'Non ci sono annunci da revisionare' }}</h1>
         </div>
+        <div>
+            <x-revisor />
+        </div>
     </div>
 </div>
 @if ($item_to_check)
@@ -56,5 +59,6 @@
         </div>
     </div>
 </div>
+@endif
 
 </x-layout-main>
