@@ -1,11 +1,11 @@
 <div>
     @vite(['resources/css/itemForm.scss','resources/js/formItem.js'])
 
-    <h1 class="mb-4">{{$button}}</h1>
+    <h1 class="mb-4">blabla</h1>
 
     <x-success />
 
-    <form wire:submit="save" class="mb-4">
+    <form wire:submit.prevent="save" class="mb-4">
         <div class="row g-3">
             <div class="col-12">
                 <label for="title">Nome prodotto</label>
@@ -67,11 +67,6 @@
                 @error('images') <span class="text-danger small">{{ $message }}</span> @enderror
             </div>
 
-            @foreach($images as $image)
-            <img src="{{ $image['preview']}}" alt="Immagine esistente" class="existing-image">
-            @endforeach
-
-
         </div>
 
 
@@ -82,7 +77,7 @@
             @error('description') <span class="text-danger small">{{ $message }}</span> @enderror
         </div>
         <div class="col-12">
-            <button type="submit" class="btn btn-primary">{{$button}}</button>
+            <button type="submit" class="btn btn-primary">blabla</button>
         </div>
 </div>
 </form>

@@ -1,8 +1,9 @@
 <x-layout-main>
 
-  <h2>L'e-commerce su misura per te</h2><br><br>
-  
-  <div id="carouselExampleCaptions" class="carousel slide">
+  <div id="HomePage">
+    <h2>L'e-commerce su misura per te</h2><br><br>
+
+    <div id="carouselExampleCaptions" class="carousel slide">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -39,23 +40,23 @@
     </div><br><br><br><br>
 
     <div class="categories-container">
-    <div class="container mt-5 mx-auto">
-      <div class="row mx-auto">
+      <div class="container mt-5 mx-auto">
+        <div class="row mx-auto">
           @foreach($categories as $category)
-              <div class="col-md-4 mb-4 mx-auto">
-                <a href="">
-                  <div class="card bg-dark text-light text-center w-50 mx-auto">
-                      <img src="https://www.practiceportuguese.com/wp-content/uploads/2017/08/Household-Items.jpg" class="card-img-top w-60" alt="{{ $category['name'] }}">
-                      <div class="card-body">
-                          <h5 class="card-title">{{ $category['name'] }}</h5>
-                      </div>
-                  </div>
-                </a>
+          <div class="col-md-4 mb-4 mx-auto">
+            <a href="{{route('listItems',$category['name'] ) }}">
+              <div class="card bg-dark text-light text-center w-50 mx-auto">
+                <img src="https://www.practiceportuguese.com/wp-content/uploads/2017/08/Household-Items.jpg" class="card-img-top w-60" alt="{{ $category['name'] }}">
+                <div class="card-body">
+                  <h5 class="card-title">{{ $category['name'] }}</h5>
+                </div>
               </div>
+            </a>
+          </div>
           @endforeach
+        </div>
       </div>
+    </div>
+    <br><br>
   </div>
-</div>
-  <br><br>
-  
-  </x-layout-main>
+</x-layout-main>
