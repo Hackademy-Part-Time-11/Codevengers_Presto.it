@@ -14,9 +14,18 @@
                 <li class="nav-item p-2">
                     <a class="nav-link" href="{{ route('listItems') }}">Articoli in vendita</a>
                 </li>
+                @if(Auth::user()->is_revisor)
+                <li class="nav-item p-2">
+                    <a class="nav-link" href="{{ route('revisor.index') }}">Area revisore
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            {{ App\Models\Items::toBeRevisionedCount() }}
+                            <span class="visually-hidden">Messaggi non letti</span>
+                        </span>
+                    </a>
+                </li>
+                @endif
                 <li class="nav-item d-flex align-items-center p-2">
                     <a id="pubblicaAnnuncio" class="nav-link button" href="{{ route('items.create') }}">Pubblica un Annuncio</a>
-                </li>
                 <li class="nav-item d-flex ms-auto p-2">
                     <div class="collapse navbar-collapse d-flex justify-content-center me-5 s" id="navbarNavDropdown">
                         <ul class="navbar-nav ">
