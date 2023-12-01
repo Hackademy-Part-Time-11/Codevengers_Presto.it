@@ -3,7 +3,7 @@
 
     <div class="row" id="item-list">
         <div class="col-12">
-            <h1>Titolo <a href="{{ route('items.create') }}"><i class="bi bi-plus-square"></i></a></h1>
+            <h1>Annunci <a href="{{ route('items.create') }}"><i class="bi bi-plus-square"></i></a></h1>
         </div>
         <div class="col-2 bg-white rounded">
             <h2>filtra la tua ricerca</h2>

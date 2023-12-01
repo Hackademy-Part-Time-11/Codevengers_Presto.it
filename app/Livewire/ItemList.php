@@ -6,9 +6,10 @@ use App\Models\item;
 use App\Models\category;
 use Livewire\Attributes\Url;
 use Livewire\Component;
-
+use Livewire\WithPagination;
 class ItemList extends Component
 {
+    use WithPagination;
     #[Url]
     public $search = '';
 
@@ -20,6 +21,7 @@ class ItemList extends Component
     {
 
         $items = item::search($this->search, $this->categorie, $this->order);
+
 
         $categories = category::all();
         return view('livewire.itemList', compact("items", "categories"));
