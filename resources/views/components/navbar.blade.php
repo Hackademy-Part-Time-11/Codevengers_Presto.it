@@ -70,8 +70,8 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="btn-group id="lingua"">
-                        <button type="button"  class="btn btn-light dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="btn-group" id="lingua">
+                        <button type="button"  class="btn fw-bold py-0 dropdown-toggle "  data-bs-toggle="dropdown" aria-expanded="false">
                             Lingua
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end " >
