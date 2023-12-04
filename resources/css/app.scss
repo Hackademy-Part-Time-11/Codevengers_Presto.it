@@ -13,11 +13,21 @@
 
 
 body {
-    background-color:rgb(208, 202, 202);
+    background-color:rgb(78, 18, 108);
+    background-image: url(https://c.wallhere.com/photos/de/ff/portrait_display_vertical_nature_artwork_digital_art_shapes_geometry-1996695.jpg!d);
+    background-size: cover;
+    margin: 0;
     }
 
-.carousel-inner {
-    width: 100%;
+.banner {
+    display: flex;
+    align-items: center;
+}
+
+.img-banner {
+max-width: 100%;
+opacity: 0.8;
+box-shadow: 0 0 15px 0 black;
 }
 
 .title-page{
@@ -40,7 +50,7 @@ h1 {
     }
 
 h2 {
-        color: rgb(91, 34, 34);
+        color: rgb(254, 254, 254);
         font-size: 40px;
         font-style: oblique;
         font-family: 'Amatic SC', sans-serif;
@@ -70,9 +80,10 @@ h2 {
 
     .categories-container {
         display: flex;
-        background-image: url(https://cdn.osxdaily.com/wp-content/uploads/2014/09/bokeh-wallpaper-1.jpg);
         padding: 30px;
         border-radius: 20px;
+        max-width: 100%;
+        margin:0;
     }
 
     .card {
