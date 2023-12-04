@@ -1,5 +1,13 @@
 nav {
     
+    background-color: rgba(57, 56, 56, 0.2);
+    box-shadow: 0 0 15px 0 black;
+
+    .container-fluid {
+        background-color: rgba(57, 56, 56, 0.2);
+        box-shadow: 0 0 15px 0 black;
+    }
+
     #logo:hover{
         background-color: rgba(255, 255, 255, 0) !important;
     }
@@ -8,7 +16,7 @@ nav {
         transform: translateX(-25%);
         
         a:hover{
-            color: black !important;
+            color: rgb(29, 28, 28) !important;
             background-color: white;
         }
         button:hover{
@@ -30,9 +38,6 @@ nav {
         color: rgb(117, 15, 103);
         font-size: 35px;
     }
-
-
-
 
 
     a {
@@ -73,12 +78,12 @@ nav {
         color: white !important;
     }
     #pubblicaAnnuncio:hover{
-        color: black !important;
-        background-color: rgb(138, 47, 123) !important;
+        color: rgb(255, 254, 254) !important;
+        background-color: rgb(11, 11, 11) !important;
     }
     
     .btn-publica {
-        background-color: blueviolet;
+        background-color: rgb(113, 35, 186);
         
         padding: 10px;
         border-radius: 10%;
