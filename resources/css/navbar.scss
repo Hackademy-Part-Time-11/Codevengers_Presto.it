@@ -85,10 +85,17 @@ nav {
 
     }
 
-.dropdown-menu{
-    li:first-of-type,li:last-of-type{
-        display: flex;
-        justify-content: center;
+    .dropdown-menu{
+        li:first-of-type,li:last-of-type{
+            display: flex;
+            justify-content: center;
+        }
     }
-}
+
+    #lingua{
+        
+        #lingua:hover{
+            background-color: rgb(79, 16, 69) ;
+        }
+    }
 }
