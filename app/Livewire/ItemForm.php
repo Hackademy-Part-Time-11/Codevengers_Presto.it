@@ -33,7 +33,17 @@ class ItemForm extends Component
 
     public $categories = [];
     public $item;
+    public $temporary_images;
 
+    public function updatedTemporaryImages(){
+        if($this->validate([
+            'temporary_images.*' => 'image|max:4096',
+        ])){
+            foreach($this->temporary_images as $image){
+                $this->images[] = $image;
+            }
+        }
+    }
     public function render()
     {
 

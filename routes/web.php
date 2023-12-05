@@ -9,8 +9,6 @@ use App\Http\Controllers\RevisorController;
 use App\Models\Item;
 use App\Http\Controllers\LavoraConNoiController;
 
-Route::resource('items', \App\Http\Controllers\ItemController::class);
-
 Route::resource('Category', \App\Http\Controllers\CategoryController::class); 
 
 Route::get('/', [App\Http\Controllers\PageController::class, 'home'])->name('home');

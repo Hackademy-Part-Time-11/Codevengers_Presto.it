@@ -1,5 +1,5 @@
 <div>
-    @vite(['resources/css/itemForm.scss', 'resources/js/formItem.js'])
+    @vite(['resources/css/itemForm.scss'])
 
     <h1 class="mb-4"> {{ $item->id ? 'Modifica' : 'Crea' }}</h1>
 
@@ -61,16 +61,16 @@
                 @endif
 
 
-                <input type="file" name="images[]" id="images" accept="image/*" class="form-control {{$item->id ?'dn': ''}}" wire:model.blur="images" multiple>
+                <input type="file" name="images[]" id="images" accept="image/*" class="form-control {{$item->id ?'dn': ''}}" wire:model.blur="temporary_images" multiple>
 
 
 
-                @if(!empty($images) && !$item->id)
+                @if(!empty($images))
                 <div class="row border border-4 border-info rounded shadow py-4">
                     @foreach($images as $image)
                     <div class="col my-3">
-                      <img id="aaaaaaa" src="{{$image->temporaryUrl()}}" alt="ciao"> 
-
+                    <!-- <div class="mx-auto shadow rounded" style="width:400px;height:400px;background-image: url({{$image->temporaryUrl()}});"></div> -->
+<img class="aaaaaaa" width="300px" src="{{$image->temporaryUrl()}}" alt="">
                     </div>
                     @endforeach
                 </div>
