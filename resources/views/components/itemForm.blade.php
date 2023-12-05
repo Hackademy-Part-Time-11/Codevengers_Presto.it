@@ -50,6 +50,7 @@
                         <div class="col-3">
                             <div class="image-container" data-image-index="{{ $key }}">
                                 @if ($image != "add")
+                                <div class="existing-image"  style="background-image: url('{{asset($image)}}');"></div>
                                 <img src="{{ $image ? asset($image) : '#' }}" alt="Immagine esistente" class="existing-image">
                                 <input type="file" name="new_images[]" class="new-image-input dn">
                                 <img src="#" alt="Anteprima" class="new-image-preview  existing-image dn">

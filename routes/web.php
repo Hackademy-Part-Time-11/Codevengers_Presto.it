@@ -10,8 +10,6 @@ use App\Models\Item;
 use App\Http\Controllers\LavoraConNoiController;
 use App\Http\Controllers\PageController;
 
-Route::resource('items', \App\Http\Controllers\ItemController::class);
-
 Route::resource('Category', \App\Http\Controllers\CategoryController::class); 
 
 Route::get('/', [App\Http\Controllers\PageController::class, 'home'])->name('home');
