@@ -177,4 +177,13 @@ class ItemController extends Controller
         $url = "storage/images/items/{$itemId}/$fileName";
         $itemImage->update(['image' => $url]);
     }
+    // private function deleteImage($itemImage){
+    //     $item=$itemImage->item;
+    //     $percorsoPubblico = str_replace('storage', 'public', $itemImage->image);
+    //     if (Storage::exists($percorsoPubblico)) {
+    //         Storage::delete($percorsoPubblico);
+    //     }
+    //     $itemImage->delete();
+    //     return redirect()->route('items.edit', $item)->with(['success' => 'Annuncio aggiornato correttamente']);
+    // }
 }

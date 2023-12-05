@@ -47,7 +47,7 @@ class ItemForm extends Component
     public function render()
     {
 
-        $this->item = new item;
+        $this->item = new Item;
         if ($this->item->id) {
             $img = ["add", "add", "add", "add"];
 

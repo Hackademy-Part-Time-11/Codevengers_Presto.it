@@ -41,7 +41,8 @@ Route::post('/settings.store', [App\Http\Controllers\AccountController::class, '
 
     Route::resource('items', \App\Http\Controllers\ItemController::class)->except([
         'index','show'
-    ]);;
+    ]);
+    // Route::delete('/items/images/{itemImage}',[ \App\Http\Controllers\ItemController::class], 'deleteImage')->name('images.delete');
 
     Route::get('/CreaAnnuncio', ItemForm::class)->name('itemForm');
 });
