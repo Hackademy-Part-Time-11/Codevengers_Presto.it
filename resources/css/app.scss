@@ -1,7 +1,7 @@
 @import "bootstrap";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
 
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Orbitron&family=Tourney:ital,wght@1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Chakra+Petch:wght@300&family=Dhurjati&family=Orbitron&family=Saira+Extra+Condensed:wght@100&family=Tourney:ital,wght@1,100&display=swap');
 
 
 @import "navbar.scss";
@@ -13,7 +13,7 @@
 
 
 body {
-    background-color:rgb(78, 18, 108);
+    background-color:rgb(48, 1, 71);
     background-image: url(https://c.wallhere.com/photos/de/ff/portrait_display_vertical_nature_artwork_digital_art_shapes_geometry-1996695.jpg!d);
     background-size: cover;
     margin: 0;
@@ -51,9 +51,9 @@ h1 {
 
 h2 {
         color: rgb(254, 254, 254);
-        font-size: 40px;
+        font-size: 32px;
         font-style: oblique;
-        font-family: 'Amatic SC', sans-serif;
+        font-family: 'Chakra Petch', sans-serif;
         align-items: center;
         justify-content: center;
         text-align: center;

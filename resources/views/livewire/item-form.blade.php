@@ -1,5 +1,5 @@
 <div>
-    @vite(['resources/css/itemForm.scss', 'resources/css/formItem.js'])
+    @vite(['resources/css/itemForm.scss', 'resources/js/formItem.js'])
 
     <h1 class="mb-4"> {{ $item->id ? 'Modifica' : 'Crea' }}</h1>
 
@@ -46,11 +46,11 @@
                         <div class="image-container" data-image-index="{{ $key }}">
                             @if ($image != "add")
                             <img src="{{ $image ? asset($image) : '#' }}" alt="Immagine esistente" class="existing-image">
-                            <input type="file" name="new_images[]" class="new-image-input dn" wire:model.blur="images">
+                            <input type="file" name="new_images[]" class="new-image-input dn" wire:model.blur="imagesNew">
                             @else
                             <div class="add-image-placeholder">
                                 <i class="bi bi-folder-plus existing-image"></i>
-                                <input type="file" name="new_images[]" class="new-image-input dn" wire:model.blur="images">
+                                <input type="file" name="new_images[]" class="new-image-input dn" wire:model.blur="imagesNew">
                             </div>
                             @endif
                         </div>
@@ -62,19 +62,21 @@
 
 
                 <input type="file" name="images[]" id="images" accept="image/*" class="form-control {{$item->id ?'dn': ''}}" wire:model.blur="images" multiple>
+
+
+
                 @if(!empty($images) && !$item->id)
                 <div class="row border border-4 border-info rounded shadow py-4">
                     @foreach($images as $image)
                     <div class="col my-3">
-                      <img src="url( {{ $image->temporaryUrl() }})" alt=""> 
-                    
+                      <img id="aaaaaaa" src="{{$image->temporaryUrl()}}" alt="ciao"> 
 
                     </div>
                     @endforeach
                 </div>
                 @endif
-                <div id="imagePreview">
-                </div>
+
+                
                 @error('images') <span class="text-danger small">{{ $message }}</span> @enderror
             </div>
         </div>
