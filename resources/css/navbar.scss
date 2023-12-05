@@ -1,10 +1,11 @@
 nav {
     
-    background-color: rgba(57, 56, 56, 0.2);
+    background-color: white;
     box-shadow: 0 0 15px 0 black;
+    opacity: 0.9;
 
     .container-fluid {
-        background-color: rgba(57, 56, 56, 0.2);
+        background-color: rgba(255, 255, 255, 0.2);
         box-shadow: 0 0 15px 0 black;
     }
 
@@ -20,8 +21,8 @@ nav {
             background-color: white;
         }
         button:hover{
-            color: black !important;
-            background-color: red;
+            color: rgb(249, 247, 247) !important;
+            background-color: rgb(73, 20, 20);
         }
     
     }
@@ -90,10 +91,28 @@ nav {
 
     }
 
-.dropdown-menu{
-    li:first-of-type,li:last-of-type{
-        display: flex;
-        justify-content: center;
+    .dropdown-menu{
+        li:first-of-type,li:last-of-type{
+            display: flex;
+            justify-content: center;
+        }
     }
-}
+
+    #lingua{
+        
+        button{
+            font-family: "Lato", sans-serif;
+            font-size: 20px;
+
+        }
+        button:hover{
+            background-color: rgb(79, 16, 69) !important;
+            color: rgb(255, 254, 254)
+        }
+
+        li{
+            
+            justify-content: center;
+        }
+    }
 }

@@ -29,6 +29,9 @@
                 <li class="nav-item d-flex align-items-center p-2">
                     <a id="pubblicaAnnuncio" class="nav-link button" href="{{ route('items.create') }}">Pubblica un Annuncio</a>
                 <li class="nav-item d-flex ms-auto p-2">
+                    
+                        
+                    
                     <div class="collapse navbar-collapse d-flex justify-content-center me-5 s" id="navbarNavDropdown">
                         <ul class="navbar-nav ">
                             <li class="nav-item dropdown ">                            
@@ -65,6 +68,16 @@
                                     @endauth
                                 </ul>
                             </li>
+                        </ul>
+                    </div>
+                    <div class="btn-group" id="lingua">
+                        <button type="button"  class="btn fw-bold py-0 dropdown-toggle "  data-bs-toggle="dropdown" aria-expanded="false">
+                            Lingua
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end justify-content-center  " >
+                            <li class="d-flex justify-content-start mb-1"><span  class =" fi fi-gr " > </span>INGLESE</li>
+                            <li class="d-flex justify-content-start my-1"><span  class =" fi fi-it " > </span>ITALINO</li>
+                            <li class="d-flex justify-content-start mt-1"><span  class =" fi fi-es " > </span>SPAGNOLO</li>
                         </ul>
                     </div>
                 </li>
