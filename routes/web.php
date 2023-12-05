@@ -8,6 +8,7 @@ use App\Http\Controllers\RevisorController;
 
 use App\Models\Item;
 use App\Http\Controllers\LavoraConNoiController;
+use App\Http\Controllers\PageController;
 
 Route::resource('items', \App\Http\Controllers\ItemController::class);
 
@@ -57,3 +58,6 @@ Route::patch('/accetta/annuncio/{item}', [RevisorController::class,'acceptItem']
 
 //Rifiuta annuncio
 Route::patch('/rifiuta/annuncio/{item}', [RevisorController::class,'rejectItem'])->name('revisor.reject_item');
+
+//cambio lingua
+Route::post('/lingua/{lang}', [PageController::class, 'setLanguage'])->name('set_language_locale');

@@ -13,6 +13,12 @@ class PageController extends Controller
         $categories = Category::all();
 
         return view('home', compact('categories'));
-    }   
+    }
+    
+    public function setLanguage($lang){
+        
+        session()->put('locale', $lang);
+        return redirect()->back();
+    }
 
 }
