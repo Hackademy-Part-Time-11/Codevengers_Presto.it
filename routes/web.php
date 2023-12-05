@@ -44,10 +44,11 @@ Route::post('/settings.store', [App\Http\Controllers\AccountController::class, '
         'index','show'
     ]);;
 
+    Route::get('/CreaAnnuncio', ItemForm::class)->name('itemForm');
 });
 
 Route::get('/Annunci', ItemList::class)->name('listItems');
-Route::get('/CreaAnnuncio', ItemForm::class)->name('itemForm');
+
 //Home revisore
 Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
 
