@@ -1,5 +1,5 @@
 <?php
 
 return[
-    'allAnnouncements'=> 'Here\'s all our announcements!'
+    'allAnnouncements'=> "L'e-commerce tailored for you"
 ];

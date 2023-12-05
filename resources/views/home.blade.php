@@ -2,7 +2,7 @@
 
   <div id="HomePage">
     <br><br>
-    <h2>L'e-commerce su misura per te</h2><br><br><br><br>
+    <h2>{{__('ui.allAnnouncements')}}</h2><br><br><br><br>
 
     <div class="banner">
       <img src="https://www.berettaclima.it/media/contact_2.jpg" alt="banner" class="img-banner">
