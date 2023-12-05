@@ -75,9 +75,9 @@
                             Lingua
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end justify-content-center  " >
-                            <li class="d-flex justify-content-start mb-1"><span  class =" fi fi-gr " > </span>INGLESE</li>
-                            <li class="d-flex justify-content-start my-1"><span  class =" fi fi-it " > </span>ITALINO</li>
-                            <li class="d-flex justify-content-start mt-1"><span  class =" fi fi-es " > </span>SPAGNOLO</li>
+                            <li class="d-flex justify-content-start mb-1"><span  class = "fi fi-en" > </span>ENG</li>
+                            <li class="d-flex justify-content-start my-1"><span  class = "fi fi-it" > </span>ITA</li>
+                            <li class="d-flex justify-content-start mt-1"><span  class = "fi fi-es" > </span>ESP</li>
                         </ul>
                     </div>
                 </li>
