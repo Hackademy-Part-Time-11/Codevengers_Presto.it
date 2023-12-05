@@ -1,3 +1,4 @@
+#itemForm{
 .col-12{
     color: white;
     .row{
@@ -21,5 +22,25 @@
         border: 1px solid black;
         border-radius: 5px;
     }
+
+    #imagePreview{
+        display: flex;
+        img{
+            height: 200px;
+            width: 200px;
+            margin: 20px;
+            background-color: white;
+            object-fit: contain;
+            border: 1px solid black;
+            border-radius: 5px;
+
+        }
+    }
     
+}
+
+#aaaaaaa{
+    width: 200px !important;
+    height:200px !important;
+}
 }

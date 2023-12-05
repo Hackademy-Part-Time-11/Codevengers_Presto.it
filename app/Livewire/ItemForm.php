@@ -30,22 +30,14 @@ class ItemForm extends Component
 
     #[Validate('max:4', message: 'Non puoi inserire più di quattro immagini.')]
     public $images = [];
-    public $temporary_images;
 
     public $categories = [];
     public $item;
 
-    public $showInput = false;
-
-    public function toggleInput()
-    {
-        $this->showInput = !$this->showInput;
-    }
-
     public function render()
     {
 
-        $this->item = item::find("49");
+        $this->item = new item;
         if ($this->item->id) {
             $img = ["add", "add", "add", "add"];
 

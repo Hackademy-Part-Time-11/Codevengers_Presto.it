@@ -1,4 +1,7 @@
 <x-layout-main>
+    <div id="itemForm">
+
+
     @vite(['resources/css/itemForm.scss','resources/js/formItem.js'])
 
     <h1 class="mb-4">{{$title}}</h1>
@@ -49,12 +52,12 @@
                                 @if ($image != "add")
                                 <img src="{{ $image ? asset($image) : '#' }}" alt="Immagine esistente" class="existing-image">
                                 <input type="file" name="new_images[]" class="new-image-input dn">
-                                <img src="#" alt="Anteprima" class="new-image-preview dn">
+                                <img src="#" alt="Anteprima" class="new-image-preview  existing-image dn">
                                 @else
                                 <div class="add-image-placeholder">
                                     <i class="bi bi-folder-plus existing-image"></i>
                                     <input type="file" name="new_images[]" class="new-image-input dn">
-                                    <img src="#" alt="Anteprima" class="new-image-preview dn">
+                                    <img src="#" alt="Anteprima" class="new-image-preview existing-image dn">
                                 </div>
                                 @endif
                             </div>
@@ -82,5 +85,5 @@
         </div>
         </div>
     </form>
-
+    </div>
 </x-layout-main>
