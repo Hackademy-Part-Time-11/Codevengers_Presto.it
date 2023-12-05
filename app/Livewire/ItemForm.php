@@ -7,9 +7,7 @@ use App\Models\item_image;
 use Illuminate\Support\Facades\Storage;
 use App\Models\category;
 use Livewire\Attributes\Validate;
-use Livewire\Form;
 use Livewire\Component;
-
 use Livewire\WithFileUploads;
 
 class ItemForm extends Component
@@ -17,54 +15,80 @@ class ItemForm extends Component
 
     use WithFileUploads;
 
-    #[Validate('required|max:40')]
-    public $title = "";
-    #[Validate('required|numeric|min:1')]
-    public $price = "";
-    #[Validate('required|max:5000')]
-    public $description = "";
-    #[Validate(['images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048', 'images' => 'max:4'])]
+    #[Validate('required', message: 'Il campo "Nome prodotto" non può essere vuoto.')]
+    #[Validate('max:40', message: 'Il campo Titolo non può essere più lungo di :max caratteri')]
+    public $title;
+
+    #[Validate('required', message: 'Il campo "Prezzo" è obbligatorio.')]
+    #[Validate('numeric', message: 'Il "Prezzo" deve essere un numero.')]
+    #[Validate('min:1', message: 'Il "Prezzo" deve essere almeno 1.')]
+    public $price;
+
+    #[Validate('required', message: 'Il campo "Descrizione" non può essere vuoto.')]
+    #[Validate('max:5000', message: 'Il campo "Descrizione" non può essere più lungo di :max caratteri')]
+    public $description;
+
+    #[Validate('max:4', message: 'Non puoi inserire più di quattro immagini.')]
     public $images = [];
+    public $temporary_images;
 
     public $categories = [];
-    public $itemId=null;
+    public $item;
+
+    public $showInput = false;
+
+    public function toggleInput()
+    {
+        $this->showInput = !$this->showInput;
+    }
 
     public function render()
     {
 
-        $item = new item;
+        $this->item = item::find("49");
+        if ($this->item->id) {
+            $img = ["add", "add", "add", "add"];
+
+            foreach ($this->item->item_images as $image) {
+                $img[pathinfo($image->image, PATHINFO_FILENAME)] = $image->image;
+            }
+            $this->images = $img;
+        } else {
+        }
         $categorie = category::all();
-        $button = "crea";
-        return view('livewire.item-form', compact("item", "categorie", "button"));
+        return view('livewire.item-form', compact("categorie"));
     }
 
     public function store()
     {
+
         $this->validate();
-        
-        if($this->categoryId) {
+        if ($this->item->id) {
 
             // $this->categoryId non è null, quindi sto modificando la categoria con id = $this->categoryId
 
-            (item::find($this->itemId))->update(['title' => $this->title,'price' => $this->price,'description' => $this->description,]);
-            $this->updateImage($this->images,$this->item);
+            (item::find($this->item->id))->update(['title' => $this->title, 'price' => $this->price, 'description' => $this->description,]);
+            $this->updateImage($this->images, $this->item);
             session()->flash('success', 'Categoria modificata correttamente.');
-
         } else {
 
             // $this->categoryId è null, quindi sto creando una nuova categoria
 
-            Category::create(['name' => $this->name]);
+            $item = Item::create([
+                'title' => $this->title,
+                'price' => $this->price,
+                'description' => $this->description,
+                'user_id' => auth()->user()->id,
+            ]);
+            $this->item = $item;
+            $item->categories()->attach($this->categories);
+
+            $this->updateImages();
 
             session()->flash('success', 'Categoria creata correttamente.');
-
         }
-
-        $this->newCategory();
-        
-
-        $this->dispatch('category-created');
     }
+
 
     private function updateImages()
     {
@@ -122,5 +146,4 @@ class ItemForm extends Component
         $url = "storage/images/items/{$this->item->id}/$fileName";
         $itemImage->update(['image' => $url]);
     }
-
 }

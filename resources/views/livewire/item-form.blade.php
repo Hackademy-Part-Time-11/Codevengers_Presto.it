@@ -1,39 +1,39 @@
 <div>
-    @vite(['resources/css/itemForm.scss','resources/js/formItem.js'])
+    @vite(['resources/css/itemForm.scss', 'resources/css/formItem.js'])
 
-    <h1 class="mb-4">blabla</h1>
+    <h1 class="mb-4"> {{ $item->id ? 'Modifica' : 'Crea' }}</h1>
 
     <x-success />
 
-    <form wire:submit.prevent="save" class="mb-4">
+    <form wire:submit="store" class="mb-4">
+        @csrf
+
         <div class="row g-3">
             <div class="col-12">
                 <label for="title">Nome prodotto</label>
-                <input type="text" name="title" id="title" maxlength="150" class="form-control" wire:model.live="title">
-                {{$title}}
+                <input type="text" name="title" id="title" maxlength="150" class="form-control @error('title') is-invalid @enderror" wire:model.blur="title">
                 @error('title') <span class="text-danger small">{{ $message }}</span> @enderror
             </div>
             <div class="col-12">
                 <label>Categorie associate</label>
                 <div class="row">
-                    @foreach($categorie as $key =>$categoria)
+                    @foreach($categorie as $key =>$category)
                     <div class="col-2">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="categorie[]" id="flexCheckDefault{{$key}}" value="{{$categoria->name}}" wire:model.live="categories">
+                            <input class="form-check-input" type="checkbox" name="categories[]" id="flexCheckDefault{{$key}}" value="{{ $category->id }}" wire:model.blur='categories'>
                             <label class="form-check-label" for="flexCheckDefault{{$key}}">
-                                {{ $categoria->name }}
+                                {{ $category->name }}
                             </label>
                         </div>
                     </div>
 
                     @endforeach
-
                 </div>
                 @error('categories') <span class="text-danger small">{{ $message }}</span> @enderror
             </div>
             <div class="col-12 ">
                 <label for="price">Prezzo</label>
-                <input type="number" name="price" id="price" min="1" class="form-control @error('price') is-invalid @enderror" wire:model.live="price">
+                <input type="number" name="price" id="price" min="1" class="form-control @error('price') is-invalid @enderror" wire:model.blur='price'>
                 @error('price') <span class="text-danger small">{{ $message }}</span> @enderror
             </div>
             <div class="col-12 align-items-center">
@@ -46,13 +46,11 @@
                         <div class="image-container" data-image-index="{{ $key }}">
                             @if ($image != "add")
                             <img src="{{ $image ? asset($image) : '#' }}" alt="Immagine esistente" class="existing-image">
-                            <input type="file" name="new_images[]" class="new-image-input dn" wire:model.live="images">
-                            <img src="#" alt="Anteprima" class="new-image-preview dn">
+                            <input type="file" name="new_images[]" class="new-image-input dn" wire:model.blur="images">
                             @else
                             <div class="add-image-placeholder">
                                 <i class="bi bi-folder-plus existing-image"></i>
-                                <input type="file" name="new_images[]" class="new-image-input dn" wire:model.live="images">
-                                <img src="#" alt="Anteprima" class="new-image-preview dn">
+                                <input type="file" name="new_images[]" class="new-image-input dn" wire:model.blur="images">
                             </div>
                             @endif
                         </div>
@@ -62,22 +60,31 @@
 
                 @endif
 
-                <input type="file" name="images[]" id="images" accept="image/*" class="form-control {{$item->id ?'dn': ''}}" wire:model.live="images" multiple>
 
+                <input type="file" name="images[]" id="images" accept="image/*" class="form-control {{$item->id ?'dn': ''}}" wire:model.blur="images" multiple>
+                @if(!empty($images) && !$item->id)
+                <div class="row border border-4 border-info rounded shadow py-4">
+                    @foreach($images as $image)
+                    <div class="col my-3">
+                      <img src="url( {{ $image->temporaryUrl() }})" alt=""> 
+                    
+
+                    </div>
+                    @endforeach
+                </div>
+                @endif
+                <div id="imagePreview">
+                </div>
                 @error('images') <span class="text-danger small">{{ $message }}</span> @enderror
             </div>
-
         </div>
-
-
-
         <div class="col-12">
             <label for="description">Descrizione</label>
-            <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror" wire:model.live="description" rows="10" maxlength="5000">{{ $description }}</textarea>
+            <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror" rows="10" maxlength="5000" wire:model.blur='description'>{{ old('description',$item->description) }}</textarea>
             @error('description') <span class="text-danger small">{{ $message }}</span> @enderror
         </div>
         <div class="col-12">
-            <button type="submit" class="btn btn-primary">blabla</button>
+            <button type="submit" class="btn btn-primary">{{ $item->id ? 'Modifica' : 'Crea' }}</button>
         </div>
 </div>
 </form>
