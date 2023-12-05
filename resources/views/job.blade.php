@@ -2,7 +2,7 @@
 
 <h2>Diventa un revisore di Presto.it!</h2>
 
-<div class="container mt-5">
+<div class="container mt-5 text-light">
   <form action="#" method="post" enctype="multipart/form-data">
     <div class="form-row">
       <div class="form-group col-md-6">

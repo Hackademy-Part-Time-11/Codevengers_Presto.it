@@ -1,6 +1,6 @@
 <x-layout-main>
 
-    <div>
+    <div class="text-light">
         <h2>Grazie per la tua richiesta, {{ $nome }}!</h2>
         <p>Abbiamo ricevuto la tua richiesta per diventare revisore. Verificheremo le tue informazioni e ti contatteremo al più presto.</p>
         

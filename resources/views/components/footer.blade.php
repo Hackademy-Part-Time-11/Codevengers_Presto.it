@@ -1,9 +1,9 @@
 
   <div class="container">
   
-    <footer class="py-5">
+    <footer class="py-4">
       <div class="row">
-        <div class="col-6 col-md-2 mb-3">
+        <div class="col-6 col-md-2 mb-2">
           <h5>Section</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Home</a></li>
@@ -51,6 +51,18 @@
           </form>
         </div>
       </div>
+
+      <br>
+      <div>
+        <p class="text-light">Powered by:</p>
+      <br>
+        <span id="developers" class="d-flex justify-content-around">
+          <div class="d-flex align-items-center"><a href="https://www.linkedin.com/in/francesco-adduce/" target="blank"><img src="{{ asset('images/Francesco-photo.jpg') }}" alt="developer1"></a><h5 class="m-3">Francesco Adduce</h5></div>
+          <div class="d-flex align-items-center"><a href="https://www.linkedin.com/in/alessiowebdev/" target="blank"><img src="{{ asset('images/Alessio-photo.jpg') }}" alt="developer2"></a><h5 class="m-3">Alessio Piras</h5></div>
+          <div class="d-flex align-items-center"><a href="https://www.linkedin.com/in/alessandro-ricci-57b553247/" target="blank"><img src="{{ asset('images/Alessandro-photo.png') }}" alt="developer3"></a><h5 class="m-3">Alessandro Ricci</h5></div>
+        </span>
+       
+      </div>
   
       <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
         <p class="text-light">© 2023 Company, Inc. All rights reserved.</p>
@@ -60,5 +72,7 @@
           <li class="ms-3"><a class="link-body-emphasis text-light" href="#"><i class="bi bi-facebook"></i></a></li>
         </ul>
       </div>
+
+      
     </footer>
   </div>
