@@ -2,12 +2,12 @@
 
 return[
     
-    'ArticoliVendita'=> "Articoli in vendita",
-    'PubblicaAnnuncio'=> "Pubblica un Annuncio",
-    'opzioni'=> "Opzioni",
-    'accedi'=> "Accedi",
-    'registrati'=>"Registrati",
-    'lingua'=>"Lingua",
+    'ArticoliVendita'=> "Items for Sale",
+    'PubblicaAnnuncio'=> "post an ad",
+    'opzioni'=> "Options",
+    'accedi'=> "Log In",
+    'registrati'=>"Sign In",
+    'lingua'=>"Language",
     
     'allAnnouncements'=> "L'e-commerce tailored for you",
     'SaluteBellezza'=>"Health and beauty",
