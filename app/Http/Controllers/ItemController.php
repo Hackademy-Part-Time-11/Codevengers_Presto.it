@@ -7,6 +7,8 @@ use App\Models\item_image;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Http\Requests\itemFormRequest;
+use Spatie\Image\Image;
+use Spatie\Image\Manipulations;
 
 
 class ItemController extends Controller
@@ -131,33 +133,42 @@ class ItemController extends Controller
     }
 
     private function updateImageFile($key, $image, $item)
-    {
-        $fileName = \Illuminate\Support\Str::slug($key) . '.' . $image->extension();
-        $filePath = "public/images/items/{$item->id}/$fileName";
-        $oldImgArray = $item->item_images->filter(function ($itemImage) use ($key) {
-            $nomeFileSenzaEstensione = pathinfo($itemImage->image, PATHINFO_FILENAME);
-            return $nomeFileSenzaEstensione == $key;
-        });
-        $oldimg=$oldImgArray->first();
-        if (isset($oldimg)) {
-            $percorsoPubblico = str_replace('storage', 'public',$oldimg->image);
-            
-            // Se il file esiste, sovrascrivilo
-            if (Storage::exists($filePath) || Storage::exists($percorsoPubblico)) {
-                Storage::delete($percorsoPubblico);
-                $this->updateImageUrl($oldimg, $item->id, $fileName);
-                $this->saveNewImage($image, $item->id, $fileName);
-            }
-            // Altrimenti, salva il nuovo file e crea un nuovo record in item_images
-            else {
-                $this->saveNewImage($image, $item->id, $fileName);
-                $this->createNewItemImage($item->id, $fileName);
-            }
+{
+    $fileName = \Illuminate\Support\Str::slug($key) . '.' . $image->extension();
+    $filePath = "public/images/items/{$item->id}/$fileName";
+    $oldImgArray = $item->item_images->filter(function ($itemImage) use ($key) {
+        $nomeFileSenzaEstensione = pathinfo($itemImage->image, PATHINFO_FILENAME);
+        return $nomeFileSenzaEstensione == $key;
+    });
+    $oldimg = $oldImgArray->first();
+    if (isset($oldimg)) {
+        $percorsoPubblico = str_replace('storage', 'public', $oldimg->image);
+
+        // Se il file esiste, sovrascrivilo
+        if (Storage::exists($filePath) || Storage::exists($percorsoPubblico)) {
+            Storage::delete($percorsoPubblico);
+            $this->updateImageUrl($oldimg, $item->id, $fileName);
+            $this->saveNewImage($image, $item->id, $fileName);
+            $this->cropImage($item->id, $fileName, 300, 300); // Aggiunta della funzione di crop
         } else {
             $this->saveNewImage($image, $item->id, $fileName);
             $this->createNewItemImage($item->id, $fileName);
         }
+    } else {
+        $this->saveNewImage($image, $item->id, $fileName);
+        $this->createNewItemImage($item->id, $fileName);
     }
+
+}
+
+private function cropImage($itemId, $fileName, $width, $height)
+{
+    $imagePath = "public/images/items/{$itemId}/{$fileName}";
+
+    Image::load($imagePath)
+        ->crop(Manipulations::CROP_CENTER, $width, $height)
+        ->save($imagePath);
+}
 
     private function saveNewImage($image, $itemId, $fileName)
     {
