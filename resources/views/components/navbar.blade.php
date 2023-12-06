@@ -12,7 +12,7 @@
                     <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item p-2">
-                    <a class="nav-link" href="{{ route('listItems') }}">Articoli in vendita</a>
+                    <a class="nav-link" href="{{ route('listItems') }}">{{__('ui.ArticoliVendita')}}</a>
                 </li>
                 @auth 
                 @if(Auth::user()->is_revisor)
@@ -27,7 +27,7 @@
                 @endif
                 @endauth
                 <li class="nav-item d-flex align-items-center p-2">
-                    <a id="pubblicaAnnuncio" class="nav-link button" href="{{ route('items.create') }}">Pubblica un Annuncio</a>
+                    <a id="pubblicaAnnuncio" class="nav-link button" href="{{ route('items.create') }}">{{__('ui.PubblicaAnnuncio')}}</a>
                 <li class="nav-item d-flex ms-auto p-2">
                     
                         
@@ -37,7 +37,7 @@
                             <li class="nav-item dropdown ">                            
                                 <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     @auth                                
-                                    Opzioni                            
+                                    {{__('ui.opzioni')}}                            
                                     @else
                                     Login
                                     @endauth                                
@@ -60,11 +60,11 @@
                                     </li>
                                 
                                     @else
-                                    <li class="dropdown-item"><a class="dropdown-item" href="/login">Accedi</a></li>
+                                    <li class="dropdown-item"><a class="dropdown-item" href="/login">{{__('ui.accedi')}}</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li class="dropdown-item"><a class="dropdown-item" href="/register">Registrati</a></li>
+                                    <li class="dropdown-item"><a class="dropdown-item" href="/register">{{__('ui.registrati')}}</a></li>
                                     @endauth
                                 </ul>
                             </li>
@@ -72,7 +72,7 @@
                     </div>
                     <div class="btn-group" id="lingua">
                         <button type="button"  class="btn fw-bold py-0 dropdown-toggle "  data-bs-toggle="dropdown" aria-expanded="false">
-                            Lingua
+                            {{__('ui.lingua')}}
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end justify-content-center  " >
                             <li class=" nav-link d-flex justify-content-start mb-1">  <x-locale  lang="en" nation="gb"/></li>

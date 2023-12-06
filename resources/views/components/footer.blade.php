@@ -46,7 +46,7 @@
               <button type="button">Subscribe</button> 
             </div><br><br>
             <div>
-                <h5 class="text-white"><a href= {{ route('job') }}>Lavora con noi</a></h5>
+                <h5 class="text-white"><a href= {{ route('job') }}>{{__('ui.LavoraNoi')}}</a></h5>
               </div>
           </form>
         </div>
@@ -54,14 +54,13 @@
 
       <br>
       <div>
-        <p class="text-light">Powered by:</p>
-      <br>
+        <p class="text-light">Created by:</p>
         <span id="developers" class="d-flex justify-content-around">
-          <div class="d-flex align-items-center"><a href="https://www.linkedin.com/in/francesco-adduce/" target="blank"><img src="{{ asset('images/Francesco-photo.jpg') }}" alt="developer1"></a><h5 class="m-3">Francesco Adduce</h5></div>
+          <div class="d-flex align-items-center"><a href="https://www.linkedin.com/in/francesco-adduce/" target="blank"><img src="{{ asset('images/Frank-photo.jpg') }}" alt="developer1"></a><h5 class="m-3">Francesco Adduce</h5></div>
           <div class="d-flex align-items-center"><a href="https://www.linkedin.com/in/alessiowebdev/" target="blank"><img src="{{ asset('images/Alessio-photo.jpg') }}" alt="developer2"></a><h5 class="m-3">Alessio Piras</h5></div>
           <div class="d-flex align-items-center"><a href="https://www.linkedin.com/in/alessandro-ricci-57b553247/" target="blank"><img src="{{ asset('images/Alessandro-photo.png') }}" alt="developer3"></a><h5 class="m-3">Alessandro Ricci</h5></div>
         </span>
-       
+      
       </div>
   
       <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
