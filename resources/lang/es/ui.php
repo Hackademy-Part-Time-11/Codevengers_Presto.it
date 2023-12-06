@@ -7,7 +7,11 @@ return[
     'opzioni'=> "Opciones",
     'accedi'=> "Acceso",
     'registrati'=>"Iniciar sesión",
+
     'lingua'=>"Lengua",
+    'inglese'=>"Inglés",
+    'italiano'=>"Italiano",
+    'spagnolo'=>"Español",
     
     'allAnnouncements'=> "L'e-commerce adaptado para usted",
     'SaluteBellezza'=>"Salud y Belleza",

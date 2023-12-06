@@ -14,15 +14,17 @@ nav {
     }
     
     .custom-dropdown-menu {
-        transform: translateX(-25%);
-        
-        a:hover{
-            color: rgb(29, 28, 28) !important;
-            background-color: white;
+        // transform: translateX(-25%);
+        li{
+            
         }
-        button:hover{
-            color: rgb(249, 247, 247) !important;
-            background-color: rgb(73, 20, 20);
+        li:hover{
+            color: rgb(29, 28, 28) !important;
+            background-color: rgb(79, 16, 69);
+        }
+        a:hover{
+            color: rgb(255, 255, 255) !important;
+            background-color: rgb(79, 16, 69);
         }
     
     }
@@ -95,6 +97,7 @@ nav {
         li:first-of-type,li:last-of-type{
             display: flex;
             justify-content: center;
+            
         }
     }
 

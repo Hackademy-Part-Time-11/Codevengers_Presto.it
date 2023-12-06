@@ -32,17 +32,17 @@
                     
                         
                     
-                    <div class="collapse navbar-collapse d-flex justify-content-center me-5 s" id="navbarNavDropdown">
+                    <div class="collapse navbar-collapse d-flex justify-content-center  s" id="navbarNavDropdown">
                         <ul class="navbar-nav ">
                             <li class="nav-item dropdown ">                            
-                                <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle ms-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     @auth                                
                                     {{__('ui.opzioni')}}                            
                                     @else
                                     Login
                                     @endauth                                
                                 </a>
-                                <ul class="dropdown-menu custom-dropdown-menu">
+                                <ul class="dropdown-menu custom-dropdown-menu p-0">
                                 
                                     @auth
                                     {{-- <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -70,16 +70,14 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="btn-group" id="lingua">
-                        <button type="button"  class="btn fw-bold py-0 dropdown-toggle "  data-bs-toggle="dropdown" aria-expanded="false">
-                            {{__('ui.lingua')}}
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end justify-content-center  " >
-                            <li class=" nav-link d-flex justify-content-start mb-1">  <x-locale  lang="en" nation="gb"/></li>
-                            <li class=" nav-link d-flex justify-content-start my-1">  <x-locale  lang="it" nation="it"/></li>
-                            <li class=" nav-link d-flex justify-content-start mt-1">  <x-locale  lang="es" nation="es"/></li>
-                        </ul>
-                    </div>
+                    
+                        
+                        
+                            <li class="p-0 nav-link d-flex justify-content-start "><x-locale  lang="en" nation="gb"/></li>
+                            <li class="p-0 nav-link d-flex justify-content-start "><x-locale  lang="it" nation="it"/></li>
+                            <li class="me-3 p-0 nav-link d-flex justify-content-start "><x-locale  lang="es" nation="es"/></li>
+                        
+                    
                 </li>
 
             </ul>

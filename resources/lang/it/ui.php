@@ -6,9 +6,13 @@ return[
     'opzioni'=> "Opzioni",
     'accedi'=> "Accedi",
     'registrati'=>"Registrati",
+
     'lingua'=>"Lingua",
+    'inglese'=>"Inglese",
+    'italiano'=>"Italiano",
+    'spagnolo'=>"Spagnolo",
     
-    'allAnnouncements'=> "L'e-commerce adatto per te",
+    'allAnnouncements'=> "L'e-commerce che fa per te",
 
     
     'LavoraNoi'=>"Lavora con noi",
