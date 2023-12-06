@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\ItemList;
 use App\Livewire\ItemForm;
 use App\Http\Controllers\RevisorController;
-use App\Http\Livewire\UserItems;
+use App\Livewire\UserItems;
 
 use App\Models\Item;
 use App\Http\Controllers\LavoraConNoiController;
@@ -48,11 +48,11 @@ Route::post('/settings.store', [App\Http\Controllers\AccountController::class, '
 Route::delete('/images/{image}', [\App\Http\Controllers\ItemController::class, 'removeImage'])->name('items.images.delete');
 
     Route::get('/CreaAnnuncio', ItemForm::class)->name('itemForm');
-
+    Route::get('/user-items', UserItems::class)->name('MyItems');
 });
 
 Route::get('/Annunci', ItemList::class)->name('listItems');
-Route::get('/Annuncio', [App\Http\Controllers\ItemController::class, 'index'])->name('items.show');
+Route::get('/Annuncio/{item}', [App\Http\Controllers\ItemController::class, 'show'])->name('items.show');
 
 //Home revisore
 Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');

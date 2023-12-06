@@ -87,3 +87,6 @@ $(document).ready(function () {
     legge il contenuto di ciascuna immagine per creare un'anteprima e quindi visualizza queste anteprime nel div con l'id imagePreview.
 
     */
+
+
+    

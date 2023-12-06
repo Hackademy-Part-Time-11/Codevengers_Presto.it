@@ -188,13 +188,12 @@ private function cropImage($itemId, $fileName, $width, $height)
         $url = "storage/images/items/{$itemId}/$fileName";
         $itemImage->update(['image' => $url]);
     }
-    // private function deleteImage($itemImage){
-    //     $item=$itemImage->item;
-    //     $percorsoPubblico = str_replace('storage', 'public', $itemImage->image);
-    //     if (Storage::exists($percorsoPubblico)) {
-    //         Storage::delete($percorsoPubblico);
-    //     }
-    //     $itemImage->delete();
-    //     return redirect()->route('items.edit', $item)->with(['success' => 'Annuncio aggiornato correttamente']);
-    // }
+    public function removeImage(item_image $image){
+
+        $percorsoPubblico = str_replace('storage', 'public', $image->image);
+        if (Storage::exists($percorsoPubblico)) {
+            Storage::delete($percorsoPubblico);
+        }
+        $image->delete();
+        return redirect()->back()->with('success', 'Immagine eliminata con successo.');    }
 }

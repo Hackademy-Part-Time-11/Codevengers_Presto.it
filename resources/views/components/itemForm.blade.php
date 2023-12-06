@@ -54,6 +54,7 @@
                                 <img src="{{ $image ? asset($image) : '#' }}" alt="Immagine esistente" class="existing-image">
                                 <input type="file" name="new_images[]" class="new-image-input dn">
                                 <img src="#" alt="Anteprima" class="new-image-preview  existing-image dn">
+
                                 @else
                                 <div class="add-image-placeholder">
                                     <i class="bi bi-folder-plus existing-image"></i>
@@ -75,16 +76,16 @@
                     </div>
                     @error('images') <span class="text-danger small">{{ $message }}</span> @enderror
                 </div>
+
+                <div class="col-12">
+                    <label for="description">Descrizione</label>
+                    <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror" rows="10" maxlength="5000">{{ old('description',$item->description) }}</textarea>
+                    @error('description') <span class="text-danger small">{{ $message }}</span> @enderror
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">{{$button}}</button>
+                </div>
             </div>
-            <div class="col-12">
-                <label for="description">Descrizione</label>
-                <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror" rows="10" maxlength="5000">{{ old('description',$item->description) }}</textarea>
-                @error('description') <span class="text-danger small">{{ $message }}</span> @enderror
-            </div>
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">{{$button}}</button>
-            </div>
-    </div>
-    </form>
+        </form>
     </div>
 </x-layout-main>
