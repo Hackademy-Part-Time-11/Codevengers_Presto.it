@@ -25,8 +25,8 @@ class ResizeImage implements ShouldQueue
     {
         $this->path = dirname($filePath);
         $this->fileName = basename($filePath);
-        $this->$w = $w;
-        $this->$h = $h;
+        $this->w = $w;
+        $this->h = $h;
     }
 
     
