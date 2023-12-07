@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <a id="logo" href="{{ route('home') }}"><img src="{{ asset('images/logo.png') }}" alt="Logo"> </a>
 
-        <span>{{ config('app.name') }}</span>
+        <span class="scritta-logo">{{ config('app.name') }}</span>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -78,7 +78,7 @@
 
 
 
-                <li class="p-0 nav-link d-flex justify-content-start "><x-locale lang="en" nation="gb" /></li>
+                <li class="p-0 nav-link d-flex justify-content-start"><x-locale lang="en" nation="gb" /></li>
                 <li class="p-0 nav-link d-flex justify-content-start "><x-locale lang="it" nation="it" /></li>
                 <li class="me-3 p-0 nav-link d-flex justify-content-start "><x-locale lang="es" nation="es" /></li>
 
