@@ -48,16 +48,16 @@
                                     {{-- <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             Dropdown
                                         </a> --}}
-                                    <li><a class="dopdown-item form-control-sm" href="{{route('account')}}">Account</a></li>
+                                    <li class="mt-2"><a class="dopdown-item form-control-sm " href="{{route('account')}}">Account</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dopdown-item form-control-sm" href="{{route('MyItems')}}">Annunci</a></li>
+                                    <li><a class="dopdown-item form-control-sm d-flex justify-content-center" href="{{route('MyItems')}}">Annunci</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
 
-                                    <li>
+                                    <li id="li-logout" class="mb-2">
                                         <form action="/logout" method="POST">
                                             @csrf
                                             <button class="btn btn-danger" type="submit"> Logout </button>
