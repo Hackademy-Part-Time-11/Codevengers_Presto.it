@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\item;
-use App\Models\item_image;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Http\Request;
-use App\Http\Requests\itemFormRequest;
 use Spatie\Image\Image;
+use App\Jobs\ResizeImage;
+use App\Models\item_image;
+use Illuminate\Http\Request;
 use Spatie\Image\Manipulations;
+use App\Http\Requests\itemFormRequest;
+use Illuminate\Support\Facades\Storage;
 
 
 class ItemController extends Controller
@@ -136,6 +137,7 @@ class ItemController extends Controller
 {
     $fileName = \Illuminate\Support\Str::slug($key) . '.' . $image->extension();
     $filePath = "public/images/items/{$item->id}/$fileName";
+    $filePathCrop="/images/items/{$item->id}/$fileName";
     $oldImgArray = $item->item_images->filter(function ($itemImage) use ($key) {
         $nomeFileSenzaEstensione = pathinfo($itemImage->image, PATHINFO_FILENAME);
         return $nomeFileSenzaEstensione == $key;
@@ -149,26 +151,22 @@ class ItemController extends Controller
             Storage::delete($percorsoPubblico);
             $this->updateImageUrl($oldimg, $item->id, $fileName);
             $this->saveNewImage($image, $item->id, $fileName);
-            $this->cropImage($item->id, $fileName, 300, 300); // Aggiunta della funzione di crop
+            ResizeImage::dispatch($filePathCrop,intval(300),intval(300));
         } else {
             $this->saveNewImage($image, $item->id, $fileName);
             $this->createNewItemImage($item->id, $fileName);
+            ResizeImage::dispatch($filePathCrop,intval(300),intval(300));
+
         }
     } else {
         $this->saveNewImage($image, $item->id, $fileName);
         $this->createNewItemImage($item->id, $fileName);
+        ResizeImage::dispatch($filePathCrop,intval(300),intval(300));
+
     }
 
 }
 
-private function cropImage($itemId, $fileName, $width, $height)
-{
-    $imagePath = "public/images/items/{$itemId}/{$fileName}";
-
-    Image::load($imagePath)
-        ->crop(Manipulations::CROP_CENTER, $width, $height)
-        ->save($imagePath);
-}
 
     private function saveNewImage($image, $itemId, $fileName)
     {
