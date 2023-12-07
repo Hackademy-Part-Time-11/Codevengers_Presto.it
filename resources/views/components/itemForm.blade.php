@@ -4,11 +4,11 @@
 
         @vite(['resources/css/itemForm.scss','resources/js/formItem.js'])
 
-        <h1 class="mb-4">{{$title}}</h1>
+        <h1 class="mb-4" style="color:rgb(204, 150, 255);" >{{$title}}</h1>
 
         <x-success />
 
-        <form action="{{ $action }}" method="POST" enctype="multipart/form-data" class="mb-4">
+        <form action="{{ $action }}" method="POST" enctype="multipart/form-data" class="mb-4 mx-5" >
             @csrf
             @if($item->id)
             @method('PUT')
@@ -83,7 +83,7 @@
                     @error('description') <span class="text-danger small">{{ $message }}</span> @enderror
                 </div>
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary">{{$button}}</button>
+                    <button type="submit" class="btn btn-primary" style="background-color: rgb(79, 16, 69); border:0; width: 150px; height: 45px;">{{$button}}</button>
                 </div>
             </div>
         </form>
