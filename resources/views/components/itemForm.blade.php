@@ -83,7 +83,7 @@
                     @error('description') <span class="text-danger small">{{ $message }}</span> @enderror
                 </div>
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary" style="background-color: rgb(79, 16, 69); border:0; width: 150px; height: 45px;">{{$button}}</button>
+                    <button type="submit" class="btn btn-primary px-4" style="background-color: rgb(79, 16, 69); border:0;  ">{{$button}}</button>
                 </div>
             </div>
         </form>

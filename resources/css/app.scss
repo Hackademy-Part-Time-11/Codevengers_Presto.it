@@ -86,15 +86,20 @@ h2 {
         margin:0;
     }
 
-    .card {
-        display:block;
-        transform: scale(1);
-        transition: all .2s linear;
-    }
+    
 
-    .card:hover {
-        transform: scale(1.1);
+    .hover-scale{
+
+        .card {
+            display:block;
+            transform: scale(1);
+            transition: all .2s linear;
+        }
+        .card:hover {
+            transform: scale(1.1);
+        }
     }
+    
 
     ::-webkit-scrollbar {
         height: 12px;

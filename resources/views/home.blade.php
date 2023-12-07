@@ -11,7 +11,7 @@
     <br><br><br><br>
 
     <div class="categories-container">
-      <div class="container mt-5 mx-auto">
+      <div class="container mt-5 mx-auto hover-scale">
         <div class="row mx-auto">
           @foreach($categories as $category)
           <div class="col-md-4 mb-4 mx-auto">
