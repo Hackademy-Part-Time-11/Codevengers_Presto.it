@@ -16,11 +16,10 @@
                 </li>
                 @auth
                 @if(Auth::user()->is_revisor)
-                <li class="nav-item p-2">
-                    <a class="nav-link" href="{{ route('revisor.index') }}">Area revisore
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                <li class="nav-item p-2 d-flex">
+                    <a class="nav-link" class="g-1" id="revisor" href="{{ route('revisor.index') }}">Area revisore
+                        <span class="badge rounded-pill bg-danger">
                             {{ App\Models\Item::toBeRevisionedCount() }}
-                            <span class="visually-hidden">Messaggi non letti</span>
                         </span>
                     </a>
                 </li>
@@ -48,15 +47,21 @@
                                     {{-- <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             Dropdown
                                         </a> --}}
-                                    <li class="mt-2"><a class="dopdown-item form-control-sm " href="{{route('account')}}">Account</a></li>
+                                    <li class="mt-2 colorHover"><a class="dopdown-item form-control-sm " href="{{route('account')}}">Account</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dopdown-item form-control-sm d-flex justify-content-center" href="{{route('MyItems')}}">Annunci</a></li>
+                                    <li class="colorHover"><a class="dopdown-item form-control-sm" href="{{route('MyItems')}}">Annunci</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="colorHover"><a class="dopdown-item form-control-sm" href="{{route('chat.default')}}">Conversazioni</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
                                     <li id="li-logout" class="mb-2">
                                         <form action="/logout" method="POST">
                                             @csrf
@@ -65,11 +70,11 @@
                                     </li>
 
                                     @else
-                                    <li class="dropdown-item"><a class="dropdown-item" href="/login">{{__('ui.accedi')}}</a></li>
+                                    <li class="dropdown-item colorHover"><a class="dropdown-item" href="/login">{{__('ui.accedi')}}</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li class="dropdown-item"><a class="dropdown-item" href="/register">{{__('ui.registrati')}}</a></li>
+                                    <li class="dropdown-item colorHover"><a class="dropdown-item" href="/register">{{__('ui.registrati')}}</a></li>
                                     @endauth
                                 </ul>
                             </li>
@@ -78,9 +83,9 @@
 
 
 
-                <li class="p-0 nav-link d-flex justify-content-start"><x-locale lang="en" nation="gb" /></li>
-                <li class="p-0 nav-link d-flex justify-content-start "><x-locale lang="it" nation="it" /></li>
-                <li class="me-3 p-0 nav-link d-flex justify-content-start "><x-locale lang="es" nation="es" /></li>
+                <li class="p-0 nav-link d-flex justify-content-start flags"><x-locale lang="en" nation="gb" /></li>
+                <li class="p-0 nav-link d-flex justify-content-start flags"><x-locale lang="it" nation="it" /></li>
+                <li class="me-3 p-0 nav-link d-flex justify-content-start flags"><x-locale lang="es" nation="es" /></li>
 
 
                 </li>

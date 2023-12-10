@@ -1,5 +1,4 @@
-<?php
-
+<?php  
 namespace App\Livewire;
 
 use App\Models\item;
@@ -20,7 +19,7 @@ class ItemList extends Component
     public function render()
     {
 
-        $items = item::search($this->search, $this->categorie, $this->order);
+        $items = item::filter($this->search, $this->categorie, $this->order);
 
 
         $categories = category::all();

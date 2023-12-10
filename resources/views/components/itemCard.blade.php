@@ -25,6 +25,10 @@
                                 </div>
                                 @endforeach
                             </div>
+                            <div>
+                                
+                                {{$item->user->name}}
+                            </div>
                             <p class="text-truncate mb-4 mb-md-0">
                                 {{$item->description}}
                             </p>
@@ -37,7 +41,7 @@
                             <h6 class="text-success">Free shipping</h6>
                             <div class="d-flex flex-column mt-4">
                                 <a class="btn btn-primary btn-sm" href="{{route('items.show', $item)}}">DETTAGLI</a>
-                                <a class="btn btn-outline-primary btn-sm mt-2">ACQUISTA</a>
+                                <a class="btn btn-outline-primary btn-sm mt-2" href="{{route('chat', $item)}}">Contatta</a>
 
                             </div>
                         </div>

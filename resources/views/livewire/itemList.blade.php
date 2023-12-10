@@ -74,5 +74,7 @@
                 @endforeach
             </div>
 
+            {{ $items->links("components.pagination") }}
+
 
         </div>

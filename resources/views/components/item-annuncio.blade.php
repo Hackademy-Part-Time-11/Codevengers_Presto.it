@@ -79,13 +79,9 @@
                         <h4 class="mb-1 me-1"> {{ number_format($item->price, 2, ',', '.')}}€</h4>
                         <span class="text-danger"><s> {{ number_format(($item->price+$item->price*20/100), 2, ',', '.')}}€</s></span>
                     </div>
-                    <a class="btn btn-sm btn-primary" href="">Contatta</a>
+                    <a class="btn btn-sm btn-primary"  href="{{route('chat', $item)}}">Contatta</a>
                 </div>
             </div>
-        </div>
-
-        <div class="m-5">
-            <a class="btn btn-sm btn-primary" href="{{ route('listItems') }}"><-- vai Indietro</a>
         </div>
 
 

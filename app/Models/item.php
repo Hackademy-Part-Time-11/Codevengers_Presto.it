@@ -4,12 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 use function PHPUnit\Framework\isEmpty;
 
 class item extends Model
 {
-    use HasFactory;
+    use HasFactory, Searchable;
 
     protected $fillable = ['title', 'price', 'description', 'user_id'];
 
@@ -18,14 +19,16 @@ class item extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function setAccept($value) {
+    public function setAccept($value)
+    {
 
         $this->is_accepted = $value;
         $this->save();
         return true;
     }
 
-    public static function toBeRevisionedCount() {
+    public static function toBeRevisionedCount()
+    {
 
         return Item::where('is_accepted', null)->count();
     }
@@ -40,14 +43,22 @@ class item extends Model
         return $this->hasMany(Item_image::class);
     }
 
-
-    public static function search($search, $categorie, $order)
+    public function toSearchableArray()
+    {
+        $array = [
+            'id' => $this->id,
+            'title' => $this->title,
+            'body' => $this->description,
+        ];
+        return $array;
+    }
+    public static function filter($search, $categorie, $order)
     {
 
-        $query = Item::query();
-
         if (!empty($search)) {
-            $query->where('title', 'LIKE', "%$search%");
+            $query = Item::search($search)->where('is_accepted', true);
+        } else {
+            $query = Item::query()->where('is_accepted', true);
         }
 
         if (!empty($categorie)) {
@@ -83,9 +94,6 @@ class item extends Model
         }
 
 
-
-        return $query->get();
-        // paginate(10);
-
-        }
+        return $query->paginate(10);
+    }
 }

@@ -1,5 +1,4 @@
 nav {
-    
     background-color: white;
     box-shadow: 0 0 15px 0 black;
     opacity: 0.9;
@@ -9,61 +8,67 @@ nav {
         box-shadow: 0 0 15px 0 black;
     }
 
-
-    #logo:hover{
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #logo:hover {
         background-color: rgba(255, 255, 255, 0) !important;
     }
-    .scritta-logo{
+    .scritta-logo {
         margin: 0 20px;
     }
-    
+
     .custom-dropdown-menu {
-        // transform: translateX(-25%);
-        li{
-            
-        }
-        li:hover{
+       .colorHover:hover {
             color: rgb(29, 28, 28) !important;
             background-color: rgb(79, 16, 69);
         }
-        a:hover{
+        a:hover {
             color: rgb(255, 255, 255) !important;
             background-color: rgb(79, 16, 69);
         }
-    
     }
     img {
         width: 50px;
         margin: 0;
         padding: 0;
     }
-    span:first-of-type {
-        
+    .scritta-logo {
         font-weight: bolder;
-        font-family: 'Tourney', sans-serif;
-        font-size: 25px;
+        font-family: "Tourney", sans-serif;
         color: rgb(117, 15, 103);
         font-size: 35px;
     }
-
+    .flags {
+        font-size: 35px;
+    }
 
     a {
         color: black !important;
         padding: 3px !important;
         padding-left: 8px !important;
         padding-right: 8px !important;
-        
+
         border-radius: 5px !important;
         font-size: 20px !important;
         font-weight: bolder !important;
-        
+
         font-family: "Lato", sans-serif;
         border-radius: 5px;
     }
 
+    #revisor {
+        display: flex;
+        align-items: center;
+        .badge {
+            margin-left: 5px;
+            font-size: 15px;
+        }
+    }
+
     a:hover {
-        
-        
         background-color: rgb(79, 16, 69);
         color: white !important;
         border-radius: 5px;
@@ -75,56 +80,51 @@ nav {
         padding-right: 8px;
         margin-left: 10px;
         border-radius: 5px;
-        color:white;
-        background-color:rgb(79, 16, 69);
+        color: white;
+        background-color: rgb(79, 16, 69);
         font-weight: 5px;
         box-shadow: 2px, 0;
     }
 
-    #pubblicaAnnuncio{
+    #pubblicaAnnuncio {
         color: white !important;
     }
-    #pubblicaAnnuncio:hover{
+    #pubblicaAnnuncio:hover {
         color: rgb(255, 254, 254) !important;
         background-color: rgb(11, 11, 11) !important;
     }
-    
+
     .btn-publica {
         background-color: rgb(113, 35, 186);
-        
+
         padding: 10px;
         border-radius: 10%;
-
     }
 
-    .dropdown-menu{
-        li:first-of-type,li:last-of-type{
+    .dropdown-menu {
+        li:first-of-type,
+        li:last-of-type {
             display: flex;
             justify-content: center;
-            
         }
     }
 
-    #lingua{
-        
-        button{
+    #lingua {
+        button {
             font-family: "Lato", sans-serif;
             font-size: 20px;
-
         }
-        button:hover{
+        button:hover {
             background-color: rgb(79, 16, 69) !important;
-            color: rgb(255, 254, 254)
+            color: rgb(255, 254, 254);
         }
 
-        li{
-            
+        li {
             justify-content: center;
         }
     }
-    #li-logout{
+    #li-logout {
         background-color: white;
         border-radius: 5px;
-
     }
 }

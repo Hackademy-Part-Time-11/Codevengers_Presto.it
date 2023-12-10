@@ -4,15 +4,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Category;
+use App\Models\item;
 
 class PageController extends Controller
 {
     public function home()
     {
-        $categories = Category::all();
+        $items =  Item::latest('created_at')->take(12)->get()->chunk(3);
 
-        return view('home', compact('categories'));
+        return view('home', compact('items'));
     }
     
     public function setLanguage($lang){

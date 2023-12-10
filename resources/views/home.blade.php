@@ -1,33 +1,45 @@
 <x-layout-main>
 
   <div id="HomePage">
-    <br><br>
-    <h2>{{__('ui.allAnnouncements')}}</h2><br><br><br><br>
+    <h1>{{__('ui.allAnnouncements')}}</h1>
+    <header>
+      <div class="banner">
+        <img src="https://www.berettaclima.it/media/contact_2.jpg" alt="banner" class="img-banner">
+      </div>
 
-    <div class="banner">
-      <img src="https://www.berettaclima.it/media/contact_2.jpg" alt="banner" class="img-banner">
-    </div>
-    
-    <br><br><br><br>
+    </header>
 
-    <div class="categories-container">
-      <div class="container mt-5 mx-auto hover-scale">
-        <div class="row mx-auto">
-          @foreach($categories as $category)
-          <div class="col-md-4 mb-4 mx-auto">
-            <a href="{{route('listItems',$category['name'] ) }}">
-              <div class="card bg-dark text-light text-center w-50 mx-auto">
-                <img src="https://www.practiceportuguese.com/wp-content/uploads/2017/08/Household-Items.jpg" class="card-img-top w-60" alt="{{ $category['name'] }}">
-                <div class="card-body">
-                  <h5 class="card-title">{{ $category['name'] }}</h5>
-                </div>
+    <section>
+      <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          @foreach($items as $key=>$group)
+          <div class="carousel-item {{$key == 0 ? 'active':''}}">
+            <div class="row">
+              @foreach($group as $item)
+              <div class="col-lg-2 mb-4 mx-auto">
+                <a href="{{route('items.show', $item)}}">
+                  <div class="card  text-light text-center mx-auto d-flex flex-column justify-content-between">
+                    <img src="{{ optional($item->item_images()->first())->image ? asset($item->item_images()->first()->image) : asset('images/NotImg.jpg') }}" class="card-img-top w-60" alt="{{$item->name }}" />
+                    <h5 class="bg-dark">{{ $item->title }}</h5>
+                  </div>
+                </a>
               </div>
-            </a>
+              @endforeach
+            </div>
           </div>
           @endforeach
+
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span aria-hidden="true"><i class="bi bi-arrow-left-circle-fill"></i></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span aria-hidden="true"><i class="bi bi-arrow-right-circle-fill"></i></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-    </div>
-    <br><br>
+    </section>
+
   </div>
 </x-layout-main>

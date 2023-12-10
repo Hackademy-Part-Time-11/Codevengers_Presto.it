@@ -17,6 +17,15 @@ class User extends Authenticatable
         return $this->hasMany(Item::class);
     }
 
+    public function conversations()
+    {
+        return $this->belongsToMany(Conversation::class);
+    }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
 
 
 

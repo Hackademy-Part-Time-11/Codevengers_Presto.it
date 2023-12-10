@@ -6,9 +6,8 @@ use App\Livewire\ItemList;
 use App\Livewire\ItemForm;
 use App\Http\Controllers\RevisorController;
 use App\Livewire\UserItems;
+use App\Livewire\Chat;
 
-use App\Models\Item;
-use App\Http\Controllers\LavoraConNoiController;
 use App\Http\Controllers\PageController;
 
 Route::resource('Category', \App\Http\Controllers\CategoryController::class); 
@@ -49,6 +48,13 @@ Route::delete('/images/{image}', [\App\Http\Controllers\ItemController::class, '
 
     Route::get('/CreaAnnuncio', ItemForm::class)->name('itemForm');
     Route::get('/user-items', UserItems::class)->name('MyItems');
+
+
+    Route::get('/chat', Chat::class)->name('chat.default');
+    Route::get('/chat/{item}', Chat::class)->name('chat');
+
+
+
 });
 
 Route::get('/Annunci', ItemList::class)->name('listItems');
