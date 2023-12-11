@@ -19,8 +19,8 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $items=item::all();
-        return view("itemList",compact("items"));
+        $items = item::all();
+        return view("itemList", compact("items"));
     }
 
     /**
@@ -44,7 +44,7 @@ class ItemController extends Controller
      */
     public function store(itemFormRequest $request)
     {
-        $item = item::create($request->all());
+        $item = new Item($request->all());
         $item->user_id = auth()->user()->id;
         $item->save();
         $itemId = $item->id;
@@ -134,38 +134,35 @@ class ItemController extends Controller
     }
 
     private function updateImageFile($key, $image, $item)
-{
-    $fileName = \Illuminate\Support\Str::slug($key) . '.' . $image->extension();
-    $filePath = "public/images/items/{$item->id}/$fileName";
-    $filePathCrop="/images/items/{$item->id}/$fileName";
-    $oldImgArray = $item->item_images->filter(function ($itemImage) use ($key) {
-        $nomeFileSenzaEstensione = pathinfo($itemImage->image, PATHINFO_FILENAME);
-        return $nomeFileSenzaEstensione == $key;
-    });
-    $oldimg = $oldImgArray->first();
-    if (isset($oldimg)) {
-        $percorsoPubblico = str_replace('storage', 'public', $oldimg->image);
+    {
+        $fileName = \Illuminate\Support\Str::slug($key) . '.' . $image->extension();
+        $filePath = "public/images/items/{$item->id}/$fileName";
+        $filePathCrop = "/images/items/{$item->id}/$fileName";
+        $oldImgArray = $item->item_images->filter(function ($itemImage) use ($key) {
+            $nomeFileSenzaEstensione = pathinfo($itemImage->image, PATHINFO_FILENAME);
+            return $nomeFileSenzaEstensione == $key;
+        });
+        $oldimg = $oldImgArray->first();
+        if (isset($oldimg)) {
+            $percorsoPubblico = str_replace('storage', 'public', $oldimg->image);
 
-        // Se il file esiste, sovrascrivilo
-        if (Storage::exists($filePath) || Storage::exists($percorsoPubblico)) {
-            Storage::delete($percorsoPubblico);
-            $this->updateImageUrl($oldimg, $item->id, $fileName);
-            $this->saveNewImage($image, $item->id, $fileName);
-            ResizeImage::dispatch($filePathCrop,intval(300),intval(300));
+            // Se il file esiste, sovrascrivilo
+            if (Storage::exists($filePath) || Storage::exists($percorsoPubblico)) {
+                Storage::delete($percorsoPubblico);
+                $this->updateImageUrl($oldimg, $item->id, $fileName);
+                $this->saveNewImage($image, $item->id, $fileName);
+                ResizeImage::dispatch($filePathCrop, intval(300), intval(300));
+            } else {
+                $this->saveNewImage($image, $item->id, $fileName);
+                $this->createNewItemImage($item->id, $fileName);
+                ResizeImage::dispatch($filePathCrop, intval(300), intval(300));
+            }
         } else {
             $this->saveNewImage($image, $item->id, $fileName);
             $this->createNewItemImage($item->id, $fileName);
-            ResizeImage::dispatch($filePathCrop,intval(300),intval(300));
-
+            ResizeImage::dispatch($filePathCrop, intval(300), intval(300));
         }
-    } else {
-        $this->saveNewImage($image, $item->id, $fileName);
-        $this->createNewItemImage($item->id, $fileName);
-        ResizeImage::dispatch($filePathCrop,intval(300),intval(300));
-
     }
-
-}
 
 
     private function saveNewImage($image, $itemId, $fileName)
@@ -186,12 +183,14 @@ class ItemController extends Controller
         $url = "storage/images/items/{$itemId}/$fileName";
         $itemImage->update(['image' => $url]);
     }
-    public function removeImage(item_image $image){
+    public function removeImage(item_image $image)
+    {
 
         $percorsoPubblico = str_replace('storage', 'public', $image->image);
         if (Storage::exists($percorsoPubblico)) {
             Storage::delete($percorsoPubblico);
         }
         $image->delete();
-        return redirect()->back()->with('success', 'Immagine eliminata con successo.');    }
+        return redirect()->back()->with('success', 'Immagine eliminata con successo.');
+    }
 }
