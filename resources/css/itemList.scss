@@ -1,4 +1,10 @@
 #item-list {
+    h1 {
+        margin: 0 0 50px 0;
+    }
+    h2 {
+        margin-bottom: 10px;
+    }
     form {
         background-color: white;
         padding: 10px;
@@ -7,7 +13,14 @@
     #searchBar {
         input {
             border: none;
-
         }
+    }
+    .filter {
+        align-self: flex-start;
+        padding: 40px 12px;
+        border-radius: 10px;
+        background-color: rgba(22, 20, 20, 0.575);
+        color: white;
+        position: fixed;
     }
 }
