@@ -8,6 +8,8 @@ use App\Jobs\ResizeImage;
 use App\Models\item_image;
 use Illuminate\Http\Request;
 use Spatie\Image\Manipulations;
+use App\Jobs\GoogleVisionLabelImage;
+use App\Jobs\GoogleVisionSafeSearch;
 use App\Http\Requests\itemFormRequest;
 use Illuminate\Support\Facades\Storage;
 
@@ -149,9 +151,11 @@ class ItemController extends Controller
             // Se il file esiste, sovrascrivilo
             if (Storage::exists($filePath) || Storage::exists($percorsoPubblico)) {
                 Storage::delete($percorsoPubblico);
-                $this->updateImageUrl($oldimg, $item->id, $fileName);
                 $this->saveNewImage($image, $item->id, $fileName);
+                $this->updateImageUrl($oldimg, $item->id, $fileName);
                 ResizeImage::dispatch($filePathCrop, intval(300), intval(300));
+
+
             } else {
                 $this->saveNewImage($image, $item->id, $fileName);
                 $this->createNewItemImage($item->id, $fileName);
@@ -176,12 +180,16 @@ class ItemController extends Controller
         $imgNew->image = "storage/images/items/{$itemId}/$fileName";
         $imgNew->item_id = $itemId;
         $imgNew->save();
+        GoogleVisionSafeSearch::dispatch($imgNew->id);
+        GoogleVisionLabelImage::dispatch($imgNew->id);
     }
 
     private function updateImageUrl($itemImage, $itemId, $fileName)
     {
         $url = "storage/images/items/{$itemId}/$fileName";
         $itemImage->update(['image' => $url]);
+        GoogleVisionSafeSearch::dispatch($itemImage->id);
+        GoogleVisionLabelImage::dispatch($itemImage->id);
     }
     public function removeImage(item_image $image)
     {

@@ -10,7 +10,8 @@ class item_image extends Model
     use HasFactory;
     protected $fillable = ['item_id','image'];
 
-    
+    protected $casts=['labels'=>'array'];
+
     public function items()
     {
         return $this->belongsTo(Item::class);

@@ -11,7 +11,6 @@ class ItemList extends Component
     use WithPagination;
     #[Url]
     public $search = '';
-
     public $categorie = [];
     public $order = 'A-z';
 
