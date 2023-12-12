@@ -41,5 +41,30 @@
       </div>
     </section>
 
+    <div class="card-container">
+      <div class="card-content">
+        <h2 class="pb-3">Nasce Presto.it!</h1>
+        <p> Il progetto viene sviluppato a partire da novembre 2023 da un piccolo team composto da Alessio Piras, Francesco Adduce e Alessandro Ricci, tutti ex studenti di Aulab Hackademy. </p>
+        <p> Circa un mese più tardi viene alla luce Presto.it! </p>
+      </div>
+  
+      <div class="card-image">
+        <img src="https://www.theeducationpeople.org/media/4357/hands-head-cogs.jpg" alt="Immagine di esempio">
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div class="card-image">
+        <img src="https://www.asendia.co.uk/hubfs/top%20ecommerce%20blog%20pic.png" alt="Immagine di esempio">
+      </div>
+
+      <div class="card-content">
+        <h2 class="pb-3">Perché scegliere Presto.it!</h1>
+        <p> Vendere e acquistare non è mai stato così semplice!</p>
+        <p>Scegli le categorie, fotografa e descrivi il tuo articolo e sei pronto per il tuo primo annuncio.</p>
+        <p>Cerca quello che desideri tra migliaia di annunci e chatta con i venditori.</p>
+      </div>
+    </div>
+
   </div>
 </x-layout-main>
