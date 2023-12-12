@@ -13,7 +13,7 @@ return[
     'italiano'=>"Italian",
     'spagnolo'=>"Spanish",
     
-    'allAnnouncements'=> "L'e-commerce tailored for you",
+    'allAnnouncements'=> "E-commerce tailored for you",
     'SaluteBellezza'=>"Health and beauty",
     'abbigliamento'=>"Clothing",
     'AutoMoto'=> "Car and bike",
