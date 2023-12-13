@@ -1,10 +1,12 @@
 <x-layout-main>
-
+@vite('resources/js/home.js')
   <div id="HomePage">
     <h1>{{__('ui.allAnnouncements')}}</h1>
     <header>
       <div class="banner">
-        <img src="https://www.berettaclima.it/media/contact_2.jpg" alt="banner" class="img-banner">
+        <a href="https://www.playstation.com/it-it/" target="blank">
+        <img src="https://www.xboom.in/wp-content/uploads/2023/04/dji-mavic-3-27.png" alt="banner" class="img-banner">
+      </a>
       </div>
 
     </header>

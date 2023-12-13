@@ -2,10 +2,12 @@ nav {
     background-color: white;
     box-shadow: 0 0 15px 0 black;
     opacity: 0.9;
+    transition: all 0.5s;
 
     .container-fluid {
         background-color: rgba(255, 255, 255, 0.2);
         box-shadow: 0 0 15px 0 black;
+        padding:5px 30px;
     }
 
     li {
@@ -127,4 +129,13 @@ nav {
         background-color: white;
         border-radius: 5px;
     }
+}
+@media screen and (min-width: 1300px) {
+    #navbarA {
+      margin: 40px 150px 0;
+    }
+  }
+
+#navbarB {
+  margin: 0;
 }
