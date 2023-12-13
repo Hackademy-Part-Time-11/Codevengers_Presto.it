@@ -1,6 +1,6 @@
 <x-layout-main>
     
-<div class="container-fluid p-5 -bg-gradient bg-success p-5 shadow mb-4">
+<div class="container-fluid -bg-gradient bg-success px-5 shadow mb-4 rounded-pill">
     <div class="row">
         <div class="col-12 text-light p-5">
             <h1 class="display-2"> {{ $item_to_check ? 'Annunci da revisionare' : 'Non ci sono annunci da revisionare' }}</h1>
@@ -37,9 +37,12 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-            <h5 class="card-title">Titolo: {{ $item_to_check->title }}</h5>
-            <p class="card-text">Descrizione: {{ $item_to_check->body }}</p>
-            <p class="card-footer">Pubblicato il: {{ $item_to_check->created_at->format('d/m/Y') }}</p>
+            <div class="text-light">
+                <h5 class="card-title">Titolo: {{ $item_to_check->title }}</h5>
+                <p class="card-text">Descrizione: {{ $item_to_check->body }}</p>
+                <p class="card-footer">Pubblicato il: {{ $item_to_check->created_at->format('d/m/Y') }}</p>
+            </div>
+            
         </div>
     </div>
     <div class="row">
