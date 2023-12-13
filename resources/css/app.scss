@@ -95,9 +95,12 @@ button {
     }
     .img-banner {
         width: 100%;
-        opacity: 0.8;
         box-shadow: 0 0 15px 0 black;
         margin: 50px 0;
+    }
+
+    .img-banner:hover {
+        transform: scale(1.007);
     }
     
     .title-page {
