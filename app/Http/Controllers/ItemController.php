@@ -3,16 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\item;
-use Spatie\Image\Image;
-use App\Jobs\ResizeImage;
 use App\Models\item_image;
-use Illuminate\Http\Request;
-use Spatie\Image\Manipulations;
+use App\Jobs\RemoveFaces;
+use App\Jobs\ResizeImage;
+use App\Jobs\watermarkLogo;
 use App\Jobs\GoogleVisionLabelImage;
 use App\Jobs\GoogleVisionSafeSearch;
+
 use App\Http\Requests\itemFormRequest;
 use Illuminate\Support\Facades\Storage;
-
 
 class ItemController extends Controller
 {
@@ -139,7 +138,6 @@ class ItemController extends Controller
     {
         $fileName = \Illuminate\Support\Str::slug($key) . '.' . $image->extension();
         $filePath = "public/images/items/{$item->id}/$fileName";
-        $filePathCrop = "/images/items/{$item->id}/$fileName";
         $oldImgArray = $item->item_images->filter(function ($itemImage) use ($key) {
             $nomeFileSenzaEstensione = pathinfo($itemImage->image, PATHINFO_FILENAME);
             return $nomeFileSenzaEstensione == $key;
@@ -153,18 +151,13 @@ class ItemController extends Controller
                 Storage::delete($percorsoPubblico);
                 $this->saveNewImage($image, $item->id, $fileName);
                 $this->updateImageUrl($oldimg, $item->id, $fileName);
-                ResizeImage::dispatch($filePathCrop, intval(300), intval(300));
-
-
             } else {
                 $this->saveNewImage($image, $item->id, $fileName);
                 $this->createNewItemImage($item->id, $fileName);
-                ResizeImage::dispatch($filePathCrop, intval(300), intval(300));
             }
         } else {
             $this->saveNewImage($image, $item->id, $fileName);
             $this->createNewItemImage($item->id, $fileName);
-            ResizeImage::dispatch($filePathCrop, intval(300), intval(300));
         }
     }
 
@@ -180,16 +173,14 @@ class ItemController extends Controller
         $imgNew->image = "storage/images/items/{$itemId}/$fileName";
         $imgNew->item_id = $itemId;
         $imgNew->save();
-        GoogleVisionSafeSearch::dispatch($imgNew->id);
-        GoogleVisionLabelImage::dispatch($imgNew->id);
+        $this->Jobs($imgNew);
     }
 
     private function updateImageUrl($itemImage, $itemId, $fileName)
     {
         $url = "storage/images/items/{$itemId}/$fileName";
         $itemImage->update(['image' => $url]);
-        GoogleVisionSafeSearch::dispatch($itemImage->id);
-        GoogleVisionLabelImage::dispatch($itemImage->id);
+        $this->Jobs($itemImage);
     }
     public function removeImage(item_image $image)
     {
@@ -200,5 +191,15 @@ class ItemController extends Controller
         }
         $image->delete();
         return redirect()->back()->with('success', 'Immagine eliminata con successo.');
+    }
+
+    public function Jobs($image)
+    {
+        RemoveFaces::withChain([
+            new ResizeImage(str_replace('storage/', '', $image->image), intval(300), intval(300)),
+            new GoogleVisionSafeSearch($image->id),
+            new GoogleVisionLabelImage($image->id),
+            new watermarkLogo($image->id),
+        ])->dispatch($image->id);
     }
 }
