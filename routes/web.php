@@ -7,6 +7,7 @@ use App\Livewire\ItemForm;
 use App\Http\Controllers\RevisorController;
 use App\Livewire\UserItems;
 use App\Livewire\Chat;
+use App\Livewire\ListRevisor;
 
 use App\Http\Controllers\PageController;
 
@@ -69,5 +70,9 @@ Route::patch('/accetta/annuncio/{item}', [RevisorController::class,'acceptItem']
 //Rifiuta annuncio
 Route::patch('/rifiuta/annuncio/{item}', [RevisorController::class,'rejectItem'])->name('revisor.reject_item');
 
+//lista accetta - rifiuta annuncio
+Route::get('/lista-annunci', ListRevisor::class)->name('listRevisor');
+
 //cambio lingua
 Route::post('/lingua/{lang}', [PageController::class, 'setLanguage'])->name('set_language_locale');
+
