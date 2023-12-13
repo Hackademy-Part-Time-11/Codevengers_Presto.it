@@ -70,7 +70,7 @@
                     @foreach($images as $image)
                     <div class="col my-3">
                     <!-- <div class="mx-auto shadow rounded" style="width:400px;height:400px;background-image: url({{$image->temporaryUrl()}});"></div> -->
-<img class="aaaaaaa" width="300px" src="{{$image->temporaryUrl()}}" alt="">
+                        <img class="aaaaaaa" width="300px" src="{{$image->temporaryUrl()}}" alt="">
                     </div>
                     @endforeach
                 </div>
