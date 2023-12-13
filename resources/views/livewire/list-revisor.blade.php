@@ -30,9 +30,7 @@
                 <div class="col-md-6">
                     <h1>articoli in accettazione</h1>
                 </div>
-                <div class="col-md-6 text-end">
-                    <a href="{{ route('items.create') }}" class="btn btn-primary">Crea Articolo</a>
-                </div>
+                
             </div>
         
             <x-success />
@@ -74,10 +72,13 @@
                             <td class="align-middle">
                                 <div class="d-flex justify-content-center">
                                     <a href="{{ route('items.edit', $item) }}" class="btn btn-sm btn-secondary">dettagli</a>
-                                    <form action="{{ route('items.destroy', $item) }}" class="d-inline ms-2" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-sm btn-danger" type="submit">elimina</button>
+                                    <form wire:submit.prevent="acceptItem">
+                                        <input type="hidden" wire:model="itemId" value="{{$item->id}}">
+                                        <button type="submit" class="btn btn-success shadow">Accetta</button>
+                                    </form>
+                                    <form wire:submit.prevent="rejectItem">
+                                        <input type="hidden" wire:model="itemId" value="{{$item->id}}">
+                                        <button type="submit" class="btn btn-danger shadow">Rifiuta</button>
                                     </form>
                                 </div>
                             </td>

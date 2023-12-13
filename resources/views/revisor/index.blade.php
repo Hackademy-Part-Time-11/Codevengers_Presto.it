@@ -17,13 +17,17 @@
             <div class="col-12">
                 <div id="showCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    @foreach($item->item_images as $key=>$image)
-                            @if($key == 0 )
-                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{$key}}" class="active" aria-current="true" aria-label='{{"Slide ".$key}}'></button>
-                            @else
-                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{$key}}" aria-label='{{"Slide ".$key}}'></button>
-                            @endif
-                            @endforeach
+                    <div class="carousel-item active">
+                        <img src="https://picsum.photos/id/27/1200/400" class="img-fluid p-3 rounded" alt="...">
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <img src="https://picsum.photos/id/27/1200/400" class="img-fluid p-3 rounded" alt="...">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="https://picsum.photos/id/27/1200/400" class="img-fluid p-3 rounded" alt="...">
+                    </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#showCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" area-hidder="true"></span>
