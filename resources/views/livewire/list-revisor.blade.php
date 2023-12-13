@@ -1,7 +1,7 @@
 <div>
     <div>
         <style>
-            .img{
+            .img {
                 width: 100px;
                 height: 100px;
                 background-position: center;
@@ -10,10 +10,12 @@
                 border: 1px solid black;
                 border-radius: 10px;
             }
-            .align-middle{
+
+            .align-middle {
                 width: 15%;
             }
-            #button{
+
+            #button {
                 height: 100%;
                 width: 100%;
                 border: 0;
@@ -22,44 +24,45 @@
                 color: white;
                 background-color: rgba(0, 0, 0, 0.4);
             }
-            #button:hover{
+
+            #button:hover {
                 opacity: 1;
             }
         </style>
         <div class="row mb-4">
-                <div class="col-md-6">
-                    <h1>articoli in accettazione</h1>
-                </div>
-                
+            <div class="col-md-6">
+                <h1>articoli in accettazione</h1>
             </div>
-        
-            <x-success />
-        
-            <div class="col-12 mt-4">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Titolo</th>
-                            <th>Categorie</th>
-                            <th>images</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($items as $key=>$item)
-                        <tr>
-                            <td>{{ $key+1 }}</td>
-                            <td>{{ $item->title }}</td>
-                            <td>
-                                @foreach($item->categories as $category)
-                                    <span class="me-2 fw-bold">{{ $category->name }}</span>
-                                @endforeach
-                            </td>
-                            <td>
-                                <div class="d-flex">
+
+        </div>
+
+        <x-success />
+
+        <div class="col-12 mt-4">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Titolo</th>
+                        <th>Categorie</th>
+                        <th>images</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($items as $key=>$item)
+                    <tr>
+                        <td>{{ $key+1 }}</td>
+                        <td>{{ $item->title }}</td>
+                        <td>
+                            @foreach($item->categories as $category)
+                            <span class="me-2 fw-bold">{{ $category->name }}</span>
+                            @endforeach
+                        </td>
+                        <td>
+                            <div class="d-flex">
                                 @foreach($item->item_images as $image)
-                                    <div class="img mx-2" style="background-image: url('{{asset($image->image)}}');">
+                                <div class="img mx-2" style="background-image: url('{{asset($image->image)}}');">
                                     <form action="{{ route('items.images.delete', $image) }}" class="d-inline" method="POST">
                                         @csrf
                                         @method('DELETE')
@@ -67,25 +70,23 @@
                                     </form>
                                 </div>
                                 @endforeach
-                                </div>
-                            </td>
-                            <td class="align-middle">
-                                <div class="d-flex justify-content-center">
-                                    <a href="{{ route('items.edit', $item) }}" class="btn btn-sm btn-secondary">dettagli</a>
-                                    <form wire:submit.prevent="acceptItem">
-                                        <input type="hidden" wire:model="itemId" value="{{$item->id}}">
-                                        <button type="submit" class="btn btn-success shadow">Accetta</button>
-                                    </form>
-                                    <form wire:submit.prevent="rejectItem">
-                                        <input type="hidden" wire:model="itemId" value="{{$item->id}}">
-                                        <button type="submit" class="btn btn-danger shadow">Rifiuta</button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
+                            </div>
+                        </td>
+                        <td class="align-middle">
+                            <div class="d-flex justify-content-center">
+                                <a href="{{ route('items.edit', $item) }}" class="btn btn-sm btn-secondary">dettagli</a>
+                                <form wire:submit.prevent="acceptItem({{$item}})">
+                                    <button type="submit" class="btn btn-success shadow">Accetta</button>
+                                </form>
+                                <form wire:submit.prevent="rejectItem({{$item}})">
+                                    <button type="submit" class="btn btn-danger shadow">Rifiuta</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
+    </div>
 </div>

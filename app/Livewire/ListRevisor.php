@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Auth;
 class ListRevisor extends Component
 {
 
-    public $itemId;
 
     public function render()
     {
@@ -17,18 +16,15 @@ class ListRevisor extends Component
 
         return view('livewire.list-revisor', ['items' => $items]);
     }
-
-    public function acceptItem() {
-        dd($this->itemId);
-        $item=item::findOrFail($this->itemId);
+    
+    public function acceptItem( Item $item) {
         $item->setAccept(true);
-        return redirect()->back()->with('message', 'Annuncio accettato!');
+        session()->flash('success', 'Annuncio accettato!');
 
     }
 
-    public function rejectItem() {
-        $item=item::findOrFail($this->itemId);
+    public function rejectItem( Item $item) {
         $item->setAccept(false);
-        return redirect()->back()->with('message', 'Annuncio rifiutato!');
+        session()->flash('success', 'Annuncio rifiutato!');
     }
 }
