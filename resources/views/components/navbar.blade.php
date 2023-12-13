@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary p-0" id="navbarA">
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary p-0" id="{{request()->path()=='/'?'navbarA':''}}">
     <div class="container-fluid">
         <a id="logo" href="{{ route('home') }}"><img src="{{ asset('images/logo.png') }}" alt="Logo"> </a>
 
