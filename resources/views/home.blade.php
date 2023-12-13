@@ -1,5 +1,5 @@
 <x-layout-main>
-
+@vite('resources/js/home.js')
   <div id="HomePage">
     <h1>{{__('ui.allAnnouncements')}}</h1>
     <header>
