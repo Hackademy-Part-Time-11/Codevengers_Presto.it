@@ -62,7 +62,7 @@ Route::get('/Annunci', ItemList::class)->name('listItems');
 Route::get('/Annuncio/{item}', [App\Http\Controllers\ItemController::class, 'show'])->name('items.show');
 
 //Home revisore
-Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
+Route::get('/revisor/{item}', [RevisorController::class, 'index'])->name('revisor.index');
 
 //Accetta annuncio
 Route::patch('/accetta/annuncio/{item}', [RevisorController::class,'acceptItem'])->name('revisor.accept_item');
