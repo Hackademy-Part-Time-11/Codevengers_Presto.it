@@ -1,8 +1,8 @@
 <div>
     <div id="listTable">
         <div class="row mb-4">
-            <div class="col-md-6">
-                <h1>articoli in accettazione</h1>
+            <div class="col-12">
+                <h1 class="d-flex justify-content-center">articoli in accettazione</h1>
             </div>
 
         </div>

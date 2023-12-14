@@ -1,47 +1,37 @@
 <x-layout-main>
-
-    <div class="container-fluid px-5 shadow mb-4 rounded-pill">
+    <div id="cardItemRevision" class="container">
         <div class="row">
-            <div class="col-12 text-light p-5">
-                <h1 class="display-2"> {{ $item->title }}</h1>
+            <div class="col-12 p-3">
+                <h1 class="display-2">Titolo: {{ $item->title }}</h1>
             </div>
             <div>
 
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 bg-white p-4">
+        <div class="row px-4" id="carosello">
+            <div class="col-12">
                 @if(optional($item->item_images()->first())->image)
                 <div id="carouselExampleCaptions" class="carousel slide">
-                    <div class="carousel-indicators">
-                        @foreach($item->item_images as $key=>$image)
-                        <div>
-                        @if($key == 0 )
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{$key}}" class="active" aria-current="true" aria-label='{{"Slide ".$key}}'></button>
-                        @else
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{$key}}" aria-label='{{"Slide ".$key}}'></button>
-                        @endif
-                        </div>
-                        @endforeach
-                    </div>
+
                     <div class="carousel-inner">
                         @foreach($item->item_images as $key=>$image)
-                        <div class="carousel-item  {{ $key == 0 ? 'active' : '' }} d-flex">
-                            <div class="col-6">
-                              <img src="{{asset($image->image)}}" class="d-block w-100 rounded mx-auto object-fit-contain" alt="">  
+                        <div class="carousel-item  {{ $key == 0 ? 'active' : '' }}">
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="{{asset($image->image)}}" class="d-block w-100 rounded mx-auto object-fit-contain" alt="">
+                                </div>
+                                <div class="col-6">
+                                    Controllo contenuto immagine
+                                    <ul>
+                                        <li><i class="{{$image->adult}}"></i> Contenuti per Adulti</li>
+                                        <li><i class="{{$image->spoof}}"></i> Parodia</li>
+                                        <li><i class="{{$image->medical}}"></i> Mediche</li>
+                                        <li><i class="{{$image->violence}}"></i> Violenza</li>
+                                        <li><i class="{{$image->racy}}"></i> Razzismo</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="col-6">
-                                Controllo contenuto immagine 
-                                <ul>
-                                    <li><i class="{{$image->adult}}"></i></li>
-                                    <li><i class="{{$image->spoof}}"></i></li>
-                                    <li><i class="{{$image->medical}}"></i></li>
-                                    <li><i class="{{$image->violence}}"></i></li>
-                                    <li><i class="{{$image->racy}}"></i></li>
-                                </ul>
-                            </div>
+
                         </div>
                         @endforeach
 
@@ -62,21 +52,31 @@
                 @endif
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 col-md-6">
+        <div class="row p-3">
+
+            <div class="col-12">
+
+                <h4 class="d-flex justify-content-center">DESCRIZIONE:</h4>
+
+
+                <p>{{$item->description}}</p>
+            </div>
+        </div>
+        <div class="row pb-5">
+            <div class="col-12 d-flex justify-content-center">
                 <form action=" {{ route('revisor.accept_item', ['item' => $item])}}" method="POST">
                     @csrf
                     @method('PATCH')
                     <button type="submit" class="btn btn-success shadow">Accetta</button>
                 </form>
-            </div>
-            <div class="col-12 col-md-6 text-end">
                 <form action=" {{ route('revisor.reject_item', ['item' => $item])}}" method="POST">
                     @csrf
                     @method('PATCH')
                     <button type="submit" class="btn btn-danger shadow">Rifiuta</button>
                 </form>
             </div>
+
         </div>
+
     </div>
 </x-layout-main>
