@@ -52,11 +52,11 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li class="colorHover"><a class="dopdown-item form-control-sm" href="{{route('MyItems')}}">Annunci</a></li>
+                                    <li class="colorHover"><a class="dopdown-item form-control-sm" href="{{route('MyItems')}}">I tuoi annunci</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li class="colorHover"><a class="dopdown-item form-control-sm" href="{{route('chat.default')}}">Conversazioni</a></li>
+                                    <li class="colorHover"><a class="dopdown-item form-control-sm" href="{{route('chat.default')}}">Messaggi</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
