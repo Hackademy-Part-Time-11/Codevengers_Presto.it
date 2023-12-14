@@ -14,9 +14,9 @@
 
 <body>
     <div class="d-flex flex-column min-vh-100">
-        <header class="sticky-top">
+        <div class="sticky-top">
             <x-navbar />
-        </header>
+        </div>
 
         <main class="mt-5">
             {{ $slot }}

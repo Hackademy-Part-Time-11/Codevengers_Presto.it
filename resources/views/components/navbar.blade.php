@@ -56,9 +56,6 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
                                     <li class="colorHover"><a class="dopdown-item form-control-sm" href="{{route('chat.default')}}">Conversazioni</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
