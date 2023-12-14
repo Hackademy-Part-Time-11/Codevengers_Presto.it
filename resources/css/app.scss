@@ -11,6 +11,7 @@
 @import "item-annuncio";
 @import "listTable";
 @import "/node_modules/flag-icons/css/flag-icons.min.css";
+@import "revisorIndex";
 
 body {
     background-color: rgb(48, 1, 71);
@@ -88,6 +89,7 @@ button {
 #HomePage {
     .banner {
         display: flex;
+        justify-content: center;
         opacity: 0.9;
         align-items: center;
         margin-bottom: 100px;
@@ -114,7 +116,7 @@ button {
         font-size: 35px;
     }
     .card {
-        transform: scale(1);
+
         transition: all 0.2s linear;
         height: 350px;
         background-color: white;
