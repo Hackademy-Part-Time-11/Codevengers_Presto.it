@@ -51,7 +51,7 @@ class ItemController extends Controller
         $itemId = $item->id;
 
         $item->categories()->attach($request->categories);
-
+        if($request->file('images')!==null){
         foreach ($request->file('images') as $key => $image) {
 
             $fileName = \Illuminate\Support\Str::slug($key) . '.' . $image->extension();
@@ -59,7 +59,7 @@ class ItemController extends Controller
             $this->saveNewImage($image, $itemId, $fileName);
             $this->createNewItemImage($itemId, $fileName);
         }
-
+    }
         return redirect()->route('items.edit', $item)->with(['success' => 'Annuncio creato correttamente']);
     }
 
