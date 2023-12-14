@@ -63,12 +63,12 @@ class GoogleVisionSafeSearch implements ShouldQueue
         // echo json_encode([Sadult, Smedical, Sspoof, Sviolence, Sracy]);
 
         $likelihoodName = [
-            'text-secondary fas fa-circle',
-            'text-success fas fa-circle',
-            'text-success fas fa-circle',
-            'text-warning fas fa-circle',
-            'text-warning fas fa-circle',
-            'text-danger fas fa-circle'
+            'text-secondary bi bi-circle',
+            'text-success bi bi-check-circle-fill',
+            'text-success bi bi-check-circle-fill',
+            'text-warning bi bi bi-exclamation-circle-fill',
+            'text-warning bi bi bi-exclamation-circle-fill',
+            'text-danger bi bi-x-circle-fill'
         ];
 
         $i->adult = $likelihoodName[$adult];

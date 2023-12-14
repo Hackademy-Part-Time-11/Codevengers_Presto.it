@@ -5,7 +5,7 @@
 
         <div class="row" id="item-list">
             <div class="col-12">
-                <h1>Annunci <a href="{{ route('items.create') }}">@auth<i class="bi bi-plus-square"></i>@endauth</a></h1>
+                <h1>Annunci</h1>
             </div>
             <div class="col-2 ">
                 <div class="filter">

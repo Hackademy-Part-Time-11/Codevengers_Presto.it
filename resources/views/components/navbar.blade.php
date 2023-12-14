@@ -18,7 +18,7 @@
                 @auth
                 @if(Auth::user()->is_revisor)
                 <li class="nav-item p-2 d-flex">
-                    <a class="nav-link" class="g-1" id="revisor" href="{{ route('revisor.index') }}">Area revisore
+                    <a class="nav-link" class="g-1" id="revisor" href="{{ route('listRevisor') }}">Area revisore
                         <span class="badge rounded-pill bg-danger">
                             {{ App\Models\Item::toBeRevisionedCount() }}
                         </span>

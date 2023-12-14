@@ -101,7 +101,8 @@ class ItemController extends Controller
     {
 
         $item->update($request->all());
-
+        $item->is_accepted = null;
+        $item->save();
         // Aggiorna le categorie collegate
         $item->categories()->sync($request->categories);
 
@@ -115,15 +116,19 @@ class ItemController extends Controller
      */
     public function destroy(item $item)
     {
-        // $oldImages=$item->images;
-        // foreach ($oldImages as $image) {
-        //     if (Storage::exists($image->image)) {
-        //         // Elimina l'immagine
-        //         Storage::delete($image->image);
-        //     }
-        // }
-        // Aggiorna i dati dell'item
+        // Elimina le immagini associate all'annuncio
+        foreach ($item->item_images as $image) {
+            $this->removeImage($image);
+        }
+        $item->categories()->detach();
+        // Cancella l'annuncio dal database
+        $item->delete();
+
+        return redirect()->route('MyItems')->with(['success' => 'Annuncio eliminato con successo']);
     }
+
+
+
     private function updateImage(itemFormRequest $request, item $item)
     {
         // Aggiorna le immagini
