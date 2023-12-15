@@ -2,14 +2,14 @@
     <div id="cardItemRevision" class="container">
         <div class="row">
             <div class="col-12 p-3">
-                <h1 class="display-2">Titolo: {{ $item->title }}</h1>
+                <h1 class="display-2">{{ $item->title }}</h1>
             </div>
             <div>
 
             </div>
         </div>
         <div class="row px-4" id="carosello">
-            <div class="col-12">
+            <div class="col-12 prova">
                 @if(optional($item->item_images()->first())->image)
                 <div id="carouselExampleCaptions" class="carousel slide">
 
