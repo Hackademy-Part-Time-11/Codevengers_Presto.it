@@ -8,6 +8,7 @@ use App\Http\Controllers\RevisorController;
 use App\Livewire\UserItems;
 use App\Livewire\Chat;
 use App\Livewire\ListRevisor;
+use App\Http\Controllers\GoogleController;
 
 use App\Http\Controllers\PageController;
 
@@ -76,3 +77,5 @@ Route::get('/lista-annunci', ListRevisor::class)->name('listRevisor');
 //cambio lingua
 Route::post('/lingua/{lang}', [PageController::class, 'setLanguage'])->name('set_language_locale');
 
+Route::get('auth/google', [GoogleController::class, 'signInwithGoogle']);
+Route::get('callback/google', [GoogleController::class, 'callbackToGoogle']);

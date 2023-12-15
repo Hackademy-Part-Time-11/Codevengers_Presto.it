@@ -42,7 +42,21 @@
 
     #description {
         max-width: 200px;
-
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(79, 16, 69, 0.103); /* Colore del cursore della barra di scorrimento */
+            border-radius: 6px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background-color: rgba(79, 16, 69, 0);
+        }
+        ::-webkit-scrollbar {
+            width: 1px;
+        }
+        ::-webkit-scrollbar:hover {
+            width: 10px;
+        }
+        
         div {
             max-height: 80px; /* 3 righe di altezza approssimativa per 1.2em per riga */
             overflow-y: auto;

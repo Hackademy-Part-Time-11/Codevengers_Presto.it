@@ -40,6 +40,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'gauth_id',
+        'gauth_type'
     ];
 
     /**
@@ -60,5 +62,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+    ];
+    protected $appends = [
+        'profile_photo_url',
     ];
 }

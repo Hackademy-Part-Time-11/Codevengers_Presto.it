@@ -1,5 +1,47 @@
 #login {
-    p {
-        font-size: 14px;
+    a{
+        padding: 0;
+        margin-left: 5px;
+    }
+   .bi-google{
+    border: 1px solid white;
+    padding: 10px 15px;
+    margin-top: -20px;
+    border-radius: 20px;
+    background-color:  rgba(69, 23, 92, 0.61);
+    border: 3px solid white;
+    transition: all 0.4s ;
+   }
+   .bi-google:hover{
+    background-color: white;
+    border: 3px solid rgba(69, 23, 92, 0.61);
+    color: rgba(69, 23, 92, 0.61);
+   }
+    .inputLogin {
+        border: 3px solid rgba(69, 23, 92, 0.61) !important;
+        padding: 10px !important;
+        border-radius: 20px;
+        background-color: white !important;
+        width: 100%;
+    }
+    #accedi{
+        padding: 10px 80px ;
+        margin: 0;
+        border-radius: 20px;
+        background-color:  rgba(69, 23, 92, 0.61);
+        border: 1px solid rgba(69, 23, 92, 0.61);
+        font-weight: bold;
+        transition: all 0.4s ;
+    }
+    #accedi:hover{
+        background-color: white;
+        border: 1px solid rgba(69, 23, 92, 0.61);
+        color: rgba(69, 23, 92, 0.61);
+    }
+    .card {
+        background-color: rgba(0, 0, 0, 0.575);
+
+        color: white;
+        padding: 0 0 50px 0;
     }
 }

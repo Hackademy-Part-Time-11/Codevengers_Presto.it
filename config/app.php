@@ -163,6 +163,7 @@ return [
             App\Providers\FortifyServiceProvider::class,
             TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
             Laravel\Scout\ScoutServiceProvider::class,
+            Laravel\Socialite\SocialiteServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -185,7 +186,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // 'Example' => App\Facades\Example::class,
+    'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ])->toArray(),
 
 ];
