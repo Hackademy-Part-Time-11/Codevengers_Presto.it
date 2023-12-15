@@ -1,39 +1,48 @@
-#login {
-    a{
+#login,#register {
+    #changePage {
         padding: 0;
         margin-left: 5px;
+        font-weight: bold;
+        transition: all 0.4s;
     }
-   .bi-google{
-    border: 1px solid white;
-    padding: 10px 15px;
-    margin-top: -20px;
-    border-radius: 20px;
-    background-color:  rgba(69, 23, 92, 0.61);
-    border: 3px solid white;
-    transition: all 0.4s ;
-   }
-   .bi-google:hover{
-    background-color: white;
-    border: 3px solid rgba(69, 23, 92, 0.61);
-    color: rgba(69, 23, 92, 0.61);
-   }
-    .inputLogin {
+    #changePage:hover{
+        color:rgba(166, 55, 221, 0.61);
+    }
+    #authG {
+        margin-top: -68px;
+        .bi-google {
+            border: 1px solid white;
+            padding: 10px 15px;
+           
+            border-radius: 20px;
+            background-color: rgba(69, 23, 92, 0.61);
+            border: 3px solid white;
+            transition: all 0.4s;
+        }
+        .bi-google:hover {
+            background-color: white;
+            border: 3px solid rgba(69, 23, 92, 0.61);
+            color: rgba(69, 23, 92, 0.61);
+        }
+    }
+
+    .input {
         border: 3px solid rgba(69, 23, 92, 0.61) !important;
         padding: 10px !important;
         border-radius: 20px;
         background-color: white !important;
         width: 100%;
     }
-    #accedi{
-        padding: 10px 80px ;
+    #confirm {
+        padding: 10px 80px;
         margin: 0;
         border-radius: 20px;
-        background-color:  rgba(69, 23, 92, 0.61);
+        background-color: rgba(69, 23, 92, 0.61);
         border: 1px solid rgba(69, 23, 92, 0.61);
         font-weight: bold;
-        transition: all 0.4s ;
+        transition: all 0.4s;
     }
-    #accedi:hover{
+    #confirm:hover {
         background-color: white;
         border: 1px solid rgba(69, 23, 92, 0.61);
         color: rgba(69, 23, 92, 0.61);
@@ -42,6 +51,6 @@
         background-color: rgba(0, 0, 0, 0.575);
 
         color: white;
-        padding: 0 0 50px 0;
+        padding: 50px 0;
     }
 }
