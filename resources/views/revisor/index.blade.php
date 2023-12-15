@@ -18,7 +18,7 @@
                         <div class="carousel-item  {{ $key == 0 ? 'active' : '' }}">
                             <div class="row">
                                 <div class="col-6">
-                                    <img src="{{asset($image->image)}}" class="d-block w-100 rounded mx-auto object-fit-contain" alt="">
+                                    <img src="{{asset($image->image)}}" class="d-block rounded mx-auto object-fit-contain" alt="">
                                 </div>
                                 <div class="col-6">
                                     Controllo contenuto immagine

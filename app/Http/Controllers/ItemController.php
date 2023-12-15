@@ -32,7 +32,7 @@ class ItemController extends Controller
         $categories = \App\Models\Category::all();
 
         return view('components.itemForm', [
-            'title' => 'Crea una nuovo Annuncio',
+            'title' => 'Crea un nuovo Annuncio',
             'categories' => $categories,
             'action' => route('items.store'),
             'button' => 'Crea Annuncio',
