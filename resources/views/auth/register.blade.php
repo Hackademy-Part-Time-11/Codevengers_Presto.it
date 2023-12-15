@@ -38,7 +38,7 @@
                                 <button type="submit" id="confirm">Registrati</button>
                             </div>
                             <div class=" d-flex justify-content-center">
-                                <div>Se non hai un account</div>
+                                <div>Se hai già un account </div>
                                 <a id="changePage" href="/login">Accedi</a>
                             </div>
 
