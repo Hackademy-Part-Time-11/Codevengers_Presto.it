@@ -2,7 +2,7 @@
 
 
     <div id="item" >
-        <div class="card mx-5 py-3">
+        <div class="card mx-5 py-3" id="sfondo-card">
 
             <div class="card-body py-3  text-center row">
                 <div class="row mb-5">
@@ -53,9 +53,9 @@
                         <div class="row">
                             <div class=" col col-12">
 
-                                <ul class="d-flex align-items-start " >
+                                <ul class="d-flex  " >
                                     @foreach ($item->categories as $category)
-                                    <li class="list-group-item "><a class="text-dark" href=""> {{$category->name}}</a></li>
+                                    <li class="list-group-item "><a  href=""> {{$category->name}}</a></li>
                                     @endforeach
                                 </ul>
 

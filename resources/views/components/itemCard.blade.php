@@ -16,11 +16,11 @@
                         </div>
                         <div class="col-md-6 col-lg-6 col-xl-6">
                             <h5>{{$item->title}}</h5>
-                            <div class="row">
+                            <div class="" >
 
                                 @foreach($item->categories as $category)
 
-                                <div class="col-2">
+                                <div class=" d-inline-flex" >
                                     {{$category->name}}
                                 </div>
                                 @endforeach
