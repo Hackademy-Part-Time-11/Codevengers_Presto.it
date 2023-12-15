@@ -4,7 +4,10 @@
 
 
         <div class="row" id="item-list">
-            <div class="col-12">
+            <div class="col-2">
+
+            </div>
+            <div class="col-10">
                 <h1>Annunci</h1>
             </div>
             <div class="col-2 ">
@@ -73,7 +76,7 @@
                 </div>
                 <div class="row justify-content-center g-3">
                     @foreach($items as $item)
-                    <div class="col-9" wire:key="{{ $item->id }}">
+                    <div class="col-10 animationCard" wire:key="{{ $item->id }}">
                         <x-itemCard :$item />
                     </div>
                     @endforeach

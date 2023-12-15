@@ -24,6 +24,12 @@
         color: white;
 
     }
-
+    .animationCard{
+        transition: all 0.2s ;
+    }
+.animationCard:hover{
+    transform: scale(1.05);
+    
+}
 }
 
