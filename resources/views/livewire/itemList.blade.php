@@ -81,5 +81,5 @@
 
 
             </div>
-            {{ $items->withQueryString()->links("components.pagination") }}
+            {{ $items->links("components.pagination") }}
         </div>

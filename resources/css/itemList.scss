@@ -73,6 +73,9 @@
             }
 
             .dettagli {
+                display: flex;
+                justify-content: center;
+                width: 100%;
                 padding: 6px 80px;
                 margin: 0;
                 border-radius: 20px;
@@ -87,6 +90,9 @@
                 color: rgba(69, 23, 92, 0.61);
             }
             .contatta {
+                display: flex;
+                justify-content: center;
+                width: 100%;
                 padding: 6px 80px;
                 margin: 10px 0;
                 border-radius: 20px;
@@ -102,5 +108,8 @@
                 color: white;
             }
         }
+    }
+    nav:last-of-type{
+        
     }
 }
