@@ -5,7 +5,7 @@
             <!-- Sidebar -->
             <div class="col-md-3 sidebar">
                 <div class="search-container">
-                    <input wire:model.live="search" class="form-control mt-3" placeholder="Search...">
+                    <input wire:model.live="search" class="form-control mt-3" placeholder="Cerca...">
                 </div>
                 <ul class="list-unstyled chat-list mt-3">
                     @foreach ($conversations as $conversation)
@@ -66,7 +66,7 @@
                                 <div class="input-group mt-3">
                                     <input wire:model.live="message" type="text" class="form-control" placeholder="Inserisci il tuo messaggio">
                                     <div class="input-group-append">
-                                        <button type="submit" class="btn btn-primary">Send</button>
+                                        <button type="submit" class="btn btn-primary">Invia</button>
                                     </div>
                                 </div>
                             </form>

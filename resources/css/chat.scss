@@ -1,8 +1,15 @@
 #chat {
-    background-color: white;
+    background-color: rgb(19, 18, 18, 0.8);
+    color: white;
     border: 1px solid #ccc;
     border-radius: 10px;
     overflow: hidden;
+
+    button{
+        background-color: rgb(64, 22, 106);
+        border: 1px solid #ccc;
+    }
+
     img {
         width: 40px;
         border-radius: 50%;
@@ -45,6 +52,9 @@
 
     .sidebar {
         padding: 0;
+        color: black;
+        background-color: white;
+        opacity: 0.9;
         .chat-list {
             list-style: none;
             padding: 0;
@@ -103,7 +113,8 @@
             justify-content: end;
             div {
                 div:first-child {
-                    background-color: gray;
+                    background-color: rgb(64, 22, 106);
+                    border: 1px solid #ccc;
                 }
                 .message-time {
                     justify-content: end;
