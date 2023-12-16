@@ -7,7 +7,7 @@
     
     
     h2, h1{
-        margin: 0 20px;
+
         font-weight: bolder;
         font-family: 'Tourney', sans-serif;
         
@@ -16,19 +16,22 @@
     }
 
     
-    
-    img{
-        height: 600px;
-        width: 300px;
-        background-color: black;
+    .carousel-item{
+    .img{
+        width: 400px;
+        height: 400px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
     }
-
+    }
     
     #notImg{
         background-color: rgb(29, 28, 28);
     }
 
     ul{
+        padding: 0;
         li{
             border: 2px solid rgb(117, 15, 103);
         border-radius: 10px;
@@ -46,6 +49,24 @@
     
     #prezzo-contatta{
         margin-top: 15%;
+    }
+
+    .contatta {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 6px 80px;
+        margin: 0;
+        border-radius: 20px;
+        background-color: rgba(69, 23, 92, 0.61);
+        border: 4px solid rgba(69, 23, 92, 0.61);
+        font-weight: bold;
+        transition: all 0.4s;
+    }
+    .contatta:hover {
+        background-color: white;
+        border: 4px solid rgba(69, 23, 92, 0.61);
+        color: rgba(69, 23, 92, 0.61);
     }
 
 }
