@@ -73,6 +73,9 @@
             }
 
             .dettagli {
+                display: flex;
+                justify-content: center;
+                width: 100%;
                 padding: 6px 80px;
                 margin: 0;
                 border-radius: 20px;
@@ -87,6 +90,9 @@
                 color: rgba(69, 23, 92, 0.61);
             }
             .contatta {
+                display: flex;
+                justify-content: center;
+                width: 100%;
                 padding: 6px 80px;
                 margin: 10px 0;
                 border-radius: 20px;
@@ -102,5 +108,42 @@
                 color: white;
             }
         }
+    }
+    #pagination {
+        background-color: rgba(255, 255, 255, 0);
+        box-shadow: none;
+        margin-top: 30px;
+        * {
+            border: none;
+            border-radius: none;
+        }
+        ul {
+            border-radius: 10px;
+            background-color: white;
+            border: 4px solid rgba(69, 23, 92, 0.61);
+        }
+        button{
+            border-radius: 0 !important;
+            background-color: white !important;
+            border-left:2px solid rgba(69, 23, 92, 0.61);
+            color: rgba(69, 23, 92, 0.61);
+            margin: 0px;
+        }
+        li{
+            border: none;
+        }
+        button:hover{
+            background-color:  rgba(69, 23, 92, 0.61) !important;
+            color: white;
+        }
+        button:focus{
+            background-color:  rgba(69, 23, 92, 0.61) !important; 
+            color:white;
+        }
+        button:active,
+        button:focus {
+            box-shadow: none;
+        }
+        
     }
 }

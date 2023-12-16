@@ -79,7 +79,7 @@
                     @endforeach
                 </div>
 
-
+                {{ $items->links("components.pagination") }}
             </div>
-            {{ $items->withQueryString()->links("components.pagination") }}
+
         </div>
