@@ -45,10 +45,10 @@
                         <td class="align-middle">
                             <div class="d-flex justify-content-center">
                                 <a href="{{ route('revisor.index', $item) }}" class="btn btn-sm btn-secondary">dettagli</a>
-                                <form wire:submit.prevent="acceptItem({{$item}})">
+                                <form wire:submit="acceptItem({{$item}})">
                                     <button type="submit" class="btn btn-success shadow">Accetta</button>
                                 </form>
-                                <form wire:submit.prevent="rejectItem({{$item}})">
+                                <form wire:submit="rejectItem({{$item}})">
                                     <button type="submit" class="btn btn-danger shadow">Rifiuta</button>
                                 </form>
                             </div>

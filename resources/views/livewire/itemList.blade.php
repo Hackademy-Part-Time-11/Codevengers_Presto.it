@@ -43,9 +43,6 @@
                         </label>
 
                     </div>
-                    @foreach($categorie as $categoria)
-                    {{$categoria}}
-                    @endforeach
                     <h3>Filtra per:</h3>
                     <h6>categoria</h6>
                     @foreach($categories as $key =>$category)
@@ -67,7 +64,7 @@
                         <div class="input-group">
                             <input type="text" class="form-control" wire:model.live="search" placeholder="Cerca annuncio">
                             <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="submit">
+                                <button class="btn " type="submit">
                                     <i class="bi bi-search"></i>
                                 </button>
                             </div>
@@ -84,5 +81,5 @@
 
 
             </div>
-            {{ $items->links("components.pagination") }}
+            {{ $items->withQueryString()->links("components.pagination") }}
         </div>

@@ -62,9 +62,9 @@
                     </div>
                     <div class="row sendMessage">
                         <div class="col-12">
-                            <form wire:submit.prevent="sendMessage">
+                            <form wire:submit="sendMessage">
                                 <div class="input-group mt-3">
-                                    <input wire:model="message" type="text" class="form-control" placeholder="Inserisci il tuo messaggio">
+                                    <input wire:model.live="message" type="text" class="form-control" placeholder="Inserisci il tuo messaggio">
                                     <div class="input-group-append">
                                         <button type="submit" class="btn btn-primary">Send</button>
                                     </div>

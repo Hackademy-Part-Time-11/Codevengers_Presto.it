@@ -3,7 +3,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Livewire\ItemList;
-use App\Livewire\ItemForm;
 use App\Http\Controllers\RevisorController;
 use App\Livewire\UserItems;
 use App\Livewire\Chat;
@@ -48,7 +47,7 @@ Route::post('/settings.store', [App\Http\Controllers\AccountController::class, '
 
 Route::delete('/images/{image}', [\App\Http\Controllers\ItemController::class, 'removeImage'])->name('items.images.delete');
 
-    Route::get('/CreaAnnuncio', ItemForm::class)->name('itemForm');
+
     Route::get('/user-items', UserItems::class)->name('MyItems');
 
 

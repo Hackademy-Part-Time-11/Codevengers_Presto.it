@@ -17,7 +17,7 @@ class ItemList extends Component
 
     public function render()
     {
-
+        $this->resetPage();
         $items = item::filter($this->search, $this->categorie, $this->order);
 
 
