@@ -13,15 +13,34 @@
 @import "/node_modules/flag-icons/css/flag-icons.min.css";
 @import "revisorIndex";
 
+@media screen and (max-width: 480px) {
+    html {
+       font-size: 10px;
+       line-height: 150%;
+    }
+ }
+
+
+ @media screen and (max-width: 768px) {
+    body {
+        background-size: contain; 
+    }
+}
+
+
 body {
     background-color: rgb(48, 1, 71);
     background-image: url(https://c.wallhere.com/photos/de/ff/portrait_display_vertical_nature_artwork_digital_art_shapes_geometry-1996695.jpg!d);
     background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
     margin: 0;
+    max-width: 100%;
 }
+
 h1 {
     color: rgb(241, 241, 241);
-    font-size: 50px;
+    font-size: 100%;
     font-style: oblique, bold;
     font-family: "Tourney", sans-serif;
     align-items: center;
