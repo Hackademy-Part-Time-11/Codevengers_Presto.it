@@ -48,7 +48,7 @@
                             @foreach ($groupedMessages as $message)
                             <li class="{{ $message->user_id == Auth::user()->id ? 'my-message' : 'other-message' }}">
                                 <div class="message-content">
-                                    <div>
+                                    <div class="message">
                                         <span>{{ $message->content }}</span>
                                     </div>
 

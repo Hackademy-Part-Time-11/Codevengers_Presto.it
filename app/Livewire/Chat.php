@@ -2,11 +2,12 @@
 
 namespace App\Livewire;
 
-use App\Models\Conversation;
 use App\Models\Item;
 use App\Models\Message;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use App\Models\Conversation;
+use App\Notifications\MessageSent;
+use Illuminate\Support\Facades\Auth;
 
 class Chat extends Component
 {
@@ -17,13 +18,34 @@ class Chat extends Component
     public $search = '';
     public $conversations;
 
+    protected $listeners = [
+        'loadMore'
+    ];
     public function mount(Item $item)
     {
         if ($item->id) {
             $this->item = $item;
             $this->createConversation();
-        } 
+        }
     }
+     public function getListeners()
+    {
+
+        $auth_id = auth()->user()->id;
+
+        return [
+
+            'loadMore',
+            "echo-private:users.{$auth_id},.Illuminate\\Notifications\\Events\\BroadcastNotificationCreated" => 'broadcastedNotifications'
+
+        ];
+    }
+
+    function BroadcastedNotifications($event)
+    {
+        dd($event);
+    }
+
 
     public function selectConversation($conversationId)
     {
@@ -87,7 +109,16 @@ class Chat extends Component
         ]);
 
         $this->message = '';
+        $otherUser = $this->chat->users->where('id', '!=', Auth::id())->first();
+
         $this->loadMessages(); // Aggiorna i messaggi dopo l'invio di un nuovo messaggio
+
+        $otherUser->notify(new MessageSent(
+            Auth::user(),
+            $newMessage,
+            $this->chat,
+            $otherUser->id,
+        ));
     }
 
     public function render()
