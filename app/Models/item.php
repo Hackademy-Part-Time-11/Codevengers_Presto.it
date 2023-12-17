@@ -73,11 +73,11 @@ class item extends Model
                 break;
 
             case 'T':
-                $query->orderBy('updated_at');
+                $query->orderByDesc('updated_at');
                 break;
 
             case 't':
-                $query->orderByDesc('updated_at');
+                $query->orderBy('updated_at');
                 break;
 
             case 'M-m':
