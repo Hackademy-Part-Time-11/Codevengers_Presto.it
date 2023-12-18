@@ -18,4 +18,5 @@ class conversation extends Model
     {
         return $this->hasMany(Message::class);
     }
+
 }

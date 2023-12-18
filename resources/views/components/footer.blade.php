@@ -2,9 +2,10 @@
 
   <footer class="py-4">
     <div class="row">
-      <div class="col-6 col-md-2 mb-2">
-        <h5>Section</h5>
-        <ul class="nav flex-column">
+      <div class="col-4 col-md-2 mb-2">
+        
+        <ul class="nav flex-column align-items-center">
+        <li><h5>Section</h5></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Home</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Features</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Pricing</a></li>
@@ -13,9 +14,10 @@
         </ul>
       </div>
 
-      <div class="col-6 col-md-2 mb-3">
-        <h5>Section</h5>
-        <ul class="nav flex-column">
+      <div class="col-4 col-md-2 mb-3">
+        
+        <ul class="nav flex-column align-items-center">
+        <li><h5>Section</h5></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Home</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Features</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Pricing</a></li>
@@ -24,9 +26,10 @@
         </ul>
       </div>
 
-      <div class="col-6 col-md-2 mb-3">
-        <h5>Section</h5>
-        <ul class="nav flex-column">
+      <div class="col-4 col-md-2 mb-3">
+        
+        <ul class="nav flex-column align-items-center">
+          <li><h5>Section</h5></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Home</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Features</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Pricing</a></li>
@@ -35,7 +38,7 @@
         </ul>
       </div>
 
-      <div class="col-md-5 offset-md-1 mb-3">
+      <div class="col-md-5 offset-md-1  mt-5 mt-md-0 mb-3">
         <form>
           <h5>Subscribe to our newsletter</h5>
           <p class="text-light">Monthly digest of what's new and exciting from us.</p>
@@ -54,18 +57,18 @@
     <br>
     <div>
       <p class="text-light">Created by:</p>
-      <span id="developers" class="d-flex justify-content-around">
-        <div class="d-flex align-items-center">
+      <div id="developers" class="row justify-content-around">
+        <div class="col d-flex align-items-center">
           <a href="https://www.linkedin.com/in/francesco-adduce/" target="blank"><img src="{{ asset('images/Frank-photo.jpg') }}" alt="developer1"></a>
           <h5 class="m-3">Francesco Adduce</h5>
         </div>
-        <div class="d-flex align-items-center"><a href="https://www.linkedin.com/in/alessiowebdev/" target="blank"><img src="{{ asset('images/Personale.jpg') }}" alt="developer2"></a>
+        <div class="col d-flex align-items-center"><a href="https://www.linkedin.com/in/alessiowebdev/" target="blank"><img src="{{ asset('images/Personale.jpg') }}" alt="developer2"></a>
           <h5 class="m-3">Alessio Piras</h5>
         </div>
-        <div class="d-flex align-items-center"><a href="https://www.linkedin.com/in/alessandro-ricci-57b553247/" target="blank"><img src="{{ asset('images/Alessandro-photo.png') }}" alt="developer3"></a>
+        <div class="col d-flex align-items-center"><a href="https://www.linkedin.com/in/alessandro-ricci-57b553247/" target="blank"><img src="{{ asset('images/Alessandro-photo.png') }}" alt="developer3"></a>
           <h5 class="m-3">Alessandro Ricci</h5>
         </div>
-      </span>
+      </div>
 
     </div>
 

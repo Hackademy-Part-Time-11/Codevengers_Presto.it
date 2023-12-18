@@ -5,7 +5,7 @@
     border-radius: 10px;
     overflow: hidden;
 
-    button{
+    button {
         background-color: rgb(64, 22, 106);
         border: 1px solid #ccc;
     }
@@ -82,44 +82,51 @@
 
         li {
             margin: 40px 0;
-                .message-content {
-        max-width: 50%;
-        div:first-child {
-            padding: 15px;
-            border-radius: 10px;
-            span {
-                color: white;
-                font-weight: 500;
-                word-wrap: break-word;
+            .message-content {
+                max-width: 50%;
+                div:first-child {
+                    padding: 15px;
+                    border-radius: 10px;
+                    span {
+                        color: white;
+                        font-weight: 500;
+                        overflow-wrap: break-word;
+                    }
+                }
+
+                .message-time {
+                    font-size: 15px;
+                    display: flex;
+                    justify-content: start;
+                    margin: 20px 20px 0 20px;
+                }
             }
         }
 
-        .message-time {
-            font-size: 15px;
+        .other-message {
             display: flex;
             justify-content: start;
-            margin: 20px 20px 0 20px;
-        }
-    }
-            div {
-                div:first-child {
-                    background-color: rgb(9, 146, 9);
-                    display: inline;
-                }
+            width: 100%;
+
+            .message {
+                background-color: rgb(9, 146, 9);
+                border: 1px solid #ccc;
+            }
+            .message-time {
+                justify-content: end;
             }
         }
         .my-message {
             display: flex;
             justify-content: end;
-            div {
-                div:first-child {
-                    background-color: rgb(64, 22, 106);
-                    border: 1px solid #ccc;
-                }
-                .message-time {
-                    justify-content: end;
+            width: 100%;
 
-                }
+            .message {
+                background-color: rgb(64, 22, 106);
+                border: 1px solid #ccc;
+            }
+            .message-time {
+                justify-content: start;
             }
         }
     }

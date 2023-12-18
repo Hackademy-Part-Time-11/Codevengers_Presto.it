@@ -28,55 +28,55 @@ class GoogleVisionSafeSearch implements ShouldQueue
      */
     public function handle(): void
     {
-        $i = item_image::find($this->announcement_image_id);
+        // $i = item_image::find($this->announcement_image_id);
 
-        if (!$i) {
+        // if (!$i) {
 
-            return;
-        }
-        $path = str_replace('storage/', '', $i->image);
+        //     return;
+        // }
+        // $path = str_replace('storage/', '', $i->image);
 
 
-        $image = file_get_contents(storage_path('app/public/' . $path));
-        // Imposta la variabile di ambiente GOOGLE_APPLICATION_CREDENTIALS
-        // al path del credentials file
+        // $image = file_get_contents(storage_path('app/public/' . $path));
+        // // Imposta la variabile di ambiente GOOGLE_APPLICATION_CREDENTIALS
+        // // al path del credentials file
 
-        putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('google_credential.json'));
+        // putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('google_credential.json'));
 
-        $imageAnnotator = new ImageAnnotatorClient();
+        // $imageAnnotator = new ImageAnnotatorClient();
 
-        $response = $imageAnnotator->safeSearchDetection($image);
+        // $response = $imageAnnotator->safeSearchDetection($image);
 
-        $imageAnnotator->close();
+        // $imageAnnotator->close();
 
-        $safe = $response->getSafeSearchAnnotation();
+        // $safe = $response->getSafeSearchAnnotation();
 
-        $adult = $safe->getAdult();
+        // $adult = $safe->getAdult();
 
-        $medical = $safe->getMedical();
-        $spoof = $safe->getSpoof();
+        // $medical = $safe->getMedical();
+        // $spoof = $safe->getSpoof();
 
-        $violence = $safe->getViolence();
+        // $violence = $safe->getViolence();
 
-        $racy = $safe->getRacy();
+        // $racy = $safe->getRacy();
 
-        // echo json_encode([Sadult, Smedical, Sspoof, Sviolence, Sracy]);
+        // // echo json_encode([Sadult, Smedical, Sspoof, Sviolence, Sracy]);
 
-        $likelihoodName = [
-            'text-secondary bi bi-circle',
-            'text-success bi bi-check-circle-fill',
-            'text-success bi bi-check-circle-fill',
-            'text-warning bi bi bi-exclamation-circle-fill',
-            'text-warning bi bi bi-exclamation-circle-fill',
-            'text-danger bi bi-x-circle-fill'
-        ];
+        // $likelihoodName = [
+        //     'text-secondary bi bi-circle',
+        //     'text-success bi bi-check-circle-fill',
+        //     'text-success bi bi-check-circle-fill',
+        //     'text-warning bi bi bi-exclamation-circle-fill',
+        //     'text-warning bi bi bi-exclamation-circle-fill',
+        //     'text-danger bi bi-x-circle-fill'
+        // ];
 
-        $i->adult = $likelihoodName[$adult];
-        $i->medical = $likelihoodName[$medical];
-        $i->spoof = $likelihoodName[$spoof];
-        $i->violence = $likelihoodName[$violence];
-        $i->racy = $likelihoodName[$racy];
+        // $i->adult = $likelihoodName[$adult];
+        // $i->medical = $likelihoodName[$medical];
+        // $i->spoof = $likelihoodName[$spoof];
+        // $i->violence = $likelihoodName[$violence];
+        // $i->racy = $likelihoodName[$racy];
 
-        $i->save();
+        // $i->save();
     }
 }
