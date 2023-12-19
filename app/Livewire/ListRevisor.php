@@ -12,7 +12,9 @@ class ListRevisor extends Component
 
     public function render()
     {
-        $items = Item::where('is_accepted', null)->get();
+        $items = Item::where('is_accepted', null)
+            ->where('user_id', '!=', Auth::id()) // Filtra gli elementi non associati all'utente autenticato
+            ->get();;
 
         return view('livewire.list-revisor', ['items' => $items]);
     }
@@ -30,7 +32,7 @@ class ListRevisor extends Component
     }
 
     public function imageBadgeValidation($img)
-    {   
+    {
         $combinedClasses = $img->adult . $img->spoof . $img->medical . $img->violence . $img->racy;
         if (strpos($combinedClasses, 'text-danger') !== false) {
             return   'text-danger bi bi-x-circle-fill';
@@ -38,7 +40,7 @@ class ListRevisor extends Component
             return  'text-warning bi bi-exclamation-circle-fill';
         } else if (strpos($combinedClasses, 'text-secondary') !== false) {
             return   'text-secondary bi bi-circle';
-        } else{
+        } else {
             return  'text-success bi bi-check-circle-fill';
         }
     }

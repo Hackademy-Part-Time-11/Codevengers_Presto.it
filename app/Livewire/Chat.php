@@ -21,6 +21,10 @@ class Chat extends Component
     protected $listeners = [
         'loadMore'
     ];
+
+    public function loadMore(){
+        $this->loadMessages();
+    }
     public function mount(Item $item)
     {
         if ($item->id) {

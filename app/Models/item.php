@@ -30,7 +30,7 @@ class item extends Model
     public static function toBeRevisionedCount()
     {
 
-        return Item::where('is_accepted', null)->count();
+        return Item::where('is_accepted', null)->where('user_id', '!=', Auth()->user()->id)->count();
     }
 
     public function categories()

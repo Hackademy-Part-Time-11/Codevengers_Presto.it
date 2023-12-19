@@ -30,38 +30,38 @@ class RemoveFaces implements ShouldQueue
      */
     public function handle(): void
     {
-        // $i = item_image::find($this->announcement_image_id);
+        $i = item_image::find($this->announcement_image_id);
 
-        // if (!$i) {
+        if (!$i) {
 
-        //     return;
-        // }
-        // $path = storage_path('app/public/' . str_replace('storage/', '', $i->image));
+            return;
+        }
+        $path = storage_path('app/public/' . str_replace('storage/', '', $i->image));
 
 
-        // $image = file_get_contents($path);
-        // putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('google_credential.json'));
-        // $imageAnnotator = new ImageAnnotatorClient();
-        // $response = $imageAnnotator->faceDetection($image);
-        // $faces = $response->getFaceAnnotations();
-        // foreach ($faces as $face) {
-        //     $vertices = $face->getBoundingPoly()->getVertices();
-        //     $bounds = [];
-        //     foreach ($vertices as $vertex) {
-        //         $bounds[] = [$vertex->getX(), $vertex->getY()];
-        //     }
-        //     $w = $bounds[2][0] - $bounds[0][0];
-        //     $h = $bounds[2][1] - $bounds[0][1];
-        //     $image = Image::load($path);
+        $image = file_get_contents($path);
+        putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('google_credential.json'));
+        $imageAnnotator = new ImageAnnotatorClient();
+        $response = $imageAnnotator->faceDetection($image);
+        $faces = $response->getFaceAnnotations();
+        foreach ($faces as $face) {
+            $vertices = $face->getBoundingPoly()->getVertices();
+            $bounds = [];
+            foreach ($vertices as $vertex) {
+                $bounds[] = [$vertex->getX(), $vertex->getY()];
+            }
+            $w = $bounds[2][0] - $bounds[0][0];
+            $h = $bounds[2][1] - $bounds[0][1];
+            $image = Image::load($path);
 
-        //     $image->watermark(base_path('public/images/censured.png'))
-        //     ->watermarkPosition('top-left')
-        //     ->watermarkPadding($bounds[0][0],$bounds[0][1])
-        //     ->watermarkWidth($w,Manipulations::UNIT_PIXELS)
-        //     ->watermarkHeight($h,Manipulations::UNIT_PIXELS)
-        //     ->watermarkFit(Manipulations::FIT_STRETCH);
-        //     $image->save($path);
-        // }
-        // $imageAnnotator->close();
+            $image->watermark(base_path('public/images/censured.png'))
+            ->watermarkPosition('top-left')
+            ->watermarkPadding($bounds[0][0],$bounds[0][1])
+            ->watermarkWidth($w,Manipulations::UNIT_PIXELS)
+            ->watermarkHeight($h,Manipulations::UNIT_PIXELS)
+            ->watermarkFit(Manipulations::FIT_STRETCH);
+            $image->save($path);
+        }
+        $imageAnnotator->close();
     }
 }
