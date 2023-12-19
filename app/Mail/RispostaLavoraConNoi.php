@@ -19,7 +19,7 @@ class RispostaLavoraConNoi extends Mailable
     {
         $this->nome = $nome;
         $this->email = $email;
-        $this->motivazione = $richiesta;
+        $this->richiesta = $richiesta;
     }
 
     public function build()

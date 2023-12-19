@@ -29,36 +29,36 @@ class GoogleVisionLabelImage implements ShouldQueue
      */
     public function handle(): void
     {
-//         $i= item_image::find($this->announcement_image_id);
+        $i= item_image::find($this->announcement_image_id);
 
-// if (!$i){
+if (!$i){
 
-// return;
-//     }
-// $path=str_replace('storage/', '', $i->image);
-
-
-// $image= file_get_contents(storage_path('app/public/'. $path));
-// // Imposta la variabile di ambiente GOOGLE_APPLICATION_CREDENTIALS
-// // al path del credentials file
-
-// putenv('GOOGLE_APPLICATION_CREDENTIALS='. base_path('google_credential.json'));
-
-// $imageAnnotator= new ImageAnnotatorClient();
-
-// $response= $imageAnnotator->labelDetection($image);
-// $labels = $response->getLabelAnnotations();
-// if($labels){
-//     $result=[];
-//     foreach($labels as $label){
-//         $result[] = $label ->getDescription();
-//     }
+return;
+    }
+$path=str_replace('storage/', '', $i->image);
 
 
-// $i->labels=$result;
-// $i->save();
-// }
-// $imageAnnotator->close();
+$image= file_get_contents(storage_path('app/public/'. $path));
+// Imposta la variabile di ambiente GOOGLE_APPLICATION_CREDENTIALS
+// al path del credentials file
+
+putenv('GOOGLE_APPLICATION_CREDENTIALS='. base_path('google_credential.json'));
+
+$imageAnnotator= new ImageAnnotatorClient();
+
+$response= $imageAnnotator->labelDetection($image);
+$labels = $response->getLabelAnnotations();
+if($labels){
+    $result=[];
+    foreach($labels as $label){
+        $result[] = $label ->getDescription();
+    }
+
+
+$i->labels=$result;
+$i->save();
+}
+$imageAnnotator->close();
 
 
 

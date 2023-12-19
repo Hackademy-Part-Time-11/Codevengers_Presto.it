@@ -48,7 +48,7 @@
                                     {{-- <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             Dropdown
                                         </a> --}}
-                                    <li class="mt-2 colorHover"><a class="dopdown-item form-control-sm " href="{{route('account')}}">Account</a></li>
+                                    <!-- <li class="mt-2 colorHover"><a class="dopdown-item form-control-sm " href="{{route('account')}}">Account</a></li> -->
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
